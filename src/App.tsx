@@ -1,19 +1,11 @@
 
-
-import './App.css'
-
-function App() {
- 
-
+import './index.css'
+export default function App() {
   return (
-    <>
-     <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-500">
-        Tailwind is working!
+    <div className="min-h-screen flex flex-col items-center justify-center bg-second-pink">
+      <h1 className="text-6xl font-bold text-primary-green">
+       Appleseed 🚀
       </h1>
     </div>
-    </>
   )
 }
-
-export default App
