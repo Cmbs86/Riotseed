@@ -1,14 +1,19 @@
-
 @import "tailwindcss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: "Shantell Sans", sans-serif; /* Default body font */
+  line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Brand colors as defaults */
+  color: #6bf7c9; /* primary-green */
+  background-color: #fb1a66; /* second-pink */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,16 +21,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 @theme {
-
-  --font-rubrik-dirt: "Rubik Dirt", sans-serif;
-  --font-sedgwick-ave: "Sedwick Ave", cursive;
+  --font-rubik-dirt: "Rubik Dirt", sans-serif;
+  --font-sedgwick-ave: "Sedgwick Ave", cursive;
   --font-sedgwick-ave-display: "Sedgwick Ave Display", cursive;
   --font-permanent-marker: "Permanent Marker", cursive;
   --font-shantell-sans: "Shantell Sans", sans-serif;
-  
-
 
   --color-primary-green: #6bf7c9;
   --color-second-green: #88f8d3;
@@ -48,4 +49,3 @@
   --color-sixth-pink: #fda1c0;
   --color-seventh-pink: #febad1;
 }
-

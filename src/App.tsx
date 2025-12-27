@@ -1,11 +1,15 @@
+import MainLayout from "./layouts/MainLayout"
 
-
-export default function App() {
+const App = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-second-pink">
-      <h1 className="text-6xl font-bold text-primary-green font-permanent-marker">
-       Appleseed 🚀
-      </h1>
-    </div>
-  )
+    <MainLayout>
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="font-permanent-marker text-6xl text-primary-green">
+          APPLESEED
+        </h1>
+      </div>
+    </MainLayout>
+  );
 }
+
+export default App;
