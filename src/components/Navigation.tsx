@@ -13,25 +13,25 @@ const Navigation = () => {
     <nav className="flex gap-8">
       <button
         onClick={() => scrollToSection('hero')}
-        className="font-shantell-sans text-primary-green hover:text-second-green transition-colors text-lg"
+        className="font-shantell-sans text-primary-black hover:text-fifth-black transition-colors text-lg font-bold"
       >
         Start
       </button>
       <button
         onClick={() => scrollToSection('services')}
-        className="font-shantell-sans text-primary-green hover:text-second-green transition-colors text-lg"
+        className="font-shantell-sans text-primary-black hover:text-fifth-black transition-colors text-lg font-bold"
       >
         Services
       </button>
       <button
         onClick={() => scrollToSection('projects')}
-        className="font-shantell-sans text-primary-green hover:text-second-green transition-colors text-lg"
+        className="font-shantell-sans text-primary-black hover:text-fifth-black transition-colors text-lg font-bold"
       >
         Projects
       </button>
       <button
         onClick={() => scrollToSection('about')}
-        className="font-shantell-sans text-primary-green hover:text-second-green transition-colors text-lg"
+        className="font-shantell-sans text-primary-black hover:text-fifth-black transition-colors text-lg font-bold"
       >
         About
       </button>
