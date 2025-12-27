@@ -1,4 +1,4 @@
-
+import Header from "../components/Header";
 interface MainLayoutProps {
   children: React.ReactNode;
 }
@@ -6,7 +6,7 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <div className="min-h-screen bg-second-pink">
-      {/* {header} */}
+      <Header />
       <main className="w-full">{children}</main>
 
       {/* Footer */}
