@@ -33,6 +33,20 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 bg-second-pink transition-all duration-700 ease-in-out ${
@@ -40,18 +54,20 @@ const Header = () => {
       }`}>
         {/* Inner container for content spacing */}
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center transition-all duration-700 ease-in-out">
-            <div className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out ${
-              isScrolled ? 'w-16 h-16' : 'w-24 h-24'
-            }`}>
-              <span className={`font-permanent-marker text-primary-black transition-all duration-700 ease-in-out ${
-                isScrolled ? 'text-lg' : 'text-2xl'
+          {/* Logo wrapper - same approach for all screen sizes */}
+          <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-40 lg:h-36 justify-around items-center"> 
+            <Link to="/" className="flex items-center transition-all duration-700 ease-in-out">
+              <div className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out ${
+                isScrolled ? 'w-16 h-16' : 'w-24 h-24'
               }`}>
-                LOGO
-              </span>
-            </div>
-          </Link>
+                <span className={`font-permanent-marker text-primary-black transition-all duration-700 ease-in-out ${
+                  isScrolled ? 'text-lg' : 'text-2xl'
+                }`}>
+                  Logo
+                </span>
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
           <div className={`hidden md:block transition-all duration-700 ease-in-out ${
