@@ -1,12 +1,85 @@
+import { useState, useEffect } from 'react';
+import heroBanner from '../assets/images/hero-banner.png';
 
 const Hero = () => {
-  return (
-    <section id="hero" className="min-h-screen flex items-center justify-center">
-      <h1 className="font-permanent-marker text-7xl text-primary-green">
-        HERO SECTION
-      </h1>
-    </section>
-  )
-}
+  const [isVisible, setIsVisible] = useState(false);
 
-export default Hero
+  useEffect(() => {
+    // Trigger animation after component mounts
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <section 
+      id="hero" 
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+    >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBanner})` }}
+      >
+        {/* Optional: Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-primary-black opacity-30"></div>
+      </div>
+
+      {/* Main content - overlaying the image */}
+      <div className="relative z-10 text-center px-4 md:px-8">
+        {/* Business name - animated entrance from FAR LEFT to CENTER */}
+        <h1 
+          className={`font-permanent-marker text-6xl md:text-8xl lg:text-9xl text-sixth-green mb-6 transition-all duration-1500 ease-out drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-[200%]'
+          }`}
+        >
+          APPLESEED
+        </h1>
+
+        {/* Tagline - delayed animation from bottom */}
+        <p 
+          className={`font-shantell-sans text-2xl md:text-4xl lg:text-5xl text-sixth-green transition-all duration-1000 delay-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          Your Creative Marketing Partner
+        </p>
+
+        {/* CTA Button - delayed animation with scale */}
+        <button
+          onClick={() => {
+            const element = document.getElementById('services');
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className={`mt-12 px-8 py-4 bg-sixth-green text-primary-black font-permanent-marker text-xl md:text-2xl rounded-lg border-4 border-primary-black hover:bg-second-green hover:scale-105 transform transition-all duration-700 shadow-lg hover:shadow-2xl ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+          }`}
+          style={{ transitionDelay: '1000ms' }}
+        >
+          Let's Work Together
+        </button>
+      </div>
+
+      {/* Scroll indicator - animated */}
+      <div 
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`}
+      >
+        <div className="animate-bounce">
+          <svg 
+            className="w-8 h-8 text-primary-green drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
