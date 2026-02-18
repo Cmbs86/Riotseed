@@ -31,7 +31,7 @@ const Hero = () => {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-[200%]'
           }`}
         >
-          APPLESEED
+          RIOTSEED
         </h1>
 
         {/* Tagline - delayed animation from bottom */}

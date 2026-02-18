@@ -27,25 +27,25 @@ const Services = () => {
       id: 'marketing-seo',
       title: 'Marketing SEO',
       color: 'bg-primary-pink',
-      hoverColor: 'hover:bg-third-pink',
+      hoverColor: 'hover:bg-second-pink',
     },
     {
       id: 'playlist-pitching-pr',
       title: 'Playlist Pitching / PR',
-      color: 'bg-fourth-pink',
-      hoverColor: 'hover:bg-fifth-pink',
+      color: 'bg-third-pink',
+      hoverColor: 'hover:bg-fourth-pink',
     },
     {
       id: 'website-creation',
       title: 'Website Creation / Optimization',
-      color: 'bg-sixth-pink',
-      hoverColor: 'hover:bg-seventh-pink',
+      color: 'bg-fifth-pink',
+      hoverColor: 'hover:bg-sixth-pink',
     },
     {
       id: 'paid-media',
       title: 'Paid Media',
-      color: 'bg-primary-pink',
-      hoverColor: 'hover:bg-second-pink',
+      color: 'bg-sixth-pink',
+      hoverColor: 'hover:bg-seventh-pink',
     },
   ];
 
@@ -78,18 +78,21 @@ const Services = () => {
             <Link
               key={service.id}
               to="/services"
-              className={`group ${service.color} ${service.hoverColor} p-8 rounded-lg border-4 border-primary-black transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`group ${service.color} ${service.hoverColor} p-8 rounded-lg border-4 border-primary-black hover:scale-105 hover:shadow-2xl ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
-              style={{ transitionDelay: `${index * 400}ms` }}
+              style={{ 
+                transition: 'opacity 1s, transform 0.5s ease-out, background-color 0.5s ease-out, box-shadow 0.5s ease-out',
+                transitionDelay: `${index * 400}ms, 0s, 0s, 0s`
+              }}
             >
               <div className="flex flex-col items-center justify-center h-full min-h-[200px]">
-                <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-300 group-hover:-translate-y-2">
+                <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2">
                   {service.title}
                 </h3>
                 
                 {/* Arrow indicator */}
-                <div className="mt-6 transition-all duration-300 group-hover:translate-y-1 group-hover:scale-110">
+                <div className="mt-6 transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
                   <svg 
                     className="w-8 h-8 text-primary-black" 
                     fill="none" 
@@ -111,15 +114,17 @@ const Services = () => {
       {/* Spacer between cards and tagline */}
       <div className="w-full h-16"></div>
 
-      {/* Tagline wrapper */}
+      {/* Tagline wrapper - with bounce animation */}
       <div className="w-full flex justify-center">
-        <p 
-          className={`font-shantell-sans text-xl md:text-2xl text-primary-black text-center transition-all duration-1000 delay-1200 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          Click to learn more about our services
-        </p>
+        <div className={`${isVisible ? 'animate-bounce' : ''}`}>
+          <p 
+            className={`font-shantell-sans text-xl md:text-2xl text-primary-black text-center transition-all duration-1000 delay-1200 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            Click to learn more about our services
+          </p>
+        </div>
       </div>
 
       {/* Bottom spacer */}
