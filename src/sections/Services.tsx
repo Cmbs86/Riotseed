@@ -72,13 +72,13 @@ const Services = () => {
       <div className="w-full h-20"></div>
 
       {/* Cards wrapper */}
-      <div className="w-full max-w-6xl px-4 md:px-8">
+      <div className="w-full max-w-7xl px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Link
               key={service.id}
               to="/services"
-              className={`group ${service.color} ${service.hoverColor} p-8 rounded-lg border-4 border-primary-black hover:scale-105 hover:shadow-2xl ${
+              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black hover:scale-105 hover:shadow-2xl ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ 
@@ -86,13 +86,13 @@ const Services = () => {
                 transitionDelay: `${index * 400}ms, 0s, 0s, 0s`
               }}
             >
-              <div className="flex flex-col items-center justify-center h-full min-h-[200px]">
-                <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2">
+              <div className="flex flex-col items-center justify-center h-full min-h-[220px]">
+                <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2 leading-tight">
                   {service.title}
                 </h3>
                 
                 {/* Arrow indicator */}
-                <div className="mt-6 transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
+                <div className="mt-8 transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
                   <svg 
                     className="w-8 h-8 text-primary-black" 
                     fill="none" 
