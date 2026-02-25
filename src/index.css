@@ -7,13 +7,12 @@
 }
 
 :root {
-  font-family: "Shantell Sans", sans-serif; /* Default body font */
+  font-family: "Shantell Sans", sans-serif;
   line-height: 1.6;
   font-weight: 400;
 
-  /* Brand colors as defaults */
-  color: #6bf7c9; /* primary-green */
-  background-color: #fb1a66; /* second-pink */
+  color: #6bf7c9;
+  background-color: #fb1a66;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -48,4 +47,9 @@
   --color-fifth-pink: #fd88b0;
   --color-sixth-pink: #fda1c0;
   --color-seventh-pink: #febad1;
+}
+
+/* Reserves scrollbar space permanently — prevents layout shift glitch */
+html {
+  scrollbar-gutter: stable;
 }
