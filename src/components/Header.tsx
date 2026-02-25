@@ -16,12 +16,9 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    // Cleanup
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when screen resizes to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && isMobileMenuOpen) {
@@ -33,7 +30,6 @@ const Header = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMobileMenuOpen]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -41,7 +37,6 @@ const Header = () => {
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -52,12 +47,12 @@ const Header = () => {
       <header className={`fixed top-0 left-0 right-0 z-50 bg-second-pink transition-all duration-700 ease-in-out ${
         isScrolled ? 'py-2' : 'py-6'
       }`}>
-        {/* Inner container for content spacing */}
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
-          {/* Logo wrapper - same approach for all screen sizes */}
+          {/* Logo wrapper */}
           <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-40 lg:h-36 justify-around items-center"> 
             <Link to="/" className="flex items-center transition-all duration-700 ease-in-out">
-              <div className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out ${
+              {/* Brutalist: hard shadow on logo box */}
+              <div className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out shadow-[4px_4px_0px_#000000] ${
                 isScrolled ? 'w-16 h-16' : 'w-24 h-24'
               }`}>
                 <span className={`font-permanent-marker text-primary-black transition-all duration-700 ease-in-out ${
@@ -69,14 +64,14 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Hidden on mobile */}
+          {/* Desktop Navigation */}
           <div className={`hidden md:block transition-all duration-700 ease-in-out ${
             isScrolled ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 pointer-events-none'
           }`}>
             <Navigation />
           </div>
 
-          {/* Hamburger Button - Visible on mobile only */}
+          {/* Hamburger Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center z-50"

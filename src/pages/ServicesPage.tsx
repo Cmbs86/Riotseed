@@ -87,9 +87,13 @@ const ServicesPage = () => {
                 transition: 'opacity 1s, transform 1s'
               }}
             >
-              {/* Card */}
-              <div className={`${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black transition-all duration-700 ease-out hover:shadow-2xl relative z-10`}>
-                {/* Card Header - Always Visible */}
+              {/* Card - brutalist: hard shadow, shrinks + shifts on hover */}
+              <div className={`${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black transition-all duration-300 ease-out relative z-10 shadow-[6px_6px_0px_#000000] ${
+                hoveredCard === service.id 
+                  ? 'shadow-[2px_2px_0px_#000000] translate-x-[4px] translate-y-[4px]' 
+                  : ''
+              }`}>
+                {/* Card Header */}
                 <div className="flex flex-col items-center justify-center min-h-[220px]">
                   <h2 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center leading-tight">
                     {service.title}
@@ -113,7 +117,7 @@ const ServicesPage = () => {
                   </div>
                 </div>
 
-                {/* Expanded Content - Slides down from card */}
+                {/* Expanded Content */}
                 <div className={`overflow-hidden transition-all duration-700 ease-out ${
                   hoveredCard === service.id ? 'max-h-[600px] opacity-100 mt-6' : 'max-h-0 opacity-0'
                 }`}>

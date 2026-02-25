@@ -57,7 +57,7 @@ const Services = () => {
       {/* Top spacer */}
       <div className="w-full h-24"></div>
 
-      {/* Header wrapper with spacing */}
+      {/* Header wrapper */}
       <div className="w-full flex justify-center">
         <h2 
           className={`font-permanent-marker text-5xl md:text-7xl text-primary-black text-center transition-all duration-1000 ${
@@ -78,11 +78,11 @@ const Services = () => {
             <Link
               key={service.id}
               to="/services"
-              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black hover:scale-105 hover:shadow-2xl ${
+              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[4px] hover:translate-y-[4px] ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ 
-                transition: 'opacity 1s, transform 0.5s ease-out, background-color 0.5s ease-out, box-shadow 0.5s ease-out',
+                transition: 'opacity 1s, transform 0.5s ease-out, background-color 0.5s ease-out, box-shadow 0.3s ease-out',
                 transitionDelay: `${index * 400}ms, 0s, 0s, 0s`
               }}
             >
@@ -114,7 +114,7 @@ const Services = () => {
       {/* Spacer between cards and tagline */}
       <div className="w-full h-16"></div>
 
-      {/* Tagline wrapper - with bounce animation */}
+      {/* Tagline wrapper */}
       <div className="w-full flex justify-center">
         <div className={`${isVisible ? 'animate-bounce' : ''}`}>
           <p 
