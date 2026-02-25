@@ -78,7 +78,7 @@ const Services = () => {
             <Link
               key={service.id}
               to="/services"
-              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[4px] hover:translate-y-[4px] ${
+              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-1 hover:translate-y-1 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ 
@@ -86,7 +86,7 @@ const Services = () => {
                 transitionDelay: `${index * 400}ms, 0s, 0s, 0s`
               }}
             >
-              <div className="flex flex-col items-center justify-center h-full min-h-[220px]">
+              <div className="flex flex-col items-center justify-center h-full min-h-55">
                 <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2 leading-tight">
                   {service.title}
                 </h3>

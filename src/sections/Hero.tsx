@@ -47,7 +47,7 @@ const Hero = () => {
             const element = document.getElementById('services');
             if (element) element.scrollIntoView({ behavior: 'smooth' });
           }}
-          className={`mt-12 px-8 py-4 bg-sixth-green text-primary-black font-permanent-marker text-xl md:text-2xl rounded-lg border-4 border-primary-black transform transition-all duration-300 shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[4px] hover:translate-y-[4px] ${
+          className={`mt-12 px-8 py-4 bg-sixth-green text-primary-black font-permanent-marker text-xl md:text-2xl rounded-lg border-4 border-primary-black transform transition-all duration-300 shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-1 hover:translate-y-1 ${
             isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
           }`}
           style={{ transitionDelay: '1000ms' }}

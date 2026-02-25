@@ -88,7 +88,7 @@ const ServicesPage = () => {
 
       {/* Services Cards Grid */}
       <div className="w-full flex justify-center px-8 md:px-16">
-        <div className="w-full max-w-5xl">
+        <div className="w-full max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((service, index) => (
               <div
@@ -109,7 +109,7 @@ const ServicesPage = () => {
                 <div
                   className={`${service.color} ${service.hoverColor} rounded-lg border-4 border-primary-black relative z-10 overflow-hidden shadow-[6px_6px_0px_#000000] ${
                     isHovered(service.id)
-                      ? "shadow-[2px_2px_0px_#000000] translate-x-[4px] translate-y-[4px] transition-all duration-700 ease-in-out"
+                      ? "shadow-[2px_2px_0px_#000000] translate-x-1 translate-y-1 transition-all duration-700 ease-in-out"
                       : "transition-all duration-400 ease-in-out"
                   }`}
                 >
@@ -155,7 +155,7 @@ const ServicesPage = () => {
                   <div
                     className={`overflow-hidden ${
                       isHovered(service.id)
-                        ? "max-h-[600px] opacity-100 transition-all duration-700 ease-in-out"
+                        ? "max-h-150 opacity-100 transition-all duration-700 ease-in-out"
                         : "max-h-0 opacity-0 transition-all duration-400 ease-in-out"
                     }`}
                   >
