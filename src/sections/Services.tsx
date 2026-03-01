@@ -47,6 +47,12 @@ const Services = () => {
       color: 'bg-sixth-pink',
       hoverColor: 'hover:bg-seventh-pink',
     },
+    {
+      id: 'personalised-services',
+      title: 'Personalised Services',
+      color: 'bg-fourth-pink',
+      hoverColor: 'hover:bg-fifth-pink',
+    },
   ];
 
   return (
@@ -73,12 +79,12 @@ const Services = () => {
 
       {/* Cards wrapper */}
       <div className="w-full max-w-7xl px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <Link
               key={service.id}
               to="/services"
-              className={`group ${service.color} ${service.hoverColor} py-10 px-8 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-1 hover:translate-y-1 ${
+              className={`group ${service.color} ${service.hoverColor} py-10 px-6 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-1 hover:translate-y-1 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
               }`}
               style={{ 
@@ -87,7 +93,7 @@ const Services = () => {
               }}
             >
               <div className="flex flex-col items-center justify-center h-full min-h-55">
-                <h3 className="font-permanent-marker text-2xl md:text-3xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2 leading-tight">
+                <h3 className="font-permanent-marker text-xl md:text-2xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-2 leading-tight">
                   {service.title}
                 </h3>
                 

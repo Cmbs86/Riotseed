@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +44,21 @@ const Header = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const handleNavClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 bg-second-pink transition-all duration-700 ease-in-out ${
@@ -49,9 +66,8 @@ const Header = () => {
       }`}>
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
           {/* Logo wrapper */}
-          <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-40 lg:h-36 justify-around items-center"> 
+          <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-40 lg:h-36 justify-around items-center">
             <Link to="/" className="flex items-center transition-all duration-700 ease-in-out">
-              {/* Brutalist: hard shadow on logo box */}
               <div className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out shadow-[4px_4px_0px_#000000] ${
                 isScrolled ? 'w-16 h-16' : 'w-24 h-24'
               }`}>
@@ -96,45 +112,38 @@ const Header = () => {
       }`}>
         <nav className="flex flex-col items-center justify-center h-full gap-8">
           <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              const element = document.getElementById('hero');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => handleNavClick('hero')}
             className="font-permanent-marker text-4xl text-primary-green hover:text-second-green transition-colors"
           >
             Start
           </button>
           <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              const element = document.getElementById('services');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => handleNavClick('services')}
             className="font-permanent-marker text-4xl text-primary-green hover:text-second-green transition-colors"
           >
             Services
           </button>
           <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              const element = document.getElementById('projects');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => handleNavClick('projects')}
             className="font-permanent-marker text-4xl text-primary-green hover:text-second-green transition-colors"
           >
             Projects
           </button>
           <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              const element = document.getElementById('about');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => handleNavClick('about')}
             className="font-permanent-marker text-4xl text-primary-green hover:text-second-green transition-colors"
           >
             About
           </button>
+
+          {/* Get in Touch CTA — styled differently to stand out */}
+          
+           <a href="mailto:hello@riotseed.com"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="font-permanent-marker text-4xl px-8 py-3 bg-primary-green text-primary-black border-4 border-primary-black rounded-lg shadow-[4px_4px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100"
+          >
+            Get in Touch
+          </a>
         </nav>
       </div>
     </>
