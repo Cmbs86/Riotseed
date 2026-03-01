@@ -27,6 +27,66 @@ const About = () => {
       id="about"
       className="flex flex-col items-center bg-third-pink"
     >
+     <style>{`
+  .about-photo-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .about-divider-v {
+    width: 4px;
+    background-color: #000000;
+    display: none;
+  }
+  .about-divider-h {
+    width: 100%;
+    height: 4px;
+    background-color: #000000;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    display: block;
+  }
+  .about-bio-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+  }
+  .about-bio-col p {
+    max-width: 520px;
+  }
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  @media (min-width: 768px) {
+    .about-layout {
+      flex-direction: row;
+    }
+    .about-photo-col {
+      justify-content: flex-end;
+      padding-right: 5rem;
+      padding-bottom: 0;
+    }
+    .about-divider-v {
+      display: block;
+      align-self: stretch;
+    }
+    .about-divider-h {
+      display: none;
+    }
+    .about-bio-col {
+      align-items: flex-start;
+      text-align: left;
+      padding-left: 5rem;
+    }
+  }
+`}</style>
+
       {/* Top spacer */}
       <div className="w-full h-24"></div>
 
@@ -45,41 +105,50 @@ const About = () => {
       <div className="w-full h-20"></div>
 
       {/* Split layout */}
-      <div className="w-full max-w-6xl px-4 md:px-8">
+      <div className="w-full max-w-6xl px-6 md:px-8">
         <div
-          className={`flex flex-col md:flex-row items-stretch transition-all duration-1000 ${
+          className={`about-layout transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
           }`}
         >
 
-          {/* Left — Photo */}
-          <div className="flex-1 flex items-center justify-center pb-12 md:pb-0 md:pr-12">
-            <div className="relative">
-              {/* Brutalist photo card */}
-              <div className="border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden w-72 h-96 md:w-80 md:h-[420px]">
+          {/* Photo */}
+          <div className="about-photo-col">
+            <div>
+              <div
+                className="border-4 border-primary-black shadow-[8px_8px_0px_#000000]"
+                style={{ width: '280px', height: '340px', overflow: 'hidden' }}
+              >
                 <img
                   src={audePhoto}
                   alt="Aude Bibidibabidibubi"
-                  className="w-full h-full object-cover object-top"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 10%'
+                  }}
                 />
               </div>
-              {/* Name tag — brutalist label underneath photo */}
-              <div className="mt-0 border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3">
+              <div
+                className="border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3"
+                style={{ width: '280px' }}
+              >
                 <p className="font-permanent-marker text-xl text-primary-black text-center">
-                  Aude Bibidibabidibubidi
+                  Aude Bibidibabidibubi
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Vertical divider — hidden on mobile */}
-          <div className="hidden md:block w-1 bg-primary-black self-stretch"></div>
+          {/* Vertical divider — desktop */}
+          <div className="about-divider-v"></div>
 
-          {/* Horizontal divider — visible on mobile only */}
-          <div className="block md:hidden w-full h-1 bg-primary-black mb-12"></div>
+          {/* Horizontal divider — mobile */}
+          <div className="about-divider-h"></div>
 
-          {/* Right — Bio */}
-          <div className="flex-1 flex flex-col items-start justify-center md:pl-12">
+          {/* Bio */}
+          <div className="about-bio-col">
             <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed mb-6">
               I don't do things by halves — and I don't do boring. With years of experience tearing through the music and creative industries, I built Riotseed to give artists and brands the raw, unapologetic strategy they actually deserve.
             </p>
