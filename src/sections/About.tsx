@@ -23,7 +23,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="w-full bg-third-pink">
+    <section id="about" className="w-full bg-third-pink flex flex-col">
       <style>{`
         .about-photo-col {
           display: flex;
@@ -62,6 +62,7 @@ const About = () => {
           display: flex;
           flex-direction: column;
           align-items: stretch;
+          flex: 1;
         }
         .about-header-mobile {
           display: block;
@@ -74,9 +75,10 @@ const About = () => {
         @media (min-width: 768px) {
           .about-layout {
             flex-direction: row;
-            min-height: 680px
-            max-width: 1400px;
+            min-height: 680px;
+            max-width: 1700px;
             margin: 0 auto;
+            width: 100%;
           }
           .about-photo-col {
             flex: 1;
@@ -97,7 +99,7 @@ const About = () => {
             flex: 1;
             align-items: center;
             text-align: left;
-            padding: 4rem 5rem 7rem 6rem;
+            padding: 4rem 5rem 0rem 6rem;
             justify-content: center;
           }
           .about-bio-inner {
@@ -110,23 +112,21 @@ const About = () => {
             display: block;
             margin-bottom: 3rem;
           }
-           @media (min-width: 1920px) {
-  .about-layout {
-    max-width: 2400px;
-    min-height: 860px;
-  }
-  .about-photo-col {
-    padding: 10rem 6rem;
-  }
-  .about-bio-col {
-    padding: 6rem 7rem 8rem 8rem;
-  }
-  .about-bio-inner {
-    max-width: 500px;
-  }
-}
-}
-            
+        }
+        @media (min-width: 1920px) {
+          .about-layout {
+            max-width: 2400px;
+            min-height: 860px;
+          }
+          .about-photo-col {
+            padding: 10rem 6rem;
+          }
+          .about-bio-col {
+            padding: 6rem 7rem 8rem 8rem;
+          }
+          .about-bio-inner {
+            max-width: 500px;
+          }
         }
       `}</style>
 
@@ -142,7 +142,7 @@ const About = () => {
       <div className="block md:hidden h-8"></div>
 
       {/* Split layout */}
-      <div className="w-full">
+      <div className="w-full flex-col flex-1">
         <div
           className={`about-layout transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
