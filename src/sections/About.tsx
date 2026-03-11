@@ -23,7 +23,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="w-full bg-third-pink flex flex-col">
+    <section id="about" className="w-full bg-third-pink relative">
       <style>{`
         .about-photo-col {
           display: flex;
@@ -32,7 +32,7 @@ const About = () => {
           flex: 1;
           padding: 4rem 2rem;
         }
-        .about-divider-v {
+        .about-divider-absolute {
           display: none;
         }
         .about-divider-h {
@@ -62,7 +62,6 @@ const About = () => {
           display: flex;
           flex-direction: column;
           align-items: stretch;
-          flex: 1;
         }
         .about-header-mobile {
           display: block;
@@ -73,10 +72,22 @@ const About = () => {
           display: none;
         }
         @media (min-width: 768px) {
+          .about-divider-absolute {
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #000000;
+            transform: translateX(-50%);
+          }
+          .about-divider-h {
+            display: none;
+          }
           .about-layout {
             flex-direction: row;
-            min-height: 680px;
-            max-width: 1700px;
+            max-width: 1400px;
             margin: 0 auto;
             width: 100%;
           }
@@ -85,21 +96,11 @@ const About = () => {
             justify-content: center;
             padding: 8rem 4rem;
           }
-          .about-divider-v {
-            display: block;
-            width: 4px;
-            background-color: #000000;
-            align-self: stretch;
-            flex: 0 0 4px;
-          }
-          .about-divider-h {
-            display: none;
-          }
           .about-bio-col {
             flex: 1;
             align-items: center;
             text-align: left;
-            padding: 4rem 5rem 0rem 6rem;
+            padding: 4rem 5rem 4rem 6rem;
             justify-content: center;
           }
           .about-bio-inner {
@@ -116,7 +117,6 @@ const About = () => {
         @media (min-width: 1920px) {
           .about-layout {
             max-width: 2400px;
-            min-height: 860px;
           }
           .about-photo-col {
             padding: 10rem 6rem;
@@ -130,6 +130,9 @@ const About = () => {
         }
       `}</style>
 
+      {/* Absolute vertical divider — desktop only, always full height */}
+      <div className="about-divider-absolute"></div>
+
       {/* Mobile header */}
       <div className="about-header-mobile">
         <h2 className={`font-permanent-marker text-5xl text-primary-black text-center transition-all duration-1000 ${
@@ -142,7 +145,7 @@ const About = () => {
       <div className="block md:hidden h-8"></div>
 
       {/* Split layout */}
-      <div className="w-full flex-col flex-1">
+      <div className="w-full">
         <div
           className={`about-layout transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
@@ -177,10 +180,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Vertical divider — desktop */}
-          <div className="about-divider-v"></div>
-
-          {/* Horizontal divider — mobile */}
+          {/* Horizontal divider — mobile only */}
           <div className="about-divider-h"></div>
 
           {/* Bio */}

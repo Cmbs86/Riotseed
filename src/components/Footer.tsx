@@ -81,7 +81,19 @@ const Footer = () => {
       `}</style>
 
       {/* Wave */}
-      <div className="footer-wave-section">
+      <div className="footer-wave-section" style={{ position: 'relative' }}>
+  {/* Continuation of About's vertical divider */}
+  <div style={{
+    position: 'absolute',
+    left: '50%',
+    top: 0,
+    bottom: 0,
+    width: '4px',
+    backgroundColor: '#000000',
+    transform: 'translateX(-50%)',
+    zIndex: 10
+  }}></div>
+        
    <svg
   viewBox="0 0 1440 280"
   xmlns="http://www.w3.org/2000/svg"
