@@ -75,12 +75,11 @@ const About = () => {
           .about-divider-absolute {
             display: block;
             position: absolute;
-            left: 50%;
+            left: calc(50% - 2px);
             top: 0;
             bottom: 0;
             width: 4px;
             background-color: #000000;
-            transform: translateX(-50%);
           }
           .about-divider-h {
             display: none;

@@ -1,4 +1,7 @@
+import {useLocation} from "react-router-dom";
 const Footer = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
   return (
     <footer className="w-full">
       <style>{`
@@ -81,31 +84,29 @@ const Footer = () => {
       `}</style>
 
       {/* Wave */}
-      <div className="footer-wave-section" style={{ position: 'relative' }}>
-  {/* Continuation of About's vertical divider */}
-  <div style={{
+    <div className="footer-wave-section" style={{ position: 'relative' }}>
+  {isHome && (<div style={{
     position: 'absolute',
-    left: '50%',
+    left: 'calc(50% - 2px)',
     top: 0,
     bottom: 0,
     width: '4px',
     backgroundColor: '#000000',
-    transform: 'translateX(-50%)',
     zIndex: 10
   }}></div>
-        
-   <svg
-  viewBox="0 0 1440 280"
-  xmlns="http://www.w3.org/2000/svg"
-  preserveAspectRatio="none"
-  style={{ display: 'block', width: '100%', height: '280px' }}
->
-  <path
-    d="M0,10 C200,140 400,0 600,80 C800,160 1000,10 1200,90 C1320,140 1380,100 1440,80 L1440,280 L0,280 Z"
-    fill="#000000"
-  />
-</svg>
-      </div>
+)};
+  <svg
+    viewBox="0 0 1440 280"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    style={{ display: 'block', width: '100%', height: '280px' }}
+  >
+    <path
+      d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
+      fill="#000000"
+    />
+  </svg>
+</div>
 
       {/* Bottom — Black */}
       <div className="footer-bottom">
