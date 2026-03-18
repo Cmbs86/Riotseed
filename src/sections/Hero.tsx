@@ -76,6 +76,7 @@ const Hero = () => {
           </svg>
         </div>
       </div>
+         <div className="w-full h-1 bg-primary-black"></div>
     </section>
   );
 };

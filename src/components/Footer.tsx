@@ -1,6 +1,4 @@
-import {useLocation} from "react-router-dom";
 const Footer = () => {
-  const location = useLocation();
   const isHome = location.pathname === "/";
   return (
     <footer className="w-full">
@@ -84,30 +82,19 @@ const Footer = () => {
       `}</style>
 
       {/* Wave */}
-    <div className="footer-wave-section" style={{ position: 'relative' }}>
-  {isHome && (<div style={{
-    position: 'absolute',
-    left: 'calc(50% - 2px)',
-    top: 0,
-    bottom: 0,
-    width: '4px',
-    backgroundColor: '#000000',
-    zIndex: 10
-  }}></div>
-)};
-  <svg
-    viewBox="0 0 1440 280"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="none"
-    style={{ display: 'block', width: '100%', height: '280px' }}
-  >
-    <path
-      d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
-      fill="#000000"
-    />
-  </svg>
-</div>
-
+      <div className="footer-wave-section">
+        <svg
+          viewBox="0 0 1440 280"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style={{ display: "block", width: "100%", height: "280px" }}
+        >
+          <path
+            d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
+            fill="#000000"
+          />
+        </svg>
+      </div>
       {/* Bottom — Black */}
       <div className="footer-bottom">
         <div className="footer-bottom-row">

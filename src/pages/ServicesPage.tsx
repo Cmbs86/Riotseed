@@ -192,6 +192,8 @@ const ServicesPage = () => {
 
       {/* Bottom spacer */}
       <div className="w-full h-24"></div>
+      {/*black spacer line*/}
+         <div className="w-full h-1 bg-primary-black"></div>
     </div>
   );
 };

@@ -213,7 +213,7 @@ const About = () => {
       </div>
 
       <div className="block md:hidden h-8"></div>
-
+   <div className="w-full h-1 bg-primary-black"></div>
     </section>
   );
 };

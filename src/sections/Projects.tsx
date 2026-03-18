@@ -35,12 +35,6 @@ const Projects = () => {
           margin: 0 auto;
           padding: 6rem 4rem 8rem;
         }
-        .projects-header {
-          font-family: 'Permanent Marker', cursive;
-          font-size: 5rem;
-          color: #000000;
-          margin-bottom: 4rem;
-        }
         .projects-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -116,8 +110,14 @@ const Projects = () => {
           width: 100%;
           height: 4px;
           background-color: #000000;
-          margin: 5rem 0 3rem;
+          margin: 5rem 0 5rem;
         }
+        .projects-divider-bottom {
+          width: 100%;
+          height: 4px;
+          background-color: #000000;
+          margin: 5rem 0 0 0;
+}
         .projects-sub-label {
           font-family: 'Permanent Marker', cursive;
           font-size: 1.5rem;
@@ -154,7 +154,8 @@ const Projects = () => {
           font-weight: 700;
           font-size: 0.9rem;
           color: #000000;
-          margin-top: 1rem;
+          margin-top: 2rem;
+          
           max-width: 400px;
         }
         @media (min-width: 768px) {
@@ -174,9 +175,13 @@ const Projects = () => {
       `}</style>
 
       <div className="projects-inner">
-
         {/* Header */}
-        <h2 className="projects-header">PROJECTS</h2>
+        <h2 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center mb-16">
+          PROJECTS
+        </h2>
+
+        {/* Spacer */}
+        <div className="w-full h-20"></div>
 
         {/* Music projects grid */}
         <div className="projects-grid">
@@ -193,12 +198,14 @@ const Projects = () => {
               />
 
               {/* Grain texture overlay */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
-                opacity: 0.4,
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
+                  opacity: 0.4,
+                }}
+              />
 
               {/* Pink hover overlay */}
               <div className="project-overlay">
@@ -211,22 +218,23 @@ const Projects = () => {
         </div>
 
         {/* Divider + Veegreen */}
-        <div className="projects-divider"></div>
-        <p className="projects-sub-label">Beyond the Music</p>
+        <div className="projects-divider "></div>
+        <p className="projects-sub-label text-center">Beyond the Music</p>
 
-<div>
-  <button
-    onClick={() => window.open('https://www.veegreen.fr/', '_blank')}
-    className="veegreen-card"
-  >
-    <span className="veegreen-name">Veegreen</span>
-    <span className="veegreen-arrow">↗</span>
-  </button>
-  <p className="veegreen-desc">
-    Sustainable online shop — branding, strategy & web.
-  </p>
-</div>
-</div>
+        <div className="flex flex-col items-center">
+          <button
+            onClick={() => window.open("https://www.veegreen.fr/", "_blank")}
+            className="veegreen-card"
+          >
+            <span className="veegreen-name">Veegreen</span>
+            <span className="veegreen-arrow">↗</span>
+          </button>
+          <p className="veegreen-desc">
+            Sustainable online shop — branding, strategy & web.
+          </p>
+        </div>
+      </div>
+       <div className="projects-divider-bottom"></div>
     </section>
   );
 };
