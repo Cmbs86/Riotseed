@@ -4,7 +4,7 @@ const projects = [
   {
     id: "vespa",
     name: "Vespa",
-    origin: "Warsaw, Poland",
+    origin: "Sczecin, Poland",
     slug: "/projects/vespa",
     gradient: "linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 50%, #1a1a1a 100%)",
   },
