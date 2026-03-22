@@ -1,25 +1,26 @@
 import { useNavigate } from "react-router-dom";
+import vespaPhoto from "../assets/images/VespaBand.webp";
+import offbeatPhoto from "../assets/images/OffbeatAffairBand.webp";
+import veePhoto from "../assets/images/Veegreen2.webp";
 
 const projects = [
   {
     id: "vespa",
     name: "Vespa",
-    origin: "Sczecin, Poland",
     slug: "/projects/vespa",
-    gradient: "linear-gradient(135deg, #2a2a2a 0%, #4a4a4a 50%, #1a1a1a 100%)",
+    image: vespaPhoto,
   },
   {
     id: "offbeat-affair",
     name: "Offbeat Affair",
-    origin: "Berlin, Germany",
     slug: "/projects/offbeat-affair",
-    gradient: "linear-gradient(135deg, #1a1a2e 0%, #3a3a5c 50%, #0a0a1a 100%)",
+    image: offbeatPhoto,
   },
   {
     id: "tba",
     name: "Coming Soon",
-    origin: "TBA",
     slug: "/projects/tba",
+    image: null,
     gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
   },
 ];
@@ -33,7 +34,7 @@ const Projects = () => {
         .projects-inner {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 6rem 4rem 8rem;
+          padding: 6rem 4rem 0;
         }
         .projects-grid {
           display: grid;
@@ -48,7 +49,7 @@ const Projects = () => {
           cursor: pointer;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           transform: perspective(800px) translateZ(0px);
-          height: 420px;
+          height: 520px;
         }
         .project-card:hover {
           transform: perspective(800px) translateZ(30px) scale(1.03);
@@ -57,111 +58,151 @@ const Projects = () => {
         .project-card-bg {
           position: absolute;
           inset: 0;
+          background-size: cover;
+          background-position: center top;
           transition: transform 0.5s ease;
         }
-        .project-card:hover .project-card-bg {
-          transform: scale(1.05);
+        @keyframes distort {
+          0%   { transform: scale(1);                                filter: blur(0px); }
+          20%  { transform: scale(1.06) skewX(1.5deg);              filter: blur(2px); }
+          40%  { transform: scale(1.04) skewX(-1deg) skewY(0.5deg); filter: blur(1px); }
+          60%  { transform: scale(1.07) skewX(0.5deg);              filter: blur(2px); }
+          80%  { transform: scale(1.05) skewX(-0.5deg);             filter: blur(1px); }
+          100% { transform: scale(1.05);                            filter: blur(0px); }
+        }
+        .project-card:hover .project-card-bg,
+        .veegreen-card-new:hover .project-card-bg {
+          animation: distort 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .project-overlay {
           position: absolute;
           inset: 0;
-          background-color: #fb387a;
-          transform: translateY(100%);
-          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           display: flex;
-          flex-direction: column;
-          justify-content: center;
           align-items: center;
-          gap: 1rem;
-          padding: 2rem;
+          justify-content: center;
+          overflow: hidden;
         }
-        .project-card:hover .project-overlay {
-          transform: translateY(0%);
+        .project-overlay-circle {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background-color: rgba(251, 56, 122, 0.3);
+          transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                      height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .project-card:hover .project-overlay-circle {
+          width: 300%;
+          height: 300%;
         }
         .project-name {
+          position: relative;
+          z-index: 2;
           font-family: 'Permanent Marker', cursive;
-          font-size: 2.5rem;
-          color: #000000;
+          font-size: 3.5rem;
+          color: #6bf7c9;
           text-align: center;
           line-height: 1.1;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+          padding: 0 1rem;
         }
-        .project-origin {
-          font-family: 'Shantell Sans', cursive;
-          font-weight: 700;
-          font-size: 1rem;
-          color: #000000;
+        .project-card:hover .project-name {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Veegreen card */
+        .veegreen-card-new {
+          position: relative;
+          border: 4px solid #000000;
+          box-shadow: 8px 8px 0px #000000;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transform: perspective(800px) translateZ(0px);
+          height: 280px;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+        .veegreen-card-new:hover {
+          transform: perspective(800px) translateZ(30px) scale(1.03);
+          box-shadow: 14px 14px 0px #000000;
+        }
+        .veegreen-overlay-circle {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background-color: rgba(107, 247, 201, 0.3);
+          transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                      height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .veegreen-card-new:hover .veegreen-overlay-circle {
+          width: 300%;
+          height: 300%;
+        }
+        .veegreen-card-name {
+          position: relative;
+          z-index: 2;
+          font-family: 'Permanent Marker', cursive;
+          font-size: 3.5rem;
+          color: #fb387a;
           text-align: center;
+          line-height: 1.1;
+          opacity: 0;
+          transform: translateY(10px);
+          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
+          padding: 0 1rem;
         }
-        .project-cta {
+        .veegreen-card-new:hover .veegreen-card-name {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .veegreen-card-label {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 50%;
+          transform: translateX(-50%);
           font-family: 'Shantell Sans', cursive;
           font-weight: 700;
           font-size: 0.875rem;
-          color: #000000;
-          border: 3px solid #000000;
-          padding: 0.5rem 1.5rem;
-          margin-top: 0.5rem;
-          transition: background-color 0.1s, color 0.1s;
+          color: #ffffff;
+          white-space: nowrap;
+          z-index: 1;
+          text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+          transition: opacity 0.2s ease;
         }
-        .project-cta:hover {
-          background-color: #000000;
-          color: #fb387a;
+        .veegreen-card-new:hover .veegreen-card-label {
+          opacity: 0;
         }
+
         .projects-divider {
           width: 100%;
           height: 4px;
           background-color: #000000;
-          margin: 5rem 0 5rem;
+          margin: 5rem 0 3rem;
         }
         .projects-divider-bottom {
           width: 100%;
           height: 4px;
           background-color: #000000;
-          margin: 5rem 0 0 0;
-}
+          margin: 3rem 0 0 0;
+        }
         .projects-sub-label {
           font-family: 'Permanent Marker', cursive;
-          font-size: 1.5rem;
+          font-size: 2.5rem;
           color: #000000;
           margin-bottom: 2rem;
         }
-        .veegreen-card {
-          display: inline-flex;
-          align-items: center;
-          gap: 1rem;
-          border: 4px solid #000000;
-          box-shadow: 6px 6px 0px #000000;
-          background-color: #000000;
-          padding: 1rem 2rem;
-          cursor: pointer;
-          text-decoration: none;
-          transition: all 0.1s;
-        }
-        .veegreen-card:hover {
-          box-shadow: 2px 2px 0px #000000;
-          transform: translate(4px, 4px);
-        }
-        .veegreen-name {
-          font-family: 'Permanent Marker', cursive;
-          font-size: 1.75rem;
-          color: #6bf7c9;
-        }
-        .veegreen-arrow {
-          font-size: 1.5rem;
-          color: #6bf7c9;
-        }
-        .veegreen-desc {
-          font-family: 'Shantell Sans', cursive;
-          font-weight: 700;
-          font-size: 0.9rem;
-          color: #000000;
-          margin-top: 2rem;
-          
-          max-width: 400px;
-        }
         @media (min-width: 768px) {
-          .projects-header {
-            font-size: 7rem;
-          }
           .projects-grid {
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
@@ -175,8 +216,9 @@ const Projects = () => {
       `}</style>
 
       <div className="projects-inner">
+
         {/* Header */}
-        <h2 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center mb-16">
+        <h2 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center">
           PROJECTS
         </h2>
 
@@ -191,50 +233,54 @@ const Projects = () => {
               className="project-card"
               onClick={() => navigate(project.slug)}
             >
-              {/* Background gradient placeholder */}
               <div
                 className="project-card-bg"
-                style={{ background: project.gradient }}
-              />
-
-              {/* Grain texture overlay */}
-              <div
                 style={{
-                  position: "absolute",
-                  inset: 0,
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E")`,
-                  opacity: 0.4,
+                  backgroundImage: project.image
+                    ? `url(${project.image})`
+                    : project.gradient,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center top",
                 }}
               />
-
-              {/* Pink hover overlay */}
               <div className="project-overlay">
+                <div className="project-overlay-circle" />
                 <p className="project-name">{project.name}</p>
-                <p className="project-origin">{project.origin}</p>
-                <span className="project-cta">View Project →</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Divider + Veegreen */}
-        <div className="projects-divider "></div>
+        <div className="projects-divider"></div>
         <p className="projects-sub-label text-center">Beyond the Music</p>
 
-        <div className="flex flex-col items-center">
-          <button
-            onClick={() => window.open("https://www.veegreen.fr/", "_blank")}
-            className="veegreen-card"
-          >
-            <span className="veegreen-name">Veegreen</span>
-            <span className="veegreen-arrow">↗</span>
-          </button>
-          <p className="veegreen-desc">
+        {/* Veegreen card */}
+        <div
+          className="veegreen-card-new"
+          onClick={() => window.open("https://www.veegreen.fr/", "_blank")}
+        >
+          <div
+            className="project-card-bg"
+            style={{
+              backgroundImage: `url(${veePhoto})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+            }}
+          />
+          <div className="project-overlay">
+            <div className="veegreen-overlay-circle" />
+            <p className="veegreen-card-name">Veegreen</p>
+          </div>
+          <p className="veegreen-card-label">
             Sustainable online shop — branding, strategy & web.
           </p>
         </div>
+
       </div>
-       <div className="projects-divider-bottom"></div>
+
+      <div className="projects-divider-bottom"></div>
+
     </section>
   );
 };

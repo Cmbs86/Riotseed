@@ -3,9 +3,9 @@
 NEXT STEPS:
 PROJECT SECTION
 
-To fix: Footer on mobile and cards motion(too fast) on services.tsx. 
+To fix: Footer on mobile(client says it's ok) and cards motion(too fast) on services.tsx. 
 Still waiting on the logo image, banner image and the texts for all sections. 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
 
 Currently, two official plugins are available:
 
