@@ -47,12 +47,10 @@ const Projects = () => {
           box-shadow: 8px 8px 0px #000000;
           overflow: hidden;
           cursor: pointer;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          transform: perspective(800px) translateZ(0px);
+          transition: box-shadow 0.3s ease;
           height: 520px;
         }
         .project-card:hover {
-          transform: perspective(800px) translateZ(30px) scale(1.03);
           box-shadow: 14px 14px 0px #000000;
         }
         .project-card-bg {
@@ -60,60 +58,46 @@ const Projects = () => {
           inset: 0;
           background-size: cover;
           background-position: center top;
-          transition: transform 0.5s ease;
+          transition: transform 0.4s ease;
         }
-        @keyframes distort {
-          0%   { transform: scale(1);                                filter: blur(0px); }
-          20%  { transform: scale(1.06) skewX(1.5deg);              filter: blur(2px); }
-          40%  { transform: scale(1.04) skewX(-1deg) skewY(0.5deg); filter: blur(1px); }
-          60%  { transform: scale(1.07) skewX(0.5deg);              filter: blur(2px); }
-          80%  { transform: scale(1.05) skewX(-0.5deg);             filter: blur(1px); }
-          100% { transform: scale(1.05);                            filter: blur(0px); }
+        .project-card:hover .project-card-bg {
+         transform: scale(1.05);
         }
-        .project-card:hover .project-card-bg,
-        .veegreen-card-new:hover .project-card-bg {
-          animation: distort 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .project-overlay {
+        .project-overlay-square {
           position: absolute;
           inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-        .project-overlay-circle {
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
           background-color: rgba(251, 56, 122, 0.3);
-          transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                      height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+          transform: scale(0);
+          transform-origin: center center;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          z-index: 1;
         }
-        .project-card:hover .project-overlay-circle {
-          width: 300%;
-          height: 300%;
+        .project-card:hover .project-overlay-square {
+          transform: scale(1);
+        }
+        @keyframes zoomfront {
+          0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
+          60%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+          80%  { transform: translate(-50%, -50%) scale(0.95); opacity: 1; }
+          100% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; }
         }
         .project-name {
-          position: relative;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.2);
+          opacity: 0;
           z-index: 2;
           font-family: 'Permanent Marker', cursive;
-          font-size: 3.5rem;
+          font-size: 2.5rem;
           color: #6bf7c9;
           text-align: center;
-          line-height: 1.1;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
-          padding: 0 1rem;
+          line-height: 1.2;
+          width: 80%;
+          transition: none;
         }
         .project-card:hover .project-name {
-          opacity: 1;
-          transform: translateY(0);
+          animation: zoomfront 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         /* Veegreen card */
@@ -123,48 +107,46 @@ const Projects = () => {
           box-shadow: 8px 8px 0px #000000;
           overflow: hidden;
           cursor: pointer;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          transform: perspective(800px) translateZ(0px);
+          transition: box-shadow 0.3s ease;
           height: 280px;
           max-width: 700px;
           margin: 0 auto;
         }
         .veegreen-card-new:hover {
-          transform: perspective(800px) translateZ(30px) scale(1.03);
           box-shadow: 14px 14px 0px #000000;
         }
-        .veegreen-overlay-circle {
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          background-color: rgba(107, 247, 201, 0.3);
-          transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                      height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
+        .veegreen-card-new:hover .project-card-bg {
+          transform: scale(1.05);
         }
-        .veegreen-card-new:hover .veegreen-overlay-circle {
-          width: 300%;
-          height: 300%;
+        .veegreen-overlay-square {
+          position: absolute;
+          inset: 0;
+          background-color: rgba(251, 56, 122, 0.3);
+          transform: scale(0);
+          transform-origin: center center;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          z-index: 1;
+        }
+        .veegreen-card-new:hover .veegreen-overlay-square {
+          transform: scale(1);
         }
         .veegreen-card-name {
-          position: relative;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.2);
+          opacity: 0;
           z-index: 2;
           font-family: 'Permanent Marker', cursive;
-          font-size: 3.5rem;
-          color: #fb387a;
+          font-size: 2.5rem;
+          color: #6bf7c9;
           text-align: center;
           line-height: 1.1;
-          opacity: 0;
-          transform: translateY(10px);
-          transition: opacity 0.3s ease 0.2s, transform 0.3s ease 0.2s;
-          padding: 0 1rem;
+          white-space: nowrap;
+          transition: none;
         }
         .veegreen-card-new:hover .veegreen-card-name {
-          opacity: 1;
-          transform: translateY(0);
+          animation: zoomfront 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .veegreen-card-label {
           position: absolute;
@@ -183,7 +165,6 @@ const Projects = () => {
         .veegreen-card-new:hover .veegreen-card-label {
           opacity: 0;
         }
-
         .projects-divider {
           width: 100%;
           height: 4px;
@@ -198,7 +179,7 @@ const Projects = () => {
         }
         .projects-sub-label {
           font-family: 'Permanent Marker', cursive;
-          font-size: 2.5rem;
+          font-size: 1.5rem;
           color: #000000;
           margin-bottom: 2rem;
         }
@@ -243,10 +224,8 @@ const Projects = () => {
                   backgroundPosition: "center top",
                 }}
               />
-              <div className="project-overlay">
-                <div className="project-overlay-circle" />
-                <p className="project-name">{project.name}</p>
-              </div>
+              <div className="project-overlay-square" />
+              <p className="project-name">{project.name}</p>
             </div>
           ))}
         </div>
@@ -268,10 +247,8 @@ const Projects = () => {
               backgroundPosition: "center center",
             }}
           />
-          <div className="project-overlay">
-            <div className="veegreen-overlay-circle" />
-            <p className="veegreen-card-name">Veegreen</p>
-          </div>
+          <div className="veegreen-overlay-square" />
+          <p className="veegreen-card-name">Veegreen</p>
           <p className="veegreen-card-label">
             Sustainable online shop — branding, strategy & web.
           </p>
