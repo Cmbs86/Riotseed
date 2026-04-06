@@ -6,8 +6,6 @@ import vespaPhoto from "../assets/images/VespaBand.webp";
 import offbeatPhoto from "../assets/images/OffbeatAffairBand.webp";
 import veePhoto from "../assets/images/Veegreen2.webp";
 
-
-
 const projects: Project[] = [
   {
     id: "vespa",
@@ -41,7 +39,7 @@ const projects: Project[] = [
   },
 ];
 
-const LEAVE_ANIMATION_MS = 40;
+const LEAVE_ANIMATION_MS = 650;
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -54,6 +52,7 @@ const Projects = () => {
       window.clearTimeout(leaveTimeoutRef.current);
       leaveTimeoutRef.current = null;
     }
+
     setLeavingCard((current) => (current === id ? null : current));
     setHoveredCard(id);
   };
@@ -77,6 +76,7 @@ const Projects = () => {
       window.open(project.link, "_blank");
       return;
     }
+
     navigate(project.link);
   };
 
@@ -118,7 +118,7 @@ const Projects = () => {
           cursor: pointer;
           isolation: isolate;
           background-color: #000000;
-          transition: box-shadow 0.25s ease, transform 0.25s ease;
+          transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
 
         .project-card {
@@ -134,6 +134,11 @@ const Projects = () => {
         .project-card.is-hovered,
         .veegreen-card-new.is-hovered {
           box-shadow: 14px 14px 0px #000000;
+        }
+
+        .project-card.is-leaving,
+        .veegreen-card-new.is-leaving {
+          animation: shadowLeave 0.65s ease-out forwards;
         }
 
         .project-bg-base,
@@ -184,12 +189,12 @@ const Projects = () => {
 
         .project-card.is-leaving .project-bg-glitch-cyan,
         .veegreen-card-new.is-leaving .project-bg-glitch-cyan {
-          animation: imageGlitchCyanOut 0.42s steps(2, end) forwards;
+          animation: imageGlitchCyanOut 0.65s steps(2, end) forwards;
         }
 
         .project-card.is-leaving .project-bg-glitch-pink,
         .veegreen-card-new.is-leaving .project-bg-glitch-pink {
-          animation: imageGlitchPinkOut 0.42s steps(2, end) forwards;
+          animation: imageGlitchPinkOut 0.65s steps(2, end) forwards;
         }
 
         .project-card::after,
@@ -211,8 +216,8 @@ const Projects = () => {
 
         .project-card.is-leaving::after,
         .veegreen-card-new.is-leaving::after {
-          opacity: 0.04;
-          transition: opacity 0.3s ease;
+          opacity: 0.12;
+          transition: opacity 0.65s ease-out;
         }
 
         .project-name,
@@ -284,17 +289,17 @@ const Projects = () => {
 
         .project-card.is-leaving .project-name,
         .veegreen-card-new.is-leaving .veegreen-card-name {
-          animation: nameRevealOut 0.32s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+          animation: nameRevealOut 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
 
         .project-card.is-leaving .project-name::before,
         .veegreen-card-new.is-leaving .veegreen-card-name::before {
-          animation: textGlitchLeftOut 0.32s steps(2, end) forwards;
+          animation: textGlitchLeftOut 0.65s steps(2, end) forwards;
         }
 
         .project-card.is-leaving .project-name::after,
         .veegreen-card-new.is-leaving .veegreen-card-name::after {
-          animation: textGlitchRightOut 0.32s steps(2, end) forwards;
+          animation: textGlitchRightOut 0.65s steps(2, end) forwards;
         }
 
         .veegreen-card-label {
@@ -318,7 +323,7 @@ const Projects = () => {
 
         .veegreen-card-new.is-leaving .veegreen-card-label {
           opacity: 0.65;
-          transition: opacity 0.25s ease;
+          transition: opacity 0.65s ease-out;
         }
 
         .projects-divider {
@@ -342,6 +347,21 @@ const Projects = () => {
           margin-bottom: 2rem;
         }
 
+        @keyframes shadowLeave {
+          0% {
+            box-shadow: 16px 16px 0px #000000;
+          }
+          35% {
+            box-shadow: 14px 14px 0px #000000;
+          }
+          70% {
+            box-shadow: 11px 11px 0px #000000;
+          }
+          100% {
+            box-shadow: 8px 8px 0px #000000;
+          }
+        }
+
         @keyframes nameRevealIn {
           0% {
             opacity: 0;
@@ -362,13 +382,17 @@ const Projects = () => {
             opacity: 1;
             transform: translate(-50%, -50%) scale(1);
           }
-          35% {
-            opacity: 0.85;
-            transform: translate(-50%, -50%) scale(1.04);
+          22% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.06) skewX(-4deg);
+          }
+          55% {
+            opacity: 0.75;
+            transform: translate(-50%, -50%) scale(0.96) skewX(3deg);
           }
           100% {
             opacity: 0;
-            transform: translate(-50%, -50%) scale(0.82);
+            transform: translate(-50%, -50%) scale(0.78) skewX(0deg);
           }
         }
 
@@ -385,15 +409,41 @@ const Projects = () => {
         }
 
         @keyframes textGlitchLeftOut {
-          0% { opacity: 0.45; transform: translate(-2px, 0); }
-          40% { opacity: 0.85; transform: translate(-6px, 1px); }
-          100% { opacity: 0; transform: translate(0, 0); }
+          0% {
+            opacity: 0.45;
+            transform: translate(-2px, 0);
+          }
+          25% {
+            opacity: 0.95;
+            transform: translate(-10px, 2px);
+          }
+          55% {
+            opacity: 0.65;
+            transform: translate(-6px, -1px);
+          }
+          100% {
+            opacity: 0;
+            transform: translate(0, 0);
+          }
         }
 
         @keyframes textGlitchRightOut {
-          0% { opacity: 0.45; transform: translate(2px, 0); }
-          40% { opacity: 0.85; transform: translate(6px, -1px); }
-          100% { opacity: 0; transform: translate(0, 0); }
+          0% {
+            opacity: 0.45;
+            transform: translate(2px, 0);
+          }
+          25% {
+            opacity: 0.95;
+            transform: translate(10px, -2px);
+          }
+          55% {
+            opacity: 0.65;
+            transform: translate(6px, 1px);
+          }
+          100% {
+            opacity: 0;
+            transform: translate(0, 0);
+          }
         }
 
         @keyframes imageGlitchCyanIn {
@@ -458,10 +508,20 @@ const Projects = () => {
             transform: translate(-3px, 0);
             clip-path: inset(0 0 0 0);
           }
-          40% {
-            opacity: 0.55;
-            transform: translate(-8px, 0);
-            clip-path: inset(20% 0 46% 0);
+          18% {
+            opacity: 0.7;
+            transform: translate(-14px, 2px);
+            clip-path: inset(8% 0 62% 0);
+          }
+          42% {
+            opacity: 0.5;
+            transform: translate(-9px, -1px);
+            clip-path: inset(52% 0 16% 0);
+          }
+          68% {
+            opacity: 0.35;
+            transform: translate(-6px, 1px);
+            clip-path: inset(18% 0 46% 0);
           }
           100% {
             opacity: 0;
@@ -476,10 +536,20 @@ const Projects = () => {
             transform: translate(3px, 0);
             clip-path: inset(0 0 0 0);
           }
-          40% {
-            opacity: 0.55;
-            transform: translate(8px, 0);
-            clip-path: inset(46% 0 20% 0);
+          18% {
+            opacity: 0.7;
+            transform: translate(14px, -2px);
+            clip-path: inset(64% 0 8% 0);
+          }
+          42% {
+            opacity: 0.5;
+            transform: translate(9px, 1px);
+            clip-path: inset(16% 0 50% 0);
+          }
+          68% {
+            opacity: 0.35;
+            transform: translate(6px, -1px);
+            clip-path: inset(44% 0 20% 0);
           }
           100% {
             opacity: 0;

@@ -132,8 +132,8 @@ const ServicesPage = () => {
       <div
         className={`overflow-hidden ${
           isHovered(service.id)
-            ? "max-h-[600px] opacity-100 transition-all duration-700 ease-in-out"
-            : "max-h-0 opacity-0 transition-all duration-[400ms] ease-in-out"
+            ? "max-h-150 opacity-100 transition-all duration-700 ease-in-out"
+            : "max-h-0 opacity-0 transition-all duration-400 ease-in-out"
         }`}
       >
         <div className="px-10 pb-10 space-y-6">
