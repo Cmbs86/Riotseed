@@ -1,53 +1,47 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import type { Project } from "../types";
+
 import vespaPhoto from "../assets/images/VespaBand.webp";
 import offbeatPhoto from "../assets/images/OffbeatAffairBand.webp";
 import veePhoto from "../assets/images/Veegreen2.webp";
 
-type Project = {
-  id: string;
-  name: string;
-  slug: string;
-  image: string | null;
-  gradient?: string;
-  bgPosition?: string;
-  external?: boolean;
-};
+
 
 const projects: Project[] = [
   {
     id: "vespa",
-    name: "Vespa",
-    slug: "/projects/vespa",
+    title: "Vespa",
+    link: "/projects/vespa",
     image: vespaPhoto,
     bgPosition: "center top",
   },
   {
     id: "offbeat-affair",
-    name: "Offbeat Affair",
-    slug: "/projects/offbeat-affair",
+    title: "Offbeat Affair",
+    link: "/projects/offbeat-affair",
     image: offbeatPhoto,
     bgPosition: "center top",
   },
   {
     id: "tba",
-    name: "Coming Soon",
-    slug: "/projects/tba",
+    title: "Coming Soon",
+    link: "/projects/tba",
     image: null,
     gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
     bgPosition: "center center",
   },
   {
     id: "veegreen",
-    name: "Veegreen",
-    slug: "https://www.veegreen.fr/",
+    title: "Veegreen",
+    link: "https://www.veegreen.fr/",
     image: veePhoto,
     bgPosition: "center center",
     external: true,
   },
 ];
 
-const LEAVE_ANIMATION_MS = 420;
+const LEAVE_ANIMATION_MS = 40;
 
 const Projects = () => {
   const navigate = useNavigate();
@@ -80,10 +74,10 @@ const Projects = () => {
 
   const handleCardClick = (project: Project) => {
     if (project.external) {
-      window.open(project.slug, "_blank");
+      window.open(project.link, "_blank");
       return;
     }
-    navigate(project.slug);
+    navigate(project.link);
   };
 
   const getCardClassName = (id: string, isVeegreen = false) => {
@@ -549,8 +543,8 @@ const Projects = () => {
               <div className="project-bg-glitch-cyan" style={getBackgroundStyle(project)} />
               <div className="project-bg-glitch-pink" style={getBackgroundStyle(project)} />
 
-              <p className="project-name" data-text={project.name}>
-                {project.name}
+              <p className="project-name" data-text={project.title}>
+                {project.title}
               </p>
             </div>
           ))}

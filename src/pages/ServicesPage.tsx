@@ -1,4 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import type { Service } from "../types";
+
+type ServiceDetailCard = Service & {
+  color: string;
+  hoverColor: string;
+  description: string[];
+};
 
 const ServicesPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,7 +27,7 @@ const ServicesPage = () => {
     setHoveredCard(null);
   };
 
-  const services = [
+  const services: ServiceDetailCard[] = [
     {
       id: "marketing-seo",
       title: "Marketing SEO",
@@ -78,7 +85,7 @@ const ServicesPage = () => {
   const firstRow = services.slice(0, 4);
   const lastCard = services[4];
 
-  const CardContent = ({ service }: { service: typeof services[0] }) => (
+  const CardContent = ({ service }: { service: ServiceDetailCard }) => (
     <div
       className={`${service.color} ${service.hoverColor} rounded-lg border-4 border-primary-black relative z-10 overflow-hidden shadow-[6px_6px_0px_#000000] ${
         isHovered(service.id)
@@ -86,39 +93,55 @@ const ServicesPage = () => {
           : "transition-all duration-400 ease-in-out"
       }`}
     >
-      {/* Title */}
-      <div className={`flex flex-col items-center justify-center px-10 transition-all duration-700 ease-in-out ${
-        isHovered(service.id) ? "pt-8 pb-5" : "h-48"
-      }`}>
-        <h2 className={`font-permanent-marker text-primary-black text-center leading-tight transition-all duration-700 ease-in-out w-full ${
-          isHovered(service.id)
-            ? "text-xl md:text-2xl pb-4 border-b-4 border-primary-black"
-            : "text-2xl md:text-3xl"
-        }`}>
+      <div
+        className={`flex flex-col items-center justify-center px-10 transition-all duration-700 ease-in-out ${
+          isHovered(service.id) ? "pt-8 pb-5" : "h-48"
+        }`}
+      >
+        <h2
+          className={`font-permanent-marker text-primary-black text-center leading-tight transition-all duration-700 ease-in-out w-full ${
+            isHovered(service.id)
+              ? "text-xl md:text-2xl pb-4 border-b-4 border-primary-black"
+              : "text-2xl md:text-3xl"
+          }`}
+        >
           {service.title}
         </h2>
       </div>
 
-      {/* Arrow */}
-      <div className={`flex justify-center transition-all duration-500 ease-in-out ${
-        isHovered(service.id)
-          ? "opacity-0 max-h-0 overflow-hidden"
-          : "opacity-100 max-h-16 pb-8"
-      }`}>
-        <svg className="w-8 h-8 text-primary-black" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
+      <div
+        className={`flex justify-center transition-all duration-500 ease-in-out ${
+          isHovered(service.id)
+            ? "opacity-0 max-h-0 overflow-hidden"
+            : "opacity-100 max-h-16 pb-8"
+        }`}
+      >
+        <svg
+          className="w-8 h-8 text-primary-black"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="3"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path d="M19 9l-7 7-7-7"></path>
         </svg>
       </div>
 
-      {/* Description */}
-      <div className={`overflow-hidden ${
-        isHovered(service.id)
-          ? "max-h-[600px] opacity-100 transition-all duration-700 ease-in-out"
-          : "max-h-0 opacity-0 transition-all duration-[400ms] ease-in-out"
-      }`}>
+      <div
+        className={`overflow-hidden ${
+          isHovered(service.id)
+            ? "max-h-[600px] opacity-100 transition-all duration-700 ease-in-out"
+            : "max-h-0 opacity-0 transition-all duration-[400ms] ease-in-out"
+        }`}
+      >
         <div className="px-10 pb-10 space-y-6">
           {service.description.map((paragraph, pIndex) => (
-            <p key={pIndex} className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
+            <p
+              key={pIndex}
+              className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed"
+            >
               {paragraph}
             </p>
           ))}
@@ -129,10 +152,8 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen bg-second-pink">
-      {/* Top spacer */}
       <div className="w-full h-32"></div>
 
-      {/* Page Header */}
       <div className="w-full flex justify-center px-4 md:px-8">
         <h1
           className={`font-permanent-marker text-6xl md:text-8xl text-primary-green text-center transition-all duration-1000 ${
@@ -143,15 +164,11 @@ const ServicesPage = () => {
         </h1>
       </div>
 
-      {/* Spacer */}
       <div className="w-full h-20"></div>
 
-      {/* Services Cards Grid */}
       <div className="w-full flex justify-center px-8 md:px-16">
-        <div className="w-full max-w-6xl flex flex-col" style={{ gap: '2.5rem' }}>
-
-          {/* First row — 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: '2.5rem' }}>
+        <div className="w-full max-w-6xl flex flex-col" style={{ gap: "2.5rem" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "2.5rem" }}>
             {firstRow.map((service, index) => (
               <div
                 key={service.id}
@@ -170,7 +187,6 @@ const ServicesPage = () => {
             ))}
           </div>
 
-          {/* Second row — 5th card centered */}
           <div className="flex justify-center">
             <div
               onMouseEnter={() => handleMouseEnter(lastCard.id)}
@@ -186,16 +202,15 @@ const ServicesPage = () => {
               <CardContent service={lastCard} />
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* Bottom spacer */}
       <div className="w-full h-24"></div>
-      {/*black spacer line*/}
-         <div className="w-full h-1 bg-primary-black"></div>
+      <div className="w-full h-1 bg-primary-black"></div>
     </div>
   );
 };
 
 export default ServicesPage;
+
+
