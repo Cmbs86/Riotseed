@@ -1,43 +1,6 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import type { Project } from "../types";
-
-import vespaPhoto from "../assets/images/VespaBand.webp";
-import offbeatPhoto from "../assets/images/OffbeatAffairBand.webp";
-import veePhoto from "../assets/images/Veegreen2.webp";
-
-const projects: Project[] = [
-  {
-    id: "vespa",
-    title: "Vespa",
-    link: "/projects/vespa",
-    image: vespaPhoto,
-    bgPosition: "center top",
-  },
-  {
-    id: "offbeat-affair",
-    title: "Offbeat Affair",
-    link: "/projects/offbeat-affair",
-    image: offbeatPhoto,
-    bgPosition: "center top",
-  },
-  {
-    id: "tba",
-    title: "Coming Soon",
-    link: "/projects/tba",
-    image: null,
-    gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
-    bgPosition: "center center",
-  },
-  {
-    id: "veegreen",
-    title: "Veegreen",
-    link: "https://www.veegreen.fr/",
-    image: veePhoto,
-    bgPosition: "center center",
-    external: true,
-  },
-];
+import { projects } from "../data/projects";
 
 const LEAVE_ANIMATION_MS = 650;
 
@@ -71,28 +34,26 @@ const Projects = () => {
     }, LEAVE_ANIMATION_MS);
   };
 
-  const handleCardClick = (project: Project) => {
-    if (project.external) {
-      window.open(project.link, "_blank");
-      return;
-    }
-
-    navigate(project.link);
+  const handleCardClick = (slug: string) => {
+    navigate(`/projects/${slug}`);
   };
 
-  const getCardClassName = (id: string, isVeegreen = false) => {
-    const base = isVeegreen ? "veegreen-card-new" : "project-card";
+  const getCardClassName = (id: string, isWide = false) => {
+    const base = isWide ? "veegreen-card-new" : "project-card";
     const hovered = hoveredCard === id ? " is-hovered" : "";
     const leaving = leavingCard === id ? " is-leaving" : "";
     return `${base}${hovered}${leaving}`;
   };
 
-  const getBackgroundStyle = (project: Project) => ({
+  const getBackgroundStyle = (project: (typeof projects)[number]) => ({
     backgroundImage: project.image ? `url(${project.image})` : project.gradient,
     backgroundSize: "cover",
     backgroundPosition: project.bgPosition ?? "center center",
     backgroundRepeat: "no-repeat",
   });
+
+  const mainProjects = projects.filter((project) => project.category === "music");
+  const veegreenProject = projects.find((project) => project.slug === "veegreen");
 
   return (
     <section id="projects" className="w-full bg-third-pink">
@@ -601,13 +562,13 @@ const Projects = () => {
         <div className="w-full h-20"></div>
 
         <div className="projects-grid">
-          {projects.slice(0, 3).map((project) => (
+          {mainProjects.map((project) => (
             <div
               key={project.id}
               className={getCardClassName(project.id)}
               onMouseEnter={() => handleMouseEnter(project.id)}
               onMouseLeave={() => handleMouseLeave(project.id)}
-              onClick={() => handleCardClick(project)}
+              onClick={() => handleCardClick(project.slug)}
             >
               <div className="project-bg-base" style={getBackgroundStyle(project)} />
               <div className="project-bg-glitch-cyan" style={getBackgroundStyle(project)} />
@@ -623,23 +584,25 @@ const Projects = () => {
         <div className="projects-divider"></div>
         <p className="projects-sub-label text-center">Beyond the Music</p>
 
-        <div
-          className={getCardClassName("veegreen", true)}
-          onMouseEnter={() => handleMouseEnter("veegreen")}
-          onMouseLeave={() => handleMouseLeave("veegreen")}
-          onClick={() => handleCardClick(projects[3])}
-        >
-          <div className="project-bg-base" style={getBackgroundStyle(projects[3])} />
-          <div className="project-bg-glitch-cyan" style={getBackgroundStyle(projects[3])} />
-          <div className="project-bg-glitch-pink" style={getBackgroundStyle(projects[3])} />
+        {veegreenProject && (
+          <div
+            className={getCardClassName(veegreenProject.id, true)}
+            onMouseEnter={() => handleMouseEnter(veegreenProject.id)}
+            onMouseLeave={() => handleMouseLeave(veegreenProject.id)}
+            onClick={() => handleCardClick(veegreenProject.slug)}
+          >
+            <div className="project-bg-base" style={getBackgroundStyle(veegreenProject)} />
+            <div className="project-bg-glitch-cyan" style={getBackgroundStyle(veegreenProject)} />
+            <div className="project-bg-glitch-pink" style={getBackgroundStyle(veegreenProject)} />
 
-          <p className="veegreen-card-name" data-text="Veegreen">
-            Veegreen
-          </p>
-          <p className="veegreen-card-label">
-            Sustainable online shop — branding, strategy & web.
-          </p>
-        </div>
+            <p className="veegreen-card-name" data-text={veegreenProject.title}>
+              {veegreenProject.title}
+            </p>
+            <p className="veegreen-card-label">
+              Sustainable online shop — branding, strategy & web.
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="projects-divider-bottom"></div>
