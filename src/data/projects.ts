@@ -36,7 +36,7 @@ export const projects: Project[] = [
     image: offbeatPhoto,
     bgPosition: "center top",
     category: "music",
-    subtitle: "Music project",
+    subtitle: "Early Reggae / Rocksteady",
     description: [
   "Offbeat Affair dropped their debut EP and sold out their very first live show: The music did the talking before they ever set foot on stage.",
   "Five musicians from Poland, Brazil, Greece and Iran, brought together by a shared love for Jamaican offbeat music. Guitarist Maciej and drummer Adam from Berlin's punk and skinhead scene, bassist Carlos from the same Oi! roots but with Brazilian music running through his veins, vocalist Marta from the gothic world, and keyboardist Nima, whose eclectic style locks it all together.",
