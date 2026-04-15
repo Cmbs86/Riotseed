@@ -175,7 +175,7 @@ const ProjectDetail = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">
           <div className="w-full max-w-[1220px]">
-            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,560px)_minmax(0,560px)] gap-10 xl:gap-14 justify-center items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,560px)_minmax(0,560px)] gap-10 xl:gap-20 2xl:gap-36 justify-center items-start">
               {/* LEFT COLUMN */}
               <div className="w-full xl:sticky xl:top-36 self-start">
                 <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
