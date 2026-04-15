@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                   </h1>
 
                   {project.subtitle && (
-                    <p className="font-shantell-sans text-base sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
+                    <p className="font-shantell-sans text-center sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
                       {project.subtitle}
                     </p>
                   )}
