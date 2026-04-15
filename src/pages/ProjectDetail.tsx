@@ -7,7 +7,7 @@ const ProjectDetail = () => {
 
   const project = useMemo(
     () => projects.find((item) => item.slug === slug),
-    [slug]
+    [slug],
   );
 
   if (!project) {
@@ -24,6 +24,8 @@ const ProjectDetail = () => {
       </section>
     );
   }
+
+  const description = project.description ?? [];
 
   const hasInfo =
     project.info?.label || project.info?.pr || project.info?.contact;
@@ -64,27 +66,27 @@ const ProjectDetail = () => {
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="w-full space-y-8 md:space-y-10">
+              <div className="w-full h-full flex flex-col justify-start items-center lg:items-start gap-10 lg:gap-14">
                 {/* Title */}
                 <div className="text-center lg:text-left">
-                  <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black leading-none">
+                  <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black leading-none mb-8 md:mb-10">
                     {project.title}
                   </h1>
 
                   {project.subtitle && (
-                    <p className="mt-3 font-shantell-sans text-base sm:text-lg md:text-xl font-bold text-primary-black">
+                    <p className="font-shantell-sans text-base sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
                       {project.subtitle}
                     </p>
                   )}
                 </div>
 
                 {/* Description */}
-                {project.description?.length > 0 && (
-                  <div className="space-y-5 md:space-y-6 text-center lg:text-left">
-                    {project.description.map((paragraph, index) => (
+                {description.length > 0 && (
+                  <div className="max-w-[520px] mx-auto lg:mx-0 space-y-8 md:space-y-10">
+                    {description.map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed"
+                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
                       >
                         {paragraph}
                       </p>
@@ -94,40 +96,46 @@ const ProjectDetail = () => {
 
                 {/* Info */}
                 {hasInfo && (
-                  <div className="border-4 border-primary-black bg-primary-pink shadow-[8px_8px_0px_#000000] px-5 sm:px-6 py-5 sm:py-6">
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black mb-5 text-center lg:text-left">
+                  <div className="space-y-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Info
                     </h2>
 
-                    <div className="space-y-3 text-center lg:text-left">
-                      {project.info?.pr && (
-                        <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
-                          <span className="font-permanent-marker">PR:</span>{" "}
-                          {project.info.pr}
-                        </p>
-                      )}
+                    <div className="border-4 border-primary-black bg-primary-pink shadow-[8px_8px_0px_#000000] px-6 py-6">
+                      <div className="space-y-4 text-center lg:text-left">
+                        {project.info?.pr && (
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
+                            <span className="font-permanent-marker">PR:</span>{" "}
+                            {project.info.pr}
+                          </p>
+                        )}
 
-                      {project.info?.label && (
-                        <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
-                          <span className="font-permanent-marker">Label:</span>{" "}
-                          {project.info.label}
-                        </p>
-                      )}
+                        {project.info?.label && (
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
+                            <span className="font-permanent-marker">
+                              Label:
+                            </span>{" "}
+                            {project.info.label}
+                          </p>
+                        )}
 
-                      {project.info?.contact && (
-                        <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black break-words">
-                          <span className="font-permanent-marker">Contact:</span>{" "}
-                          {project.info.contact}
-                        </p>
-                      )}
+                        {project.info?.contact && (
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black break-words">
+                            <span className="font-permanent-marker">
+                              Contact:
+                            </span>{" "}
+                            {project.info.contact}
+                          </p>
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
 
                 {/* Spotify */}
                 {project.spotifyEmbed && (
-                  <div>
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black mb-4 text-center lg:text-left">
+                  <div className="space-y-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Listen
                     </h2>
 
@@ -146,12 +154,12 @@ const ProjectDetail = () => {
 
                 {/* Links */}
                 {hasSocials && (
-                  <div>
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black mb-4 text-center lg:text-left">
+                  <div className="space-y-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Links
                     </h2>
 
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                       {project.socials?.instagram && (
                         <a
                           href={project.socials.instagram}
