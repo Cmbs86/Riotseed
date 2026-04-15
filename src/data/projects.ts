@@ -38,9 +38,12 @@ export const projects: Project[] = [
     category: "music",
     subtitle: "Music project",
     description: [
-      "Offbeat Affair blends personality, mood, and a distinct visual identity into a project that feels both playful and refined. The result is a world that is recognisable at a glance and easy to connect with.",
-      "This page gives space for the project story, listening access, and key links, creating a simple but focused presentation for visitors who want to explore further.",
-    ],
+  "Offbeat Affair dropped their debut EP and sold out their very first live show: The music did the talking before they ever set foot on stage.",
+  "Five musicians from Poland, Brazil, Greece and Iran, brought together by a shared love for Jamaican offbeat music. Guitarist Maciej and drummer Adam from Berlin's punk and skinhead scene, bassist Carlos from the same Oi! roots but with Brazilian music running through his veins, vocalist Marta from the gothic world, and keyboardist Nima, whose eclectic style locks it all together.",
+  "Their debut EP Don't Need Love (2026) was recorded fully analog on a 16-track tape machine, mixed to mono, no computers - just warm, syncopated grooves that nod to The Paragons, Alton Ellis and The Aggrolites, with a gritty edge that could only come from Berlin's underground. Artwork by Malwina / Old School Design.",
+  "Currently taking their raw, vintage sound to stages across Europe: catch them at Wild At Heart, Supamolly, Gdańsk Ska Jamboree, and alongside The Hotknives and The Butlers for their 40th anniversary show at SO36 Berlin in December 2026.",
+  "Don't Need Love is out now!"
+],
     spotifyEmbed: "https://open.spotify.com/embed/artist/REPLACE_WITH_OFFBEAT_ID",
     socials: {
       instagram: "https://instagram.com/REPLACE_OFFBEAT",
