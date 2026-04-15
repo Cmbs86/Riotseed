@@ -11,7 +11,18 @@ export interface ProjectSocials {
   website?: string;
   facebook?: string;
   tiktok?: string;
+  linkedin?: string;
+  bandcamp?: string;
 }
+
+export type ProjectSocialKey =
+  | "instagram"
+  | "spotify"
+  | "website"
+  | "facebook"
+  | "tiktok"
+  | "linkedin"
+  | "bandcamp";
 
 export interface ProjectInfo {
   label?: string;
@@ -31,6 +42,7 @@ export interface Project {
   description?: string[];
   spotifyEmbed?: string;
   socials?: ProjectSocials;
+  socialOrder?: ProjectSocialKey[];
   info?: ProjectInfo;
   external?: boolean;
   link?: string;
