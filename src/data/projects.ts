@@ -44,16 +44,16 @@ export const projects: Project[] = [
   "Currently taking their raw, vintage sound to stages across Europe: catch them at Wild At Heart, Supamolly, Gdańsk Ska Jamboree, and alongside The Hotknives and The Butlers for their 40th anniversary show at SO36 Berlin in December 2026.",
   "Don't Need Love is out now!"
 ],
-    spotifyEmbed: "https://open.spotify.com/embed/artist/REPLACE_WITH_OFFBEAT_ID",
+    spotifyEmbed: "https://open.spotify.com/embed/artist/7IUniaZrcXFpjoQSoDZk3q?theme=0",
     socials: {
-      instagram: "https://instagram.com/REPLACE_OFFBEAT",
-      spotify: "https://open.spotify.com/artist/REPLACE_WITH_OFFBEAT_ID",
+      instagram: "https://www.instagram.com/offbeataffairband/",
+      spotify: "https://open.spotify.com/artist/7IUniaZrcXFpjoQSoDZk3q?si=idNtTy6_Thu0skGJDk1lhw",
       website: "https://REPLACE-OFFBEAT-WEBSITE.com",
     },
     info: {
       label: "Independent",
-      pr: "Artist PR",
-      contact: "REPLACE CONTACT",
+      pr: "album(online) / live PR",
+      contact: "Maciej",
     },
   },
   {

@@ -66,7 +66,7 @@ const ProjectDetail = () => {
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="w-full h-full flex flex-col justify-start items-center lg:items-start gap-10 lg:gap-14">
+              <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-10 lg:gap-14">
                 {/* Title */}
                 <div className="text-center lg:text-left">
                   <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black leading-none mb-8 md:mb-10">
@@ -82,7 +82,7 @@ const ProjectDetail = () => {
 
                 {/* Description */}
                 {description.length > 0 && (
-                  <div className="max-w-[520px] mx-auto lg:mx-0 space-y-8 md:space-y-10">
+                  <div className="max-w-130 mx-auto flex flex-col items-center lg:items-start gap-6">
                     {description.map((paragraph, index) => (
                       <p
                         key={index}
@@ -96,22 +96,22 @@ const ProjectDetail = () => {
 
                 {/* Info */}
                 {hasInfo && (
-                  <div className="space-y-5">
+                  <div className="max-w-130 mx-auto flex flex-col items-center gap-6">
                     <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Info
                     </h2>
 
-                    <div className="border-4 border-primary-black bg-primary-pink shadow-[8px_8px_0px_#000000] px-6 py-6">
-                      <div className="space-y-4 text-center lg:text-left">
+                    <div className="border-4 border-primary-black  shadow-[8px_8px_0px_#000000] px-6 py-6">
+                      <div className="space-y-4 text-center lg:text-center">
                         {project.info?.pr && (
-                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-third-black">
                             <span className="font-permanent-marker">PR:</span>{" "}
                             {project.info.pr}
                           </p>
                         )}
 
                         {project.info?.label && (
-                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black">
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-third-black">
                             <span className="font-permanent-marker">
                               Label:
                             </span>{" "}
@@ -120,7 +120,7 @@ const ProjectDetail = () => {
                         )}
 
                         {project.info?.contact && (
-                          <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black break-words">
+                          <p className="font-shantell-sans text-base md:text-lg font-bold text-third-black wrap-break-words">
                             <span className="font-permanent-marker">
                               Contact:
                             </span>{" "}
@@ -134,7 +134,7 @@ const ProjectDetail = () => {
 
                 {/* Spotify */}
                 {project.spotifyEmbed && (
-                  <div className="space-y-5">
+                  <div className="max-w-130 mx-auto flex flex-col items-center gap-6">
                     <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Listen
                     </h2>
@@ -143,10 +143,16 @@ const ProjectDetail = () => {
                       <iframe
                         src={project.spotifyEmbed}
                         width="100%"
-                        height="152"
+                        height={
+                          project.spotifyEmbed?.includes("artist")
+                            ? 352
+                            : project.spotifyEmbed?.includes("album")
+                              ? 380
+                              : 152
+                        }
                         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                         loading="lazy"
-                        className="block w-full"
+                        className="block w-full rounded-xl"
                       />
                     </div>
                   </div>
@@ -154,7 +160,7 @@ const ProjectDetail = () => {
 
                 {/* Links */}
                 {hasSocials && (
-                  <div className="space-y-5">
+                  <div className="max-w-130 mx-auto flex flex-col items-center gap-6">
                     <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
                       Links
                     </h2>
