@@ -17,7 +17,7 @@ const Navigation = () => {
     }
   };
 
-  const navLinkClass = "font-shantell-sans text-primary-black hover:text-fifth-black transition-colors text-lg font-bold";
+  const navLinkClass = "font-permanent-marker text-primary-black text-xl font-bold hover:text-primary-green transition-all duration-100 hover:-translate-y-[3px]";
 
   return (
     <nav className="flex gap-8 items-center">

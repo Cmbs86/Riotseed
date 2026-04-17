@@ -203,7 +203,7 @@ const ProjectDetail = () => {
                   </h1>
 
                   {project.subtitle && (
-                    <p className="font-shantell-sans text-center sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
+                    <p className="font-sedgwick-ave-display text-center sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
                       {project.subtitle}
                     </p>
                   )}
@@ -215,7 +215,7 @@ const ProjectDetail = () => {
                     {description.map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-sedgwick-ave text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
                       >
                         {paragraph}
                       </p>
