@@ -53,3 +53,9 @@
 html {
   scrollbar-gutter: stable;
 }
+
+@media (min-width: 1700px) {
+  .project-detail-grid {
+    column-gap: 15rem; /* same as roughly gap-60 */
+  }
+}

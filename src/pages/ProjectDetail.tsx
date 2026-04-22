@@ -174,8 +174,8 @@ const ProjectDetail = () => {
 
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">
-          <div className="w-full max-w-[1220px]">
-        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,560px)_minmax(0,560px)] gap-10 xl:gap-20 2xl:gap-36 justify-center items-start">
+          <div className="w-full max-w-[1520px]">
+           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
               {/* LEFT COLUMN */}
               <div className="w-full xl:sticky xl:top-36 self-start">
                 <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
@@ -183,11 +183,11 @@ const ProjectDetail = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[360px] sm:h-[480px] md:h-[620px] object-cover object-[center_5%]"
+                      className="w-full h-[340px] sm:h-[440px] md:h-[560px] object-cover object-[center_5%]"
                     />
                   ) : (
                     <div
-                      className="w-full h-[360px] sm:h-[480px] md:h-[620px]"
+                      className="w-full h-[340px] sm:h-[440px] md:h-[560px]"
                       style={{ background: project.gradient ?? "#1a1a1a" }}
                     />
                   )}
@@ -195,15 +195,15 @@ const ProjectDetail = () => {
               </div>
 
               {/* RIGHT COLUMN */}
-              <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-10 lg:gap-14">
+              <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-8 lg:gap-10">
                 {/* Title */}
                 <div className="text-center lg:text-left">
-                  <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black leading-none mb-8 md:mb-10">
+                  <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-primary-black leading-none mb-6 md:mb-8">
                     {project.title}
                   </h1>
 
                   {project.subtitle && (
-                    <p className="font-sedgwick-ave-display text-center sm:text-lg md:text-xl font-bold text-primary-black mb-12 md:mb-14">
+                    <p className="font-sedgwick-ave-display text-center sm:text-lg md:text-lg font-bold text-primary-black mb-8 md:mb-10">
                       {project.subtitle}
                     </p>
                   )}
@@ -211,7 +211,7 @@ const ProjectDetail = () => {
 
                 {/* Description */}
                 {description.length > 0 && (
-                  <div className="max-w-130 mx-auto flex flex-col items-center lg:items-start gap-6">
+                  <div className="max-w-[32rem] mx-auto flex flex-col items-center lg:items-start gap-5">
                     {description.map((paragraph, index) => (
                       <p
                         key={index}
