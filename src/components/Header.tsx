@@ -77,7 +77,7 @@ const Header = () => {
               <img
                 src="/logos/riot-seed-color.svg"
                 alt="Riot Seed"
-                className={`w-auto object-contain transition-all duration-700 ease-in-out drop-shadow-[8px_3px_0px_#000000] ${
+                className={`w-auto object-contain transition-all duration-700 ease-in-out drop-shadow-[-7px_-3px_1px_#000000] ${
                   isScrolled ? "h-26" : "h-36"
                 }`}
               />

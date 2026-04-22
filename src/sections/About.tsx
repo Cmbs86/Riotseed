@@ -23,7 +23,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="w-full bg-third-pink relative">
+    <section id="about" className="w-full bg-second-pink relative">
       <style>{`
         .about-photo-col {
           display: flex;

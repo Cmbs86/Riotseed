@@ -56,7 +56,7 @@ const Projects = () => {
   const veegreenProject = projects.find((project) => project.slug === "veegreen");
 
   return (
-    <section id="projects" className="w-full bg-third-pink">
+    <section id="projects" className="w-full bg-second-pink">
       <style>{`
         .projects-inner {
           max-width: 1400px;

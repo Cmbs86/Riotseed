@@ -67,7 +67,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="flex flex-col items-center bg-third-pink">
+    <section id="services" className="flex flex-col items-center bg-second-pink">
       <div className="w-full h-24"></div>
 
       <div className="w-full flex justify-center">
