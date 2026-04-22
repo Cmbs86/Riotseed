@@ -67,23 +67,20 @@ const Header = () => {
         }`}
       >
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
-          {/* Logo wrapper */}
-          <div className="flex w-36 h-32 md:w-36 md:h-32 lg:w-40 lg:h-36 justify-around items-center">
+          
+          {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
+          <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-52 lg:h-36 justify-around items-center">
             <Link
               to="/"
               className="flex items-center transition-all duration-700 ease-in-out"
             >
-              <div
-                className={`bg-primary-green flex items-center justify-center rounded-lg border-4 border-primary-black transition-all duration-700 ease-in-out shadow-[4px_4px_0px_#000000] ${
-                  isScrolled ? "w-24 h-24" : "w-36 h-32"
+              <img
+                src="/logos/riot-seed-color.svg"
+                alt="Riot Seed"
+                className={`w-auto object-contain transition-all duration-700 ease-in-out ${
+                  isScrolled ? "h-26" : "h-34"
                 }`}
-              >
-                <img
-                  src="/logos/riot-seed-color.svg"
-                  alt="Riot Seed"
-                  className="w-full h-full object-contain p-2"
-                />
-              </div>
+              />
             </Link>
           </div>
 
