@@ -48,11 +48,11 @@ const ServiceDetail = () => {
   return (
     <section className="min-h-screen bg-second-pink">
       {/* Space for fixed header */}
-      <div className="h-28 w-full" />
+      <div className="h-40 md:h-44 lg:h-48 w-full" />
 
       {/* Page Title */}
-      <div className="w-full min-h-[12rem] flex items-center justify-center">
-        <h1 className="font-permanent-marker text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-primary-black text-center leading-none">
+      <div className="w-full min-h-[7rem] md:min-h-[9rem] flex items-center justify-center">
+        <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black text-center leading-none">
           OUR SERVICES
         </h1>
       </div>
@@ -62,47 +62,45 @@ const ServiceDetail = () => {
         <div className="w-full flex justify-center">
           {/* FLEX COLUMN WRAPPER */}
           <div className="w-full max-w-[920px] min-h-[60vh] flex flex-col items-center">
-            {/* 🔑 Spacer (pushes card away from yellow line) */}
-            <div className="h-16 md:h-20 w-full" />
+            <div className="h-6 md:h-10 lg:h-12 w-full" />
 
             {/* CARD */}
             <article
               className="
-                        w-full max-w-190
-                         bg-primary-pink
-                        border-4 border-primary-black
-                        rounded-lg
-                        shadow-[8px_8px_0px_#000000]
-                        px-8 pt-12 pb-16  
-                         md:px-14 md:pt-16 md:pb-20
-"
+                w-full max-w-[92vw] sm:max-w-[680px] lg:max-w-[760px]
+                bg-primary-pink
+                border-4 border-primary-black
+                rounded-lg
+                shadow-[5px_5px_0px_#000000] md:shadow-[8px_8px_0px_#000000]
+                px-5 pt-8 pb-12
+                sm:px-8 sm:pt-10 sm:pb-14
+                md:px-14 md:pt-16 md:pb-20
+              "
             >
-              <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center leading-tight mb-10">
+              <h2 className="font-permanent-marker text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
                 {service.title}
               </h2>
 
-              <div className="w-full h-1 bg-primary-black mb-12" />
+              <div className="w-full h-1.5 md:h-2 bg-primary-black mb-8 md:mb-12" />
 
-              <div className="h-4 md:h-6 w-full" />
+              <div className="h-3 md:h-6 w-full" />
 
-              <div className="flex flex-col items-center gap-8">
+              <div className="flex flex-col items-center gap-6 md:gap-8">
                 {service.description.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="font-sedgwick-ave text-base md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-[38rem]"
+                    className="font-sedgwick-ave text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-[32rem] md:max-w-[38rem]"
                   >
                     {paragraph}
                   </p>
                 ))}
               </div>
-              {/* NEW bottom breathing space */}
-              <div className="h-6 md:h-10 w-full" />
+
+              <div className="h-6 md:h-8 w-full" />
             </article>
 
-            {/* FLEXIBLE SPACE (pushes button down) */}
-            <div className="h-20 md:h-24 w-full" />
+            <div className="h-14 md:h-20 w-full" />
 
-            {/* BUTTON (unchanged as requested) */}
             <button
               onClick={handleBackToServices}
               className="
@@ -125,11 +123,9 @@ const ServiceDetail = () => {
           </div>
         </div>
 
-        {/* FOOTER SPACING */}
         <div className="h-24 md:h-32 w-full" />
       </div>
 
-      {/* Bottom border */}
       <div className="w-full h-1 bg-primary-black" />
     </section>
   );
