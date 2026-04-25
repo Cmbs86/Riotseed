@@ -7,7 +7,7 @@ const ServiceDetail = () => {
 
   const service = useMemo(
     () => services.find((item) => item.slug === slug),
-    [slug],
+    [slug]
   );
 
   useEffect(() => {
@@ -21,6 +21,7 @@ const ServiceDetail = () => {
           <h1 className="font-permanent-marker text-4xl md:text-6xl text-primary-black mb-6">
             Service not found
           </h1>
+
           <Link
             to="/"
             className="font-shantell-sans text-lg md:text-xl font-bold text-primary-black underline"
@@ -34,53 +35,60 @@ const ServiceDetail = () => {
 
   return (
     <section className="min-h-screen bg-second-pink">
-      {/* Fixed-header spacer, same idea as ProjectDetail */}
-      <div className="h-52 md:h-60 lg:h-64 w-full" />
+      {/* Space for fixed header */}
+      <div className="h-28 w-full" />
 
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      {/* Page Title */}
+      <div className="w-full min-h-[12rem] flex items-center justify-center">
+        <h1 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center leading-none">
+          OUR SERVICES
+        </h1>
+      </div>
+
+      {/* CONTENT WRAPPER */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-16">
         <div className="w-full flex justify-center">
-          <div className="w-full max-w-[920px] flex flex-col items-center">
-            <h1 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center leading-none mb-16">
-              OUR SERVICES
-            </h1>
-
-            <article className="w-full max-w-[680px] bg-primary-pink border-4 border-primary-black rounded-lg shadow-[8px_8px_0px_#000000] px-7 py-10 md:px-12 md:py-14">
-              <h2 className="font-permanent-marker text-4xl md:text-6xl text-primary-black text-center leading-tight mb-8">
+          {/* FLEX COLUMN WRAPPER (this is the key fix) */}
+          <div className="w-full max-w-[920px] min-h-[60vh] flex flex-col items-center">
+            
+            {/* CARD */}
+            <article className="w-full max-w-[760px] bg-primary-pink border-4 border-primary-black rounded-lg shadow-[8px_8px_0px_#000000] px-8 pt-12 pb-20 md:px-14 md:pt-16 md:pb-24">
+              <h2 className="font-permanent-marker text-4xl md:text-5xl text-primary-black text-center leading-tight mb-10">
                 {service.title}
               </h2>
 
-              <p className="font-shantell-sans text-lg md:text-2xl font-bold text-primary-black text-center leading-relaxed max-w-[34rem] mx-auto mb-10">
-                {service.teaser}
-              </p>
+              <div className="w-full h-1 bg-primary-black mb-12" />
 
-              <div className="w-full h-1 bg-primary-black mb-10" />
-
-              <div className="flex flex-col items-center gap-7">
+              <div className="flex flex-col items-center gap-8">
                 {service.description.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center max-w-[32rem]"
+                    className="font-sedgwick-ave text-base md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-[38rem]"
                   >
                     {paragraph}
                   </p>
                 ))}
               </div>
-
-              <div className="flex justify-center mt-12">
-                <Link
-                  to="/"
-                  className="font-permanent-marker text-xl text-primary-black bg-primary-green border-4 border-primary-black rounded-lg px-6 py-3 shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100"
-                >
-                  Back to Services
-                </Link>
-              </div>
             </article>
+
+            {/* FLEXIBLE SPACE (pushes button down) */}
+            <div className="flex-1 min-h-[6rem] md:min-h-[8rem]" />
+
+            {/* BUTTON */}
+            <Link
+              to="/"
+              className="font-permanent-marker text-xl text-primary-black bg-primary-green border-4 border-primary-black rounded-lg px-6 py-3 shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100"
+            >
+              Back to Services
+            </Link>
           </div>
         </div>
 
-        <div className="h-24 md:h-28 w-full" />
+        {/* FOOTER SPACING (same idea as ProjectDetail) */}
+        <div className="h-24 md:h-32 w-full" />
       </div>
 
+      {/* Bottom border */}
       <div className="w-full h-1 bg-primary-black" />
     </section>
   );
