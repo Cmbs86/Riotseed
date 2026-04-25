@@ -67,17 +67,20 @@ const Header = () => {
         }`}
       >
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
-          
           {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
           <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-66 lg:h-40 justify-around items-center">
             <Link
               to="/"
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               className="flex items-center transition-all duration-700 ease-in-out"
             >
               <img
                 src="/logos/riot-seed-color.svg"
                 alt="Riot Seed"
-                className={`w-auto object-contain transition-all duration-700 ease-in-out drop-shadow-[-7px_-3px_1px_#000000] ${
+                className={`w-auto object-contain transition-all duration-700 ease-in-out drop-shadow-[7px_-3px_1px_#000000] ${
                   isScrolled ? "h-26" : "h-36"
                 }`}
               />

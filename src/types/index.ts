@@ -1,8 +1,8 @@
 export interface Service {
-  id: string;
+  slug: string;
   title: string;
-  description?: string | string[];
-  link?: string;
+  teaser: string;
+  description: string[];
 }
 
 export interface ProjectSocials {

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
+import ServiceDetail from './pages/ServiceDetail';
 import ProjectDetail from './pages/ProjectDetail';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <MainLayout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetail />} /> 
         <Route path="/projects/:slug" element={<ProjectDetail />} />
       </Routes>
     </MainLayout>
