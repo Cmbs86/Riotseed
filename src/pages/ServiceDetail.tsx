@@ -1,18 +1,29 @@
 import { useMemo, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { services } from "../data/services";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-
+  const navigate = useNavigate();
   const service = useMemo(
     () => services.find((item) => item.slug === slug),
-    [slug]
+    [slug],
   );
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleBackToServices = () => {
+    navigate("/");
+
+    setTimeout(() => {
+      const servicesSection = document.getElementById("services");
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  };
 
   if (!service) {
     return (
@@ -50,7 +61,6 @@ const ServiceDetail = () => {
         <div className="w-full flex justify-center">
           {/* FLEX COLUMN WRAPPER (this is the key fix) */}
           <div className="w-full max-w-[920px] min-h-[60vh] flex flex-col items-center">
-            
             {/* CARD */}
             <article className="w-full max-w-[760px] bg-primary-pink border-4 border-primary-black rounded-lg shadow-[8px_8px_0px_#000000] px-8 pt-12 pb-20 md:px-14 md:pt-16 md:pb-24">
               <h2 className="font-permanent-marker text-4xl md:text-5xl text-primary-black text-center leading-tight mb-10">
@@ -75,12 +85,25 @@ const ServiceDetail = () => {
             <div className="flex-1 min-h-[6rem] md:min-h-[8rem]" />
 
             {/* BUTTON */}
-            <Link
-              to="/"
-              className="font-permanent-marker text-xl text-primary-black bg-primary-green border-4 border-primary-black rounded-lg px-6 py-3 shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[3px] hover:translate-y-[3px] transition-all duration-100"
+            <button
+              onClick={handleBackToServices}
+              className="
+    font-permanent-marker text-xl
+    text-primary-black
+    bg-primary-green
+    border-4 border-primary-black
+    rounded-lg
+    w-50 h-13
+    flex items-center justify-center
+    shadow-[5px_5px_0px_#000000]
+    hover:shadow-[2px_2px_0px_#000000]
+    hover:translate-x-0.75
+    hover:translate-y-0.75
+    transition-all duration-500
+  "
             >
               Back to Services
-            </Link>
+            </button>
           </div>
         </div>
 
