@@ -7,9 +7,7 @@ const About = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.1 },
     );
@@ -24,196 +22,118 @@ const About = () => {
 
   return (
     <section id="about" className="w-full bg-second-pink relative">
-      <style>{`
-        .about-photo-col {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex: 1;
-          padding: 4rem 2rem;
-        }
-        .about-divider-absolute {
-          display: none;
-        }
-        .about-divider-h {
-          width: 100%;
-          height: 4px;
-          background-color: #000000;
-          margin-top: 4rem;
-          margin-bottom: 4rem;
-          display: block;
-        }
-        .about-bio-col {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          flex: 1;
-          padding: 4rem 2rem;
-        }
-        .about-bio-inner {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-          max-width: 480px;
-        }
-        .about-layout {
-          display: flex;
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .about-header-mobile {
-          display: block;
-          text-align: center;
-          padding-top: 4rem;
-        }
-        .about-header-desktop {
-          display: none;
-        }
-        @media (min-width: 768px) {
-          .about-divider-absolute {
-            display: block;
-            position: absolute;
-            left: calc(50% - 2px);
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #000000;
-          }
-          .about-divider-h {
-            display: none;
-          }
-          .about-layout {
-            flex-direction: row;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-          }
-          .about-photo-col {
-            flex: 1;
-            justify-content: center;
-            padding: 8rem 4rem;
-          }
-          .about-bio-col {
-            flex: 1;
-            align-items: center;
-            text-align: left;
-            padding: 4rem 5rem 4rem 6rem;
-            justify-content: center;
-          }
-          .about-bio-inner {
-            max-width: 520px;
-          }
-          .about-header-mobile {
-            display: none;
-          }
-          .about-header-desktop {
-            display: block;
-            margin-bottom: 3rem;
-          }
-        }
-        @media (min-width: 1920px) {
-          .about-layout {
-            max-width: 2400px;
-          }
-          .about-photo-col {
-            padding: 10rem 6rem;
-          }
-          .about-bio-col {
-            padding: 6rem 7rem 8rem 8rem;
-          }
-          .about-bio-inner {
-            max-width: 500px;
-          }
-        }
-      `}</style>
+      <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-primary-black" />
+      <div className="hidden md:block h-16 lg:h-20 w-full" />
 
-      {/* Absolute vertical divider — desktop only, always full height */}
-      <div className="about-divider-absolute"></div>
-
-      {/* Mobile header */}
-      <div className="about-header-mobile">
-        <h2 className={`font-permanent-marker text-5xl text-primary-black text-center transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-        }`}>
+      <div className="block md:hidden text-center pt-16">
+        <h2
+          className={`font-permanent-marker text-5xl text-primary-black transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          }`}
+        >
           ABOUT
         </h2>
       </div>
 
-      <div className="block md:hidden h-8"></div>
+      <div className="block md:hidden h-8" />
 
-      {/* Split layout */}
       <div className="w-full">
         <div
-          className={`about-layout transition-all duration-1000 ${
+          className={`flex flex-col md:flex-row items-stretch w-full max-w-[1400px] 2xl:max-w-[2400px] mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           }`}
         >
-          {/* Photo */}
-          <div className="about-photo-col">
-            <div>
-              <div
-                className="border-4 border-primary-black shadow-[8px_8px_0px_#000000]"
-                style={{ width: "280px", height: "340px", overflow: "hidden" }}
-              >
-                <img
-                  src={audePhoto}
-                  alt="Aude Bibidibabidibubi"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center 10%",
-                  }}
-                />
-              </div>
-              <div
-                className="border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3"
-                style={{ width: "280px" }}
-              >
-                <p className="font-permanent-marker text-xl text-primary-black text-center">
-                  Aude Bibidibabidibubi
-                </p>
-              </div>
-            </div>
-          </div>
+         <div className="flex flex-1 items-start justify-center px-8 py-16 md:px-16 md:pt-32 md:pb-16 2xl:px-24 2xl:pt-40 2xl:pb-24">
+  <div className="md:h-[92%]">
+    <div className="md:sticky md:top-40">
+      <div className="w-[300px] h-[370px] md:w-[320px] md:h-[400px] overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
+        <img
+          src={audePhoto}
+          alt="Aude"
+          className="w-full h-full object-cover object-[center_10%]"
+        />
+      </div>
 
-          {/* Horizontal divider — mobile only */}
-          <div className="about-divider-h"></div>
+      <div className="w-[300px] md:w-[320px] border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3">
+        <p className="font-permanent-marker text-xl text-primary-black text-center">
+          Aude
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-          {/* Bio */}
-          <div className="about-bio-col">
-            <h2 className={`about-header-desktop font-permanent-marker text-5xl md:text-7xl text-primary-black transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
-            }`}>
+          <div className="block md:hidden w-full h-1 bg-primary-black my-16" />
+
+          <div className="flex flex-1 flex-col justify-start items-center text-center md:text-left px-8 py-16 md:px-20 md:pt-32 md:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
+            <h2
+              className={`hidden md:block font-permanent-marker text-5xl md:text-7xl text-primary-black mb-12 transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+              }`}
+            >
               ABOUT
             </h2>
-            <div className="about-bio-inner">
+
+            <div className="flex flex-col gap-6 max-w-[480px] md:max-w-[520px] 2xl:max-w-[500px] w-full">
+              <div className="h-2 md:h-4 w-full" />
+
               <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
-                I don't do things by halves — and I don't do boring. With years of
-                experience tearing through the music and creative industries, I
-                built Riotseed to give artists and brands the raw, unapologetic
-                strategy they actually deserve.
+                I’m Aude - French, Berlin-based, full of tattoos, and obsessed
+                with music since my teenage years when I first discovered punk
+                and never looked back.
               </p>
+
               <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
-                I believe the best marketing doesn't feel like marketing at all —
-                it feels like a movement. Whether it's getting your track on the
-                right playlist, building a website that actually converts, or
-                crafting a campaign that cuts through the noise, I bring the same
-                obsessive energy to every project.
+                I’ve spent 12+ years in the music industry, on pretty much every
+                side of the table. I started at independent punk and rock labels
+                - SideOneDummy and People Like You Records - Then moved to OÜI
+                FM, France’s national rock radio, where I worked alongside
+                labels, festivals like Hellfest and Rock en Seine, and built
+                partnership programs from scratch. After that: Viacom/MTV, Vice
+                Media, and six years at Spotify, where I managed 250+ campaigns
+                a year and learned exactly how the biggest streaming platform in
+                the world works from the inside.
               </p>
+
               <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
-                Ready to make some noise? Let's go. 🖤
+                But through all of that, I never stopped being part of the
+                scene. I play guitar in a FLINTA punk hardcore band. I go to
+                shows constantly: from Berlin basements to European festivals. I
+                moved to Berlin because the underground music scene here is
+                unlike anywhere else in the world. This city is where punk, DIY
+                culture, and creative chaos collide. It felt like home from day
+                one.
               </p>
+
+              <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
+                I built Riotseed because I saw a gap that kept bothering me:
+                bands in development - the ones playing incredible music in
+                small venues and booking their own tours - almost never have
+                access to professional marketing. The budgets are too small, the
+                agencies too expensive, and the tools too confusing. I wanted to
+                change that.
+              </p>
+
+              <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
+                Riotseed is a female-run agency that brings real industry
+                experience to DIY and independent bands. No corporate bullshit,
+                no inflated budgets. Just someone who knows the scene, knows the
+                platforms, and knows how to make things happen for bands who
+                deserve to be heard.
+              </p>
+
+              <p className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed">
+                If your music is real, your marketing should be too.
+              </p>
+
+              <div className="h-10 md:h-16 w-full" />
             </div>
           </div>
-
         </div>
       </div>
 
-      <div className="block md:hidden h-8"></div>
-   <div className="w-full h-1 bg-primary-black"></div>
+      <div className="block md:hidden h-8" />
+      <div className="w-full h-1 bg-primary-black" />
     </section>
   );
 };

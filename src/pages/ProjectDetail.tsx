@@ -174,20 +174,20 @@ const ProjectDetail = () => {
 
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">
-          <div className="w-full max-w-[1520px]">
+          <div className="w-full max-w-380">
            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
               {/* LEFT COLUMN */}
-              <div className="w-full xl:sticky xl:top-36 self-start">
+              <div className="w-full xl:sticky xl:top-40 self-start">
                 <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
                   {project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-[340px] sm:h-[440px] md:h-[560px] object-cover object-[center_5%]"
+                      className="w-full h-85 sm:h-110 md:h-140 object-cover object-[center_5%]"
                     />
                   ) : (
                     <div
-                      className="w-full h-[340px] sm:h-[440px] md:h-[560px]"
+                      className="w-full h-85 sm:h-110 md:h-140"
                       style={{ background: project.gradient ?? "#1a1a1a" }}
                     />
                   )}
@@ -211,7 +211,7 @@ const ProjectDetail = () => {
 
                 {/* Description */}
                 {description.length > 0 && (
-                  <div className="max-w-[32rem] mx-auto flex flex-col items-center lg:items-start gap-5">
+                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
                     {description.map((paragraph, index) => (
                       <p
                         key={index}
@@ -231,17 +231,17 @@ const ProjectDetail = () => {
                         Info
                       </h2>
 
-                      <div className="w-full min-h-[280px] border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex flex-col justify-center">
+                      <div className="w-full min-h-70 border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex flex-col justify-center">
                         <div className="flex flex-col items-center gap-3 text-center">
                           {project.info?.pr && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words">
+                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
                               <span className="font-permanent-marker">PR:</span>{" "}
                               {project.info.pr}
                             </p>
                           )}
 
                           {project.info?.label && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words">
+                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
                               <span className="font-permanent-marker">
                                 Label:
                               </span>{" "}
@@ -250,7 +250,7 @@ const ProjectDetail = () => {
                           )}
 
                           {project.info?.contact && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words">
+                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
                               <span className="font-permanent-marker">
                                 Contact:
                               </span>{" "}
@@ -266,7 +266,7 @@ const ProjectDetail = () => {
                 {/* Spotify */}
                 {project.spotifyEmbed && (
                   <div className="w-full flex justify-center">
-                    <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
+                    <div className="w-full max-w-100 flex flex-col items-center gap-6">
                       <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                         Listen
                       </h2>
@@ -293,7 +293,7 @@ const ProjectDetail = () => {
 
                 {/* Social Icons */}
                 {hasSocials && (
-                  <div className="w-full max-w-[620px] mx-auto flex flex-col items-center">
+                  <div className="w-full max-w-155 mx-auto flex flex-col items-center">
                     <div className="flex flex-wrap justify-center gap-6 md:gap-7">
                       {socialOrder.map((key) => {
                         const socialKey = key as keyof typeof socialLinks;

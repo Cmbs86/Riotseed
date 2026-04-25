@@ -51,7 +51,7 @@ const ServiceDetail = () => {
       <div className="h-40 md:h-44 lg:h-48 w-full" />
 
       {/* Page Title */}
-      <div className="w-full min-h-[7rem] md:min-h-[9rem] flex items-center justify-center">
+      <div className="w-full min-h-28 md:min-h-36 flex items-center justify-center">
         <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-black text-center leading-none">
           OUR SERVICES
         </h1>
@@ -61,13 +61,13 @@ const ServiceDetail = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-16">
         <div className="w-full flex justify-center">
           {/* FLEX COLUMN WRAPPER */}
-          <div className="w-full max-w-[920px] min-h-[60vh] flex flex-col items-center">
+          <div className="w-full max-w-230 min-h-[60vh] flex flex-col items-center">
             <div className="h-6 md:h-10 lg:h-12 w-full" />
 
             {/* CARD */}
             <article
               className="
-                w-full max-w-[92vw] sm:max-w-[680px] lg:max-w-[760px]
+                w-full max-w-[92vw] sm:max-w-170 lg:max-w-190
                 bg-primary-pink
                 border-4 border-primary-black
                 rounded-lg
@@ -89,7 +89,7 @@ const ServiceDetail = () => {
                 {service.description.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="font-sedgwick-ave text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-[32rem] md:max-w-[38rem]"
+                    className="font-sedgwick-ave text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-lg md:max-w-152"
                   >
                     {paragraph}
                   </p>

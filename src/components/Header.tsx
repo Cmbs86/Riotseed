@@ -162,7 +162,7 @@ const Header = () => {
           <a
             href="mailto:hello@riotseed.com"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-permanent-marker text-4xl px-8 py-3 bg-primary-green text-primary-black border-4 border-primary-black rounded-lg shadow-[4px_4px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-100"
+            className="font-permanent-marker text-4xl px-8 py-3 bg-primary-green text-primary-black border-4 border-primary-black rounded-lg shadow-[4px_4px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-100"
           >
             Get in Touch
           </a>
