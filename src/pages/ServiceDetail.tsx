@@ -52,7 +52,7 @@ const ServiceDetail = () => {
 
       {/* Page Title */}
       <div className="w-full min-h-[12rem] flex items-center justify-center">
-        <h1 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center leading-none">
+        <h1 className="font-permanent-marker text-4xl sm:text-4xl md:text-6xl lg:text-7xl text-primary-black text-center leading-none">
           OUR SERVICES
         </h1>
       </div>
@@ -68,7 +68,7 @@ const ServiceDetail = () => {
             {/* CARD */}
             <article
               className="
-                        w-full max-w-[760px]
+                        w-full max-w-190
                          bg-primary-pink
                         border-4 border-primary-black
                         rounded-lg
@@ -77,7 +77,7 @@ const ServiceDetail = () => {
                          md:px-14 md:pt-16 md:pb-20
 "
             >
-              <h2 className="font-permanent-marker text-4xl md:text-5xl text-primary-black text-center leading-tight mb-10">
+              <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center leading-tight mb-10">
                 {service.title}
               </h2>
 
