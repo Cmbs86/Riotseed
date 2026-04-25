@@ -5,6 +5,7 @@ import { services } from "../data/services";
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+
   const service = useMemo(
     () => services.find((item) => item.slug === slug),
     [slug],
@@ -59,15 +60,30 @@ const ServiceDetail = () => {
       {/* CONTENT WRAPPER */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-16">
         <div className="w-full flex justify-center">
-          {/* FLEX COLUMN WRAPPER (this is the key fix) */}
+          {/* FLEX COLUMN WRAPPER */}
           <div className="w-full max-w-[920px] min-h-[60vh] flex flex-col items-center">
+            {/* 🔑 Spacer (pushes card away from yellow line) */}
+            <div className="h-16 md:h-20 w-full" />
+
             {/* CARD */}
-            <article className="w-full max-w-[760px] bg-primary-pink border-4 border-primary-black rounded-lg shadow-[8px_8px_0px_#000000] px-8 pt-12 pb-20 md:px-14 md:pt-16 md:pb-24">
+            <article
+              className="
+                        w-full max-w-[760px]
+                         bg-primary-pink
+                        border-4 border-primary-black
+                        rounded-lg
+                        shadow-[8px_8px_0px_#000000]
+                        px-8 pt-12 pb-16  
+                         md:px-14 md:pt-16 md:pb-20
+"
+            >
               <h2 className="font-permanent-marker text-4xl md:text-5xl text-primary-black text-center leading-tight mb-10">
                 {service.title}
               </h2>
 
               <div className="w-full h-1 bg-primary-black mb-12" />
+
+              <div className="h-4 md:h-6 w-full" />
 
               <div className="flex flex-col items-center gap-8">
                 {service.description.map((paragraph, index) => (
@@ -79,35 +95,37 @@ const ServiceDetail = () => {
                   </p>
                 ))}
               </div>
+              {/* NEW bottom breathing space */}
+              <div className="h-6 md:h-10 w-full" />
             </article>
 
             {/* FLEXIBLE SPACE (pushes button down) */}
-            <div className="flex-1 min-h-[6rem] md:min-h-[8rem]" />
+            <div className="h-20 md:h-24 w-full" />
 
-            {/* BUTTON */}
+            {/* BUTTON (unchanged as requested) */}
             <button
               onClick={handleBackToServices}
               className="
-    font-permanent-marker text-xl
-    text-primary-black
-    bg-primary-green
-    border-4 border-primary-black
-    rounded-lg
-    w-50 h-13
-    flex items-center justify-center
-    shadow-[5px_5px_0px_#000000]
-    hover:shadow-[2px_2px_0px_#000000]
-    hover:translate-x-0.75
-    hover:translate-y-0.75
-    transition-all duration-500
-  "
+                font-permanent-marker text-xl
+                text-primary-black
+                bg-primary-green
+                border-4 border-primary-black
+                rounded-lg
+                w-50 h-13
+                flex items-center justify-center
+                shadow-[5px_5px_0px_#000000]
+                hover:shadow-[2px_2px_0px_#000000]
+                hover:translate-x-0.75
+                hover:translate-y-0.75
+                transition-all duration-500
+              "
             >
               Back to Services
             </button>
           </div>
         </div>
 
-        {/* FOOTER SPACING (same idea as ProjectDetail) */}
+        {/* FOOTER SPACING */}
         <div className="h-24 md:h-32 w-full" />
       </div>
 
