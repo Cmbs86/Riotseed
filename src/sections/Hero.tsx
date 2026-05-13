@@ -14,12 +14,13 @@ const Hero = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-primary-black"
     >
-      {/* Banner Image */}
-      <img
-        src={RiotseedBanner}
-        alt="Riotseed banner"
-        className="w-full h-auto block"
-      />
+     <div className="translate-y-8 md:translate-y-10 lg:translate-y-14">
+  <img
+    src={RiotseedBanner}
+    alt="Riotseed banner"
+    className="w-full h-auto block"
+  />
+</div>
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-primary-black opacity-20 pointer-events-none"></div>
