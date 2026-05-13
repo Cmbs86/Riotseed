@@ -63,12 +63,16 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 bg-second-pink transition-all duration-700 ease-in-out ${
-          isScrolled ? "py-2" : "py-6"
+          isScrolled ? "py-2" : "py-4"
         }`}
       >
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
           {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
-          <div className="flex w-32 h-32 md:w-36 md:h-32 lg:w-66 lg:h-40 justify-around items-center">
+          <div
+            className={`flex w-[280px] md:w-[340px] lg:w-[400px] items-center translate-x-6 md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
+              isScrolled ? "h-20" : "h-28"
+            }`}
+          >
             <Link
               to="/"
               onClick={() => {
@@ -78,10 +82,12 @@ const Header = () => {
               className="flex items-center transition-all duration-700 ease-in-out"
             >
               <img
-                src="/logos/riot-seed-color.svg"
+                src="/logos/riotseed-color-long.svg"
                 alt="Riot Seed"
-                className={`w-auto object-contain transition-all duration-700 ease-in-out drop-shadow-[7px_-3px_1px_#000000] ${
-                  isScrolled ? "h-26" : "h-36"
+                className={`object-contain transition-all duration-700 ease-in-out ${
+                  isScrolled
+                    ? "w-[220px] md:w-[280px] lg:w-[320px]"
+                    : "w-[250px] md:w-[320px] lg:w-[380px]"
                 }`}
               />
             </Link>
@@ -95,7 +101,7 @@ const Header = () => {
                 : "opacity-0 translate-x-10 pointer-events-none"
             }`}
           >
-            <Navigation />
+            <Navigation isScrolled={isScrolled} />
           </div>
 
           {/* Hamburger Button */}
