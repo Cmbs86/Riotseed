@@ -1,11 +1,25 @@
 # React + TypeScript + Vite
 
 NEXT STEPS:
-PROJECT SECTION
+***MAIN PAGE**
+Reduce orientation/size - like 90% - Start with that.
 
-To fix: Footer on mobile(client says it's ok) and cards motion(too fast) on services.tsx. 
-Still waiting on the logo image, banner image and the texts for all sections. 
+*NEW SECTION*
+Add new section - see document client
 
+*HERO SECTION*
+Fix logo and add new banner, remove banner headers and subheadders
+
+*SERVICES SECTION*
+fix our services cards header orientation
+
+*PROJECT SECTION*
+Add new card, new band - See clients documentation
+*PROJECTS PAGE*
+Add new text field and update info box
+
+**META DATA**
+apply meta data according to clients document.
 
 Currently, two official plugins are available:
 
