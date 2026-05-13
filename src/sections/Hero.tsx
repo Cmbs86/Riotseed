@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import RiotseedBanner from '../assets/images/riotseed-banner.webp';
+import RiotseedBanner from "../assets/images/riotseed-banner.webp";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,40 +10,42 @@ const Hero = () => {
   }, []);
 
   return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+    <section
+      id="hero"
+      className="relative w-full overflow-hidden bg-primary-black"
     >
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${RiotseedBanner})` }}
-      >
-        <div className="absolute inset-0 bg-primary-black opacity-30"></div>
-      </div>
+      {/* Banner Image */}
+      <img
+        src={RiotseedBanner}
+        alt="Riotseed banner"
+        className="w-full h-auto block"
+      />
 
-      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-primary-black opacity-20 pointer-events-none"></div>
+
       {/* Scroll indicator */}
-      <div 
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      <div
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         <div className="animate-bounce">
-          <svg 
-            className="w-8 h-8 text-primary-green drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" 
-            fill="none" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth="2" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="w-8 h-8 text-primary-green drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </div>
       </div>
-         <div className="w-full h-1 bg-primary-black"></div>
+
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-primary-black"></div>
     </section>
   );
 };
