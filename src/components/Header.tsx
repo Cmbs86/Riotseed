@@ -70,7 +70,7 @@ const Header = () => {
           {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
           <div
             className={`flex w-[280px] md:w-[340px] lg:w-[400px] items-center translate-x-6 md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
-              isScrolled ? "h-20" : "h-28"
+              isScrolled ? "h-20" : "h-26"
             }`}
           >
             <Link

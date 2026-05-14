@@ -22,8 +22,8 @@ const Hero = () => {
   />
 </div>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-primary-black opacity-20 pointer-events-none"></div>
+      {/* Dark overlay
+      <div className="absolute inset-0 bg-primary-black opacity-20 pointer-events-none"></div> */}
 
       {/* Scroll indicator */}
       <div
