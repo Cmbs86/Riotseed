@@ -222,59 +222,64 @@ const ProjectDetail = () => {
                     ))}
                   </div>
                 )}
+{/* Info */}
+{hasInfo && (
+  <div className="w-full flex justify-center">
+    <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
+      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
+        Info
+      </h2>
 
-                {/* Info */}
-                {hasInfo && (
-                  <div className="w-full flex justify-center">
-                    <div className="w-full max-w-[420px] flex flex-col items-center gap-6">
-                      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
-                        Info
-                      </h2>
+      <div className="w-full min-h-63 border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
 
-                      <div className="w-full min-h-70 border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex flex-col justify-center">
-                        <div className="flex flex-col items-start gap-5 text-center w-full">
-                          {project.info?.label && (
-                            <div className="w-full">
-                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
-                                <span className="font-permanent-marker inline-block min-w-[110px]">
-                                  Label:
-                                </span>
-                                {project.info.label}
-                              </p>
-                            </div>
-                          )}
+        {/* CENTERED TABLE */}
+        <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
 
-                          {project.info?.contact && (
-                            <div className="w-full">
-                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
-                                <span className="font-permanent-marker inline-block min-w-[110px]">
-                                  Contact:
-                                </span>
-                                {project.info.contact}
-                              </p>
-                            </div>
-                          )}
+          {project.info?.label && (
+            <>
+              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                Label:
+              </span>
 
-                          {project.info?.download && (
-                            <div className="w-full">
-                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
-                                <span className="font-permanent-marker inline-block min-w-[110px]">
-                                  Download:
-                                </span>
-                                {project.info.download}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                {project.info.label}
+              </span>
+            </>
+          )}
 
+          {project.info?.contact && (
+            <>
+              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                Contact:
+              </span>
+
+              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                {project.info.contact}
+              </span>
+            </>
+          )}
+
+          {project.info?.download && (
+            <>
+              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                Download:
+              </span>
+
+              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                {project.info.download}
+              </span>
+            </>
+          )}
+
+        </div>
+      </div>
+    </div>
+  </div>
+)}
                 {/* Spotify */}
                 {project.spotifyEmbed && (
                   <div className="w-full flex justify-center">
-                    <div className="w-full max-w-100 flex flex-col items-center gap-6">
+                    <div className="w-full max-w-120 flex flex-col items-center gap-6">
                       <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                         Listen
                       </h2>
