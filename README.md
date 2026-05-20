@@ -1,8 +1,6 @@
 # React + TypeScript + Vite
 
 NEXT STEPS:
-***MAIN PAGE**
-Reduce orientation/size - like 90% - Start with that.
 
 *NEW SECTION*
 Add new section - see document client
@@ -10,13 +8,11 @@ Add new section - see document client
 *HERO SECTION*
 Fix logo and add new banner, remove banner headers and subheadders
 
-*SERVICES SECTION*
-fix our services cards header orientation
-
-*PROJECT SECTION*
-Add new card, new band - See clients documentation
 *PROJECTS PAGE*
-Add new text field and update info box
+Add new text field "what we done together" + testimonial
+
+**MOBILE and IPAD**
+Media queries need adjustment
 
 **META DATA**
 apply meta data according to clients document.
