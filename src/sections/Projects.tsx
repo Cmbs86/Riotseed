@@ -59,9 +59,9 @@ const Projects = () => {
     <section id="projects" className="w-full bg-second-pink">
       <style>{`
         .projects-inner {
-          max-width: 1400px;
+          max-width: 1320px;
           margin: 0 auto;
-          padding: 6rem 4rem 0;
+          padding: 5rem 4rem 0;
         }
 
         .projects-grid {
@@ -83,12 +83,12 @@ const Projects = () => {
         }
 
         .project-card {
-          height: 520px;
+          height: 460px;
         }
 
         .veegreen-card-new {
-          height: 280px;
-          max-width: 700px;
+          height: 250px;
+          max-width: 680px;
           margin: 0 auto;
         }
 
@@ -291,7 +291,7 @@ const Projects = () => {
           width: 100%;
           height: 4px;
           background-color: #000000;
-          margin: 5rem 0 3rem;
+          margin: 4rem 0 2.5rem;
         }
 
         .projects-divider-bottom {
@@ -309,52 +309,23 @@ const Projects = () => {
         }
 
         @keyframes shadowLeave {
-          0% {
-            box-shadow: 16px 16px 0px #000000;
-          }
-          35% {
-            box-shadow: 14px 14px 0px #000000;
-          }
-          70% {
-            box-shadow: 11px 11px 0px #000000;
-          }
-          100% {
-            box-shadow: 8px 8px 0px #000000;
-          }
+          0% { box-shadow: 16px 16px 0px #000000; }
+          35% { box-shadow: 14px 14px 0px #000000; }
+          70% { box-shadow: 11px 11px 0px #000000; }
+          100% { box-shadow: 8px 8px 0px #000000; }
         }
 
         @keyframes nameRevealIn {
-          0% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.78);
-          }
-          65% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.08);
-          }
-          100% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.78); }
+          65% { opacity: 1; transform: translate(-50%, -50%) scale(1.08); }
+          100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
         }
 
         @keyframes nameRevealOut {
-          0% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
-          22% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.06) skewX(-4deg);
-          }
-          55% {
-            opacity: 0.75;
-            transform: translate(-50%, -50%) scale(0.96) skewX(3deg);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.78) skewX(0deg);
-          }
+          0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          22% { opacity: 1; transform: translate(-50%, -50%) scale(1.06) skewX(-4deg); }
+          55% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.96) skewX(3deg); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(0.78) skewX(0deg); }
         }
 
         @keyframes textGlitchLeftIn {
@@ -370,159 +341,55 @@ const Projects = () => {
         }
 
         @keyframes textGlitchLeftOut {
-          0% {
-            opacity: 0.45;
-            transform: translate(-2px, 0);
-          }
-          25% {
-            opacity: 0.95;
-            transform: translate(-10px, 2px);
-          }
-          55% {
-            opacity: 0.65;
-            transform: translate(-6px, -1px);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(0, 0);
-          }
+          0% { opacity: 0.45; transform: translate(-2px, 0); }
+          25% { opacity: 0.95; transform: translate(-10px, 2px); }
+          55% { opacity: 0.65; transform: translate(-6px, -1px); }
+          100% { opacity: 0; transform: translate(0, 0); }
         }
 
         @keyframes textGlitchRightOut {
-          0% {
-            opacity: 0.45;
-            transform: translate(2px, 0);
-          }
-          25% {
-            opacity: 0.95;
-            transform: translate(10px, -2px);
-          }
-          55% {
-            opacity: 0.65;
-            transform: translate(6px, 1px);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(0, 0);
-          }
+          0% { opacity: 0.45; transform: translate(2px, 0); }
+          25% { opacity: 0.95; transform: translate(10px, -2px); }
+          55% { opacity: 0.65; transform: translate(6px, 1px); }
+          100% { opacity: 0; transform: translate(0, 0); }
         }
 
         @keyframes imageGlitchCyanIn {
-          0% {
-            opacity: 0;
-            transform: translate(0, 0);
-            clip-path: inset(0 0 0 0);
-          }
-          20% {
-            opacity: 0.75;
-            transform: translate(-10px, 0);
-            clip-path: inset(8% 0 58% 0);
-          }
-          45% {
-            opacity: 0.55;
-            transform: translate(-6px, 0);
-            clip-path: inset(48% 0 18% 0);
-          }
-          70% {
-            opacity: 0.4;
-            transform: translate(-4px, 0);
-            clip-path: inset(72% 0 6% 0);
-          }
-          100% {
-            opacity: 0.22;
-            transform: translate(-3px, 0);
-            clip-path: inset(0 0 0 0);
-          }
+          0% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+          20% { opacity: 0.75; transform: translate(-10px, 0); clip-path: inset(8% 0 58% 0); }
+          45% { opacity: 0.55; transform: translate(-6px, 0); clip-path: inset(48% 0 18% 0); }
+          70% { opacity: 0.4; transform: translate(-4px, 0); clip-path: inset(72% 0 6% 0); }
+          100% { opacity: 0.22; transform: translate(-3px, 0); clip-path: inset(0 0 0 0); }
         }
 
         @keyframes imageGlitchPinkIn {
-          0% {
-            opacity: 0;
-            transform: translate(0, 0);
-            clip-path: inset(0 0 0 0);
-          }
-          20% {
-            opacity: 0.75;
-            transform: translate(10px, 0);
-            clip-path: inset(62% 0 8% 0);
-          }
-          45% {
-            opacity: 0.55;
-            transform: translate(6px, 0);
-            clip-path: inset(18% 0 42% 0);
-          }
-          70% {
-            opacity: 0.4;
-            transform: translate(4px, 0);
-            clip-path: inset(4% 0 72% 0);
-          }
-          100% {
-            opacity: 0.22;
-            transform: translate(3px, 0);
-            clip-path: inset(0 0 0 0);
-          }
+          0% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+          20% { opacity: 0.75; transform: translate(10px, 0); clip-path: inset(62% 0 8% 0); }
+          45% { opacity: 0.55; transform: translate(6px, 0); clip-path: inset(18% 0 42% 0); }
+          70% { opacity: 0.4; transform: translate(4px, 0); clip-path: inset(4% 0 72% 0); }
+          100% { opacity: 0.22; transform: translate(3px, 0); clip-path: inset(0 0 0 0); }
         }
 
         @keyframes imageGlitchCyanOut {
-          0% {
-            opacity: 0.22;
-            transform: translate(-3px, 0);
-            clip-path: inset(0 0 0 0);
-          }
-          18% {
-            opacity: 0.7;
-            transform: translate(-14px, 2px);
-            clip-path: inset(8% 0 62% 0);
-          }
-          42% {
-            opacity: 0.5;
-            transform: translate(-9px, -1px);
-            clip-path: inset(52% 0 16% 0);
-          }
-          68% {
-            opacity: 0.35;
-            transform: translate(-6px, 1px);
-            clip-path: inset(18% 0 46% 0);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(0, 0);
-            clip-path: inset(0 0 0 0);
-          }
+          0% { opacity: 0.22; transform: translate(-3px, 0); clip-path: inset(0 0 0 0); }
+          18% { opacity: 0.7; transform: translate(-14px, 2px); clip-path: inset(8% 0 62% 0); }
+          42% { opacity: 0.5; transform: translate(-9px, -1px); clip-path: inset(52% 0 16% 0); }
+          68% { opacity: 0.35; transform: translate(-6px, 1px); clip-path: inset(18% 0 46% 0); }
+          100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
         }
 
         @keyframes imageGlitchPinkOut {
-          0% {
-            opacity: 0.22;
-            transform: translate(3px, 0);
-            clip-path: inset(0 0 0 0);
-          }
-          18% {
-            opacity: 0.7;
-            transform: translate(14px, -2px);
-            clip-path: inset(64% 0 8% 0);
-          }
-          42% {
-            opacity: 0.5;
-            transform: translate(9px, 1px);
-            clip-path: inset(16% 0 50% 0);
-          }
-          68% {
-            opacity: 0.35;
-            transform: translate(6px, -1px);
-            clip-path: inset(44% 0 20% 0);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(0, 0);
-            clip-path: inset(0 0 0 0);
-          }
+          0% { opacity: 0.22; transform: translate(3px, 0); clip-path: inset(0 0 0 0); }
+          18% { opacity: 0.7; transform: translate(14px, -2px); clip-path: inset(64% 0 8% 0); }
+          42% { opacity: 0.5; transform: translate(9px, 1px); clip-path: inset(16% 0 50% 0); }
+          68% { opacity: 0.35; transform: translate(6px, -1px); clip-path: inset(44% 0 20% 0); }
+          100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
         }
 
         @media (min-width: 768px) {
           .projects-grid {
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 3rem;
           }
         }
 
@@ -549,17 +416,17 @@ const Projects = () => {
 
         @media (min-width: 1920px) {
           .projects-inner {
-            max-width: 1800px;
+            max-width: 1320px;
           }
         }
       `}</style>
 
       <div className="projects-inner">
-        <h2 className="font-permanent-marker text-6xl md:text-8xl text-primary-black text-center">
+        <h2 className="font-permanent-marker text-5xl md:text-7xl text-primary-black text-center">
           PROJECTS
         </h2>
 
-        <div className="w-full h-20"></div>
+        <div className="w-full h-16"></div>
 
         <div className="projects-grid">
           {mainProjects.map((project) => (
@@ -582,6 +449,7 @@ const Projects = () => {
         </div>
 
         <div className="projects-divider"></div>
+
         <p className="projects-sub-label text-center">Beyond the Music</p>
 
         {veegreenProject && (
@@ -598,6 +466,7 @@ const Projects = () => {
             <p className="veegreen-card-name" data-text={veegreenProject.title}>
               {veegreenProject.title}
             </p>
+
             <p className="veegreen-card-label">
               Sustainable online shop — branding, strategy & web.
             </p>
