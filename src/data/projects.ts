@@ -3,6 +3,7 @@ import type { Project } from "../types";
 import vespaPhoto from "../assets/images/VespaBand.webp";
 import offbeatPhoto from "../assets/images/OffbeatAffairBand.webp";
 import veePhoto from "../assets/images/Veegreen2.webp";
+import sicksaintsPhoto from "../assets/images/sick-saints.webp";
 
 export const projects: Project[] = [
   {
@@ -10,7 +11,7 @@ export const projects: Project[] = [
     title: "Vespa",
     slug: "vespa",
     image: vespaPhoto,
-    bgPosition: "center top",
+    bgPosition: "center left",
     category: "music",
     subtitle: "Ska Music",
     description: [
@@ -20,10 +21,12 @@ export const projects: Project[] = [
       "Whether in Poland, Germany, the UK, or Russia, the performances of the band from Szczecin are known for their lively, unpredictable interludes and unforgettable stage presence.",
       "Don't miss your chance to see them live on tour!",
     ],
-    spotifyEmbed: "https://open.spotify.com/embed/artist/1viUiCv2UhZg1JKQRDKRxw?theme=0",
+    spotifyEmbed:
+      "https://open.spotify.com/embed/artist/1viUiCv2UhZg1JKQRDKRxw?theme=0",
     socials: {
       instagram: "https://instagram.com/REPLACE_VESPA",
-      spotify: "https://open.spotify.com/artist/1viUiCv2UhZg1JKQRDKRxw?si=TBMKAp8VT1qjFh_5nf2cWw",
+      spotify:
+        "https://open.spotify.com/artist/1viUiCv2UhZg1JKQRDKRxw?si=TBMKAp8VT1qjFh_5nf2cWw",
       facebook: "https://www.facebook.com/vespaband",
       website: "https://vespaband.pl/en/",
       bandcamp: "https://vespaband.bandcamp.com/music",
@@ -31,8 +34,9 @@ export const projects: Project[] = [
     socialOrder: ["website", "facebook", "instagram", "bandcamp", "spotify"],
     info: {
       label: "Independent",
-      pr: "Artist PR",
-      contact: "Maciej",
+       contact: "Mvespa.ska@gmail.com",
+      download: "PRESS PACK",
+     
     },
   },
   {
@@ -40,7 +44,7 @@ export const projects: Project[] = [
     title: "Offbeat Affair",
     slug: "offbeat-affair",
     image: offbeatPhoto,
-    bgPosition: "center top",
+    bgPosition: "center center",
     category: "music",
     subtitle: "Early Reggae / Rocksteady",
     description: [
@@ -54,6 +58,7 @@ export const projects: Project[] = [
       "https://open.spotify.com/embed/artist/7IUniaZrcXFpjoQSoDZk3q?theme=0",
     socials: {
       instagram: "https://www.instagram.com/offbeataffairband/",
+      tiktok: "https://www.tiktok.com/@offbeat.affair",
       spotify:
         "https://open.spotify.com/artist/7IUniaZrcXFpjoQSoDZk3q?si=idNtTy6_Thu0skGJDk1lhw",
       facebook: "https://www.facebook.com/offbeataffair",
@@ -62,32 +67,50 @@ export const projects: Project[] = [
     socialOrder: ["instagram", "facebook", "bandcamp", "spotify"],
     info: {
       label: "Independent",
-      pr: "album(online) / live PR",
-      contact: "Maciej",
+      contact: "offbeat.affair.band@gmail.com",
+      download: "PRESS PACK",
+      
     },
   },
   {
-    id: "tba",
-    title: "Coming Soon",
-    slug: "tba",
-    image: null,
-    gradient:
-      "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
+    id: "Sick Saints",
+    title: "Sick Saints",
+    slug: "Sick Saints",
+    image: sicksaintsPhoto,
+    gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
     bgPosition: "center center",
     category: "music",
-    subtitle: "Upcoming project",
+    subtitle: "Brutal Glam / Heavy Rock",
     description: [
-      "A new project is currently in development and will be revealed soon. This space is reserved for the next artist or collaboration to join the portfolio.",
+      "Sick Saints play Brutal Glam: a high-energy collision of 70s glam, 80s metal, and larger-than-life stage presence.",
+      "Founded by guitarist Mighty Mike in 2020, the Kraków-based band has quickly become one of the most exciting acts on the Polish rock scene, with two nationaltours supporting Nocny Kochanek and a debut album “Out of the Night” released in 2025.",
+      "In2026, they launched their first European tour.",
     ],
-    socials: {},
-    info: {},
+    spotifyEmbed:
+      "https://open.spotify.com/embed/artist/5c4gmndNhZtOjeZdaMizIk?utm_source=generator&theme=0",
+    socials: {
+      instagram: "https://www.instagram.com/sicksaints.band/",
+      tiktok: "https://www.tiktok.com/@sicksaints",
+      facebook: "https://www.facebook.com/sicksaints.music/",
+      website: "https://sicksaints.com/band",
+      spotify:
+        "https://open.spotify.com/artist/5c4gmndNhZtOjeZdaMizIk?si=9e7b8f1a9c3b4d2e",
+      bandcamp: "https://sicksaints.bandcamp.com/album/sick-saints",
+    },
+    socialOrder: [  "instagram","tiktok","facebook", "website", "spotify", "bandcamp"],
+    info: {
+      label: "Mighty Mike Productions",
+      contact: "sicksaints.music@gmail.com",
+      download: "PRESS PACK",
+      
+    },
   },
   {
     id: "veegreen",
     title: "Veegreen",
     slug: "veegreen",
     image: veePhoto,
-    bgPosition: "center center",
+    bgPosition: "center top",
     category: "brand",
     subtitle: "Natural products",
     description: [
@@ -102,8 +125,9 @@ export const projects: Project[] = [
     },
     socialOrder: ["instagram", "tiktok", "website", "linkedin"],
     info: {
-      label: "Brand project",
-      contact: "REPLACE CONTACT",
+      
+      contact: "Benoît Petit",
+        download: "2026 CATALOGUE",
     },
   },
 ];

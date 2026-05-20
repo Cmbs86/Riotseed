@@ -156,11 +156,11 @@ const ProjectDetail = () => {
   const socialOrder = project.socialOrder ?? [
     "instagram",
     "tiktok",
-    "spotify",
     "facebook",
-    "bandcamp",
     "linkedin",
     "website",
+    "bandcamp",
+    "spotify",
   ];
 
   const hasSocials = socialOrder.some((key) => {
@@ -175,7 +175,7 @@ const ProjectDetail = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="w-full flex justify-center">
           <div className="w-full max-w-380">
-           <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
               {/* LEFT COLUMN */}
               <div className="w-full xl:sticky xl:top-40 self-start">
                 <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
@@ -226,36 +226,44 @@ const ProjectDetail = () => {
                 {/* Info */}
                 {hasInfo && (
                   <div className="w-full flex justify-center">
-                    <div className="w-full max-w-[320px] flex flex-col items-center gap-6">
+                    <div className="w-full max-w-[420px] flex flex-col items-center gap-6">
                       <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                         Info
                       </h2>
 
                       <div className="w-full min-h-70 border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex flex-col justify-center">
-                        <div className="flex flex-col items-center gap-3 text-center">
-                          {project.info?.pr && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
-                              <span className="font-permanent-marker">PR:</span>{" "}
-                              {project.info.pr}
-                            </p>
-                          )}
-
+                        <div className="flex flex-col items-start gap-5 text-center w-full">
                           {project.info?.label && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
-                              <span className="font-permanent-marker">
-                                Label:
-                              </span>{" "}
-                              {project.info.label}
-                            </p>
+                            <div className="w-full">
+                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
+                                <span className="font-permanent-marker inline-block min-w-[110px]">
+                                  Label:
+                                </span>
+                                {project.info.label}
+                              </p>
+                            </div>
                           )}
 
                           {project.info?.contact && (
-                            <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black wrap-break-word">
-                              <span className="font-permanent-marker">
-                                Contact:
-                              </span>{" "}
-                              {project.info.contact}
-                            </p>
+                            <div className="w-full">
+                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
+                                <span className="font-permanent-marker inline-block min-w-[110px]">
+                                  Contact:
+                                </span>
+                                {project.info.contact}
+                              </p>
+                            </div>
+                          )}
+
+                          {project.info?.download && (
+                            <div className="w-full">
+                              <p className="font-sedgwick-ave text-base md:text-xl font-bold text-third-black break-words leading-relaxed">
+                                <span className="font-permanent-marker inline-block min-w-[110px]">
+                                  Download:
+                                </span>
+                                {project.info.download}
+                              </p>
+                            </div>
                           )}
                         </div>
                       </div>

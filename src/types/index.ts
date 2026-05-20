@@ -26,8 +26,9 @@ export type ProjectSocialKey =
 
 export interface ProjectInfo {
   label?: string;
-  pr?: string;
   contact?: string;
+  download?: string;
+    pr?: string;
 }
 
 export interface Project {
