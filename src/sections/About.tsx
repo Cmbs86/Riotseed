@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import audePhoto from "../assets/images/Aude.webp";
+import audePhoto from "../assets/images/aude-leteurtre.webp";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,7 +28,9 @@ const About = () => {
       <div className="block lg:hidden text-center pt-16">
         <h2
           className={`font-permanent-marker text-5xl md:text-6xl text-primary-black transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+            isVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-10"
           }`}
         >
           ABOUT
@@ -50,7 +52,7 @@ const About = () => {
                   <img
                     src={audePhoto}
                     alt="Aude"
-                    className="w-full h-full object-cover object-[center_10%]"
+                    className="w-full h-full object-cover object-[left_center]"
                   />
                 </div>
 
@@ -68,7 +70,9 @@ const About = () => {
           <div className="flex flex-1 flex-col justify-start items-center text-center lg:text-left px-8 py-16 lg:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
             <h2
               className={`hidden lg:block font-permanent-marker text-5xl lg:text-7xl text-primary-black mb-12 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-10"
               }`}
             >
               ABOUT
@@ -78,52 +82,37 @@ const About = () => {
               <div className="h-2 lg:h-4 w-full" />
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                I’m Aude - French, Berlin-based, full of tattoos, and obsessed
+                I’m Aude! French, Berlin-based, full of tattoos, and obsessed
                 with music since my teenage years when I first discovered punk
                 and never looked back.
               </p>
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                I’ve spent 12+ years in the music industry, on pretty much every
-                side of the table. I started at independent punk and rock labels
-                - SideOneDummy and People Like You Records - Then moved to OÜI
-                FM, France’s national rock radio, where I worked alongside
-                labels, festivals like Hellfest and Rock en Seine, and built
-                partnership programs from scratch. After that: Viacom/MTV, Vice
-                Media, and six years at Spotify, where I managed 250+ campaigns
-                a year and learned exactly how the biggest streaming platform in
-                the world works from the inside.
+                12+ years in the industry, on every side of the table:
+                independent punk labels (SideOneDummy, People Like You Records),
+                national rock radio (OÜI FM), Viacom/MTV, Vice Media, and six
+                years at Spotify managing marketing ad campaigns.
               </p>
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                But through all of that, I never stopped being part of the
-                scene. I play guitar in a FLINTA punk hardcore band. I go to
-                shows constantly: from Berlin basements to European festivals. I
-                moved to Berlin because the underground music scene here is
-                unlike anywhere else in the world. This city is where punk, DIY
-                culture, and creative chaos collide. It felt like home from day
-                one.
+                But I never stopped being part of the scene. I play guitar in a
+                FLINTA punk hardcore band, go to shows constantly, and moved to
+                Berlin for the underground scene. There’s nowhere else like it.
               </p>
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                I built Riotseed because I saw a gap that kept bothering me:
-                bands in development - the ones playing incredible music in
-                small venues and booking their own tours - almost never have
+                I built Riotseed because bands in development almost never have
                 access to professional marketing. The budgets are too small, the
-                agencies too expensive, and the tools too confusing. I wanted to
-                change that.
+                agencies too expensive. I wanted to change that.
               </p>
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                Riotseed is a female-run agency that brings real industry
-                experience to DIY and independent bands. No corporate bullshit,
-                no inflated budgets. Just someone who knows the scene, knows the
-                platforms, and knows how to make things happen for bands who
-                deserve to be heard.
+                Female-run. No corporate bullshit. If your music is real, your
+                marketing should be too.
               </p>
 
               <p className="font-shantell-sans text-base lg:text-lg font-bold text-primary-black leading-relaxed">
-                If your music is real, your marketing should be too.
+                So, let’s plant the seed. And watch it riot!
               </p>
 
               <div className="h-10 lg:h-16 w-full" />
