@@ -69,8 +69,8 @@ const Header = () => {
         <div className="max-w-[96%] mx-auto flex items-center justify-between">
           {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
           <div
-            className={`flex w-[280px] md:w-[340px] lg:w-[400px] items-center translate-x-6 md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
-              isScrolled ? "h-20" : "h-26"
+            className={`flex w-[230px] md:w-[300px] lg:w-[360px] items-center translate-x-6 md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
+              isScrolled ? "h-18" : "h-24"
             }`}
           >
             <Link
@@ -86,8 +86,8 @@ const Header = () => {
                 alt="Riot Seed"
                 className={`object-contain transition-all duration-700 ease-in-out ${
                   isScrolled
-                    ? "w-[220px] md:w-[280px] lg:w-[320px]"
-                    : "w-[250px] md:w-[320px] lg:w-[380px]"
+                    ? "w-[160px] md:w-[220px] lg:w-[260px]"
+                    : "w-[230px] md:w-[300px] lg:w-[360px]"
                 }`}
               />
             </Link>

@@ -1,5 +1,5 @@
 const Footer = () => {
-  const isHome = location.pathname === "/";
+  // const isHome = location.pathname === "/";
   return (
     <footer className="w-full">
       <style>{`
