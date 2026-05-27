@@ -24,7 +24,7 @@ const AgencyPitch = () => {
                 strategy.
               </p>
 
-              <h2 className="font-permanent-marker text-3xl lg:text-5xl text-primary-black leading-tight">
+              <h2 className="font-permanent-marker text-3xl lg:text-5xl text-primary-black ">
                 That’s where we come in.
               </h2>
 
@@ -44,7 +44,7 @@ const AgencyPitch = () => {
                 real bands.
               </p>
 
-              <p className="font-permanent-marker text-3xl lg:text-5xl text-primary-black leading-tight">
+              <p className="font-permanent-marker text-3xl lg:text-5xl text-primary-black">
                 Plant the seed. Watch it riot.
               </p>
 
@@ -63,3 +63,5 @@ const AgencyPitch = () => {
 };
 
 export default AgencyPitch;
+
+
