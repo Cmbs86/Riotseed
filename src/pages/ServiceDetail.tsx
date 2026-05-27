@@ -68,7 +68,7 @@ const ServiceDetail = () => {
             <article
               className="
                 w-full max-w-[92vw] sm:max-w-170 lg:max-w-190
-                bg-primary-pink
+                bg-sixth-pink
                 border-4 border-primary-black
                 rounded-lg
                 shadow-[5px_5px_0px_#000000] md:shadow-[8px_8px_0px_#000000]
@@ -77,7 +77,7 @@ const ServiceDetail = () => {
                 md:px-14 md:pt-16 md:pb-20
               "
             >
-              <h2 className="font-permanent-marker text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
+              <h2 className="font-permanent-marker  text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
                 {service.title}
               </h2>
 

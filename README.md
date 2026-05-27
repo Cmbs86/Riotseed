@@ -9,10 +9,12 @@ Waiting for readjusted art
 Add new text field "what we done together" + testimonial
 
 **MOBILE and IPAD**
-Media queries need adjustment
+Media queries need adjustment main page, sections: Our Services, Projects, About me.
 
 **META DATA**
 apply meta data according to clients document.
+
+Codebase: Adjust the inline styles to tailwind.
 
 Currently, two official plugins are available:
 
