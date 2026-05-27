@@ -28,7 +28,12 @@ export interface ProjectInfo {
   label?: string;
   contact?: string;
   download?: string;
-    pr?: string;
+  pr?: string;
+}
+
+export interface ProjectTestimonial {
+  quote: string;
+  author: string;
 }
 
 export interface Project {
@@ -40,11 +45,19 @@ export interface Project {
   subtitle?: string;
   gradient?: string;
   bgPosition?: string;
+
   description?: string[];
+
+  whatWeDid?: string[];
+  results?: string[];
+  testimonial?: ProjectTestimonial;
+
   spotifyEmbed?: string;
   socials?: ProjectSocials;
   socialOrder?: ProjectSocialKey[];
+
   info?: ProjectInfo;
+
   external?: boolean;
   link?: string;
 }
