@@ -47,7 +47,7 @@ export interface Project {
   bgPosition?: string;
 
   description?: string[];
-
+  whatWeDidTitle?: string;
   whatWeDid?: string[];
   results?: string[];
   testimonial?: ProjectTestimonial;

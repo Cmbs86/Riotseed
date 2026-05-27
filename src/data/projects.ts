@@ -13,7 +13,7 @@ export const projects: Project[] = [
     image: vespaPhoto,
     bgPosition: "center left",
     category: "music",
-    subtitle: "Ska Music",
+    subtitle: "Ska / Swing / Reggae — Szczecin, Poland",
     description: [
       "Vespa: Pioneers of Ska Music in Poland",
       "There is no doubt that Vespa is is one of the pioneers of Ska music in Poland. Known for their unique blend of Jamaican rhythms and a mix of soul, swing, and rock'n'roll, Vespa has solidified their place as one of the top ska bands in Poland since 1995. With six critically acclaimed LPs, the band continues to captivate audiences both old and new.",
@@ -21,6 +21,7 @@ export const projects: Project[] = [
       "Whether in Poland, Germany, the UK, or Russia, the performances of the band from Szczecin are known for their lively, unpredictable interludes and unforgettable stage presence.",
       "Don't miss your chance to see them live on tour!",
     ],
+    whatWeDidTitle: "What we did together",
     whatWeDid: [
       "Ahead of their 6th album release and European tour, the goal was to sharpen Vespa’s entire digital presence and make sure their online visibility matched their live reputation. We ran a full audit and optimization across all platforms — Instagram, Facebook, YouTube, Spotify, Bandcamp, Apple Music, and Deezer.",
 
@@ -59,27 +60,36 @@ export const projects: Project[] = [
     image: offbeatPhoto,
     bgPosition: "center center",
     category: "music",
-    subtitle: "Early Reggae / Rocksteady",
+    subtitle: "Early Reggae / Rocksteady / Soul — Berlin, Germany",
     description: [
-      "Offbeat Affair dropped their debut EP and sold out their very first live show: The music did the talking before they ever set foot on stage.",
-      "Five musicians from Poland, Brazil, Greece and Iran, brought together by a shared love for Jamaican offbeat music. Guitarist Maciej and drummer Adam from Berlin's punk and skinhead scene, bassist Carlos from the same Oi! roots but with Brazilian music running through his veins, vocalist Marta from the gothic world, and keyboardist Nima, whose eclectic style locks it all together.",
-      "Their debut EP Don't Need Love (2026) was recorded fully analog on a 16-track tape machine, mixed to mono, no computers - just warm, syncopated grooves that nod to The Paragons, Alton Ellis and The Aggrolites, with a gritty edge that could only come from Berlin's underground. Artwork by Malwina / Old School Design.",
-      "Currently taking their raw, vintage sound to stages across Europe: catch them at Wild At Heart, Supamolly, Gdańsk Ska Jamboree, and alongside The Hotknives and The Butlers for their 40th anniversary show at SO36 Berlin in December 2026.",
-      "Don't Need Love is out now!",
+      "Offbeat Affair is a Berlin five-piece blending early reggae, rocksteady, ska, and soul into something that sounds like Kingston circa 1967 filtered through Berlin’s underground.",
+      "Five musicians from wildly different worlds — punk, Oi!, goth, Brazilian music — united by a shared love for Jamaican offbeat rhythms.",
+      "Their debut EP “Don’t Need Love” was recorded fully analog on a 16-track tape machine, mixed to mono, no computers.",
+      "They sold out their very first show before ever setting foot on stage.",
     ],
+    whatWeDidTitle: "What we're doing together",
     whatWeDid: [
-      "Offbeat Affair needed a digital identity that matched the authenticity of their sound and the uniqueness of their international lineup. The focus was on building a coherent visual and strategic presence around the release of their debut EP and first live shows.",
+      "Offbeat Affair is a brand new band — everything needed to be built from scratch. We created their complete EPK to pitch venues, festivals, and media.",
 
-      "We developed their branding direction, optimized and connected their social platforms, structured their release communication, refined artist bios and press materials, and helped position the band within Berlin’s underground reggae and rocksteady scene. We also supported the rollout strategy around their debut release and upcoming concerts.",
+      "We ran a full social media optimization and built a content strategy to generate awareness and reach new audiences ahead of their first live dates. Playlist pitching and paid media campaigns are currently in progress to drive streams and grow their listener base across Germany and beyond.",
     ],
 
     results: [
-      "A strong and cohesive debut presence across streaming, social media, and live promotion — helping establish Offbeat Affair as a fresh name within the European reggae and rocksteady scene.",
+      "First show sold out.",
+
+      "Spotify followers up 19.3%, playlist adds up 188.9%.",
+
+      "Shows booked at Berlin’s Wild At Heart, Supamolly, Schokoladen, and SO36 alongside The Hotknives and The Butlers.",
+
+      "Festival slots secured at Gdańsk Ska Jamboree and Offbeat Attack.",
+
+      "Featured in Tighten Up Zine.",
+
+      "Playlist pitching and paid media campaigns currently active.",
     ],
 
     testimonial: {
-      quote:
-        "Working together gave the project a real sense of direction and professionalism from the very beginning. Everything finally felt connected visually and strategically.",
+      quote: "Client testimonial coming soon.",
       author: "Offbeat Affair",
     },
     spotifyEmbed:
@@ -107,26 +117,34 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
     bgPosition: "center center",
     category: "music",
-    subtitle: "Brutal Glam / Heavy Rock",
+    subtitle: "Brutal Glam / Heavy Rock — Kraków, Poland",
     description: [
       "Sick Saints play Brutal Glam: a high-energy collision of 70s glam, 80s metal, and larger-than-life stage presence.",
-      "Founded by guitarist Mighty Mike in 2020, the Kraków-based band has quickly become one of the most exciting acts on the Polish rock scene, with two nationaltours supporting Nocny Kochanek and a debut album “Out of the Night” released in 2025.",
-      "In2026, they launched their first European tour.",
-    ],
-    whatWeDid: [
-      "Sick Saints were preparing to expand beyond the Polish rock scene and needed a digital presence capable of supporting a larger international audience and touring activity.",
 
-      "We worked on strengthening the band’s branding consistency across platforms, improving online visibility, refining promotional communication, and supporting the presentation of the band’s image across streaming services, social media, and press materials.",
+      "Founded by guitarist Mighty Mike in 2020, the Kraków-based band has quickly become one of the most exciting acts on the Polish rock scene, with two national tours supporting Nocny Kochanek and a debut album 'Out of the Night' released in 2025.",
+
+      "In 2026, they launched their first European tour.",
+    ],
+    whatWeDidTitle: "What we're doing together",
+    whatWeDid: [
+      "The goal: start building real, repeatable fanbases in Germany and France — not just views, but actual fans showing up to shows.",
+
+      "We created localized bios and press materials in German and French, then built a comprehensive mapping of the European scene — over 1,000 contacts including relevant blogs, radio shows, playlist curators, venues, festivals, and potential collaboration partners across both territories, with clear prioritization for outreach.",
+
+      "We’re currently running targeted PR and playlist pitching to key contacts in DE/FR, and adapting their social media content for local audiences — all coordinated with the band’s existing PR and paid ads teams.",
     ],
 
     results: [
-      "A sharper and more unified digital identity that better reflected the band’s energy, aesthetic, and growing presence on the European heavy rock circuit.",
+      "Project in progress.",
+
+      "Scene mapping delivered with 1,000+ curated contacts across Germany and France.",
+
+      "PR and playlist pitching campaign currently active ahead of European tour dates.",
     ],
 
     testimonial: {
-      quote:
-        "The entire project started feeling bigger, more professional, and far more aligned with the image we always wanted to project.",
-      author: "Mighty Mike, Sick Saints",
+      quote: "Client testimonial coming soon.",
+      author: "Sick Saints",
     },
     spotifyEmbed:
       "https://open.spotify.com/embed/artist/5c4gmndNhZtOjeZdaMizIk?utm_source=generator&theme=0",
@@ -160,25 +178,40 @@ export const projects: Project[] = [
     image: veePhoto,
     bgPosition: "center top",
     category: "brand",
-    subtitle: "Natural products",
+    subtitle: "Sustainable Wellness brand — France",
     description: [
-      "Veegreen is a sustainable online shop with a clear visual identity and a purpose-driven positioning. The project combines branding, strategy, and digital presence to create something coherent, contemporary, and recognisable.",
-      "Unlike the music-focused projects, Veegreen does not need a Spotify embed. The emphasis here is on the brand story, visual universe, and direct access to the website and social presence.",
-    ],
-    whatWeDid: [
-      "Veegreen needed a digital presence that reflected its sustainable philosophy while remaining modern, clean, and commercially effective. The objective was to create a strong visual identity and coherent online communication strategy.",
+      "Veegreen is a French e-commerce brand rooted in well-being, purification rituals, and ethically sourced products — from Palo Santo and white sage to organic maté.",
 
-      "We worked on branding direction, visual consistency, website positioning, social media strategy, and the overall presentation of the brand across digital platforms. The project focused on creating a contemporary image capable of building trust and recognisability.",
+      "A brand built on authenticity, sustainability, and connection to nature.",
+    ],
+    whatWeDidTitle: "What we did together",
+    whatWeDid: [
+      "The goal was to build Veegreen’s organic visibility on Google and turn the website into a real acquisition channel.",
+
+      "Over six months, we ran a full SEO strategy: complete technical audit, on-page optimization of all product descriptions and collections, keyword research, blog content creation and rewrite, internal linking architecture, metadata overhaul, and performance optimization.",
+
+      "We also built a social media audit with a ready-to-deploy content strategy.",
     ],
 
     results: [
-      "A cohesive and professional brand identity with a stronger online presence, clearer positioning, and improved consistency across all digital touchpoints.",
+      "+79% estimated organic traffic.",
+
+      "+57% keywords ranking in Google’s Top 10.",
+
+      "183 keywords positioned, 25 in the Top 10.",
+
+      "Over 600 clicks on three key blog articles alone.",
+
+      "39,100 impressions on Google Search in December.",
+
+      "The site now ranks as a natural reference for searches around Palo Santo, white sage, and organic maté in France — with solid foundations to expand into the German market next.",
     ],
 
     testimonial: {
       quote:
-        "The project finally started looking and feeling like a real brand with a clear identity and direction.",
-      author: "Veegreen",
+        "We worked with Aude on our website’s SEO. The collaboration went really well — smooth communication, a genuine understanding of our brand’s universe, and content delivered with real care. A positive experience we’d be happy to repeat. I found the collaboration both enjoyable and professional, with great responsiveness and real involvement in the project. The content was perfectly aligned with the lifestyle and natural feel we wanted for the brand.",
+
+      author: "Benoit Petit, Founder, Veegreen",
     },
     socials: {
       instagram: "https://www.instagram.com/veegreen_official/",

@@ -124,6 +124,7 @@ const ProjectDetail = () => {
   const results = project.results ?? [];
 
   const testimonial = project.testimonial;
+  const whatWeDidTitle = project.whatWeDidTitle ?? "What we did together";
 
   const hasInfo =
     project.info?.label || project.info?.pr || project.info?.contact;
@@ -232,7 +233,7 @@ const ProjectDetail = () => {
                 {whatWeDid.length > 0 && (
                   <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
                     <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
-                      What we did together
+                      {whatWeDidTitle}
                     </h2>
 
                     {whatWeDid.map((paragraph, index) => (
