@@ -230,7 +230,7 @@ const ProjectDetail = () => {
         Info
       </h2>
 
-      <div className="w-full min-h-63 border-4 border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
+      <div className="w-full min-h-63 border-4 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
 
         {/* CENTERED TABLE */}
         <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">

@@ -2,11 +2,8 @@
 
 NEXT STEPS:
 
-*NEW SECTION*
-Add new section - see document client
-
 *HERO SECTION*
-Fix logo and add new banner, remove banner headers and subheadders
+Waiting for readjusted art
 
 *PROJECTS PAGE*
 Add new text field "what we done together" + testimonial
