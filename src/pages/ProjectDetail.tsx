@@ -119,6 +119,11 @@ const ProjectDetail = () => {
   }
 
   const description = project.description ?? [];
+  const whatWeDid = project.whatWeDid ?? [];
+
+  const results = project.results ?? [];
+
+  const testimonial = project.testimonial;
 
   const hasInfo =
     project.info?.label || project.info?.pr || project.info?.contact;
@@ -222,60 +227,111 @@ const ProjectDetail = () => {
                     ))}
                   </div>
                 )}
-{/* Info */}
-{hasInfo && (
-  <div className="w-full flex justify-center">
-    <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
-      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
-        Info
-      </h2>
 
-      <div className="w-full min-h-63 border-4 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
+                {/* What We Did Together */}
+                {whatWeDid.length > 0 && (
+                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                      What we did together
+                    </h2>
 
-        {/* CENTERED TABLE */}
-        <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                    {whatWeDid.map((paragraph, index) => (
+                      <p
+                        key={index}
+                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                )}
 
-          {project.info?.label && (
-            <>
-              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                Label:
-              </span>
+                {/* Results */}
+                {results.length > 0 && (
+                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                      Results
+                    </h2>
 
-              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                {project.info.label}
-              </span>
-            </>
-          )}
+                    {results.map((paragraph, index) => (
+                      <p
+                        key={index}
+                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                )}
 
-          {project.info?.contact && (
-            <>
-              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                Contact:
-              </span>
+                {/* Client Testimonial */}
+                {testimonial && (
+                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                      Client testimonial
+                    </h2>
 
-              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                {project.info.contact}
-              </span>
-            </>
-          )}
+                    <blockquote className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left">
+                      “{testimonial.quote}”
+                    </blockquote>
 
-          {project.info?.download && (
-            <>
-              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                Download:
-              </span>
+                    <p className="font-sedgwick-ave text-lg md:text-xl font-bold text-primary-black text-center lg:text-left">
+                      — {testimonial.author}
+                    </p>
+                  </div>
+                )}
 
-              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                {project.info.download}
-              </span>
-            </>
-          )}
+                {/* Info */}
+                {hasInfo && (
+                  <div className="w-full flex justify-center">
+                    <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
+                      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
+                        Info
+                      </h2>
 
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+                      <div className="w-full min-h-63 border-4 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
+                        {/* CENTERED TABLE */}
+                        <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
+                          {project.info?.label && (
+                            <>
+                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                Label:
+                              </span>
+
+                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                {project.info.label}
+                              </span>
+                            </>
+                          )}
+
+                          {project.info?.contact && (
+                            <>
+                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                Contact:
+                              </span>
+
+                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                {project.info.contact}
+                              </span>
+                            </>
+                          )}
+
+                          {project.info?.download && (
+                            <>
+                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                Download:
+                              </span>
+
+                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                {project.info.download}
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {/* Spotify */}
                 {project.spotifyEmbed && (
                   <div className="w-full flex justify-center">

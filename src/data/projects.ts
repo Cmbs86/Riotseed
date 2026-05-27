@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description: [
       "Vespa: Pioneers of Ska Music in Poland",
       "There is no doubt that Vespa is is one of the pioneers of Ska music in Poland. Known for their unique blend of Jamaican rhythms and a mix of soul, swing, and rock'n'roll, Vespa has solidified their place as one of the top ska bands in Poland since 1995. With six critically acclaimed LPs, the band continues to captivate audiences both old and new.",
-      "Their energetic live shows are a trademark of their career. Vespa's retro style, a dynamic four-piece brass section, and the distinctive presence of their female vocalist have made them a favorite across Europe. With a love for vintage fashion, sharp suits, and brass-heavy grooves, they became a staple in Polandâs alternative music scene, bridging the gap between traditional ska and a modern, danceable sound.",
+      "Their energetic live shows are a trademark of their career. Vespa's retro style, a dynamic four-piece brass section, and the distinctive presence of their female vocalist have made them a favorite across Europe. With a love for vintage fashion, sharp suits, and brass-heavy grooves, they became a staple in Poland's alternative music scene, bridging the gap between traditional ska and a modern, danceable sound.",
       "Whether in Poland, Germany, the UK, or Russia, the performances of the band from Szczecin are known for their lively, unpredictable interludes and unforgettable stage presence.",
       "Don't miss your chance to see them live on tour!",
     ],
