@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import RiotseedBanner from "../assets/images/riotseed-banner.webp";
+import RiotseedBanner from "../assets/images/riotseed-banner-new-smaller.webp";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +14,7 @@ const Hero = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-primary-black"
     >
-     <div className="translate-y-8 md:translate-y-10 lg:translate-y-14">
+     <div className="translate-y-4 md:translate-y-6 lg:translate-y-8">
   <img
     src={RiotseedBanner}
     alt="Riotseed banner"
