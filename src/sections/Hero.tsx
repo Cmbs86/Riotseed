@@ -14,7 +14,7 @@ const Hero = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-primary-black"
     >
-     <div className="translate-y-4 md:translate-y-6 lg:translate-y-8">
+     <div className="translate-y-4 md:translate-y-6 ">
   <img
     src={RiotseedBanner}
     alt="Riotseed banner"
@@ -33,7 +33,7 @@ const Hero = () => {
       >
         <div className="animate-bounce">
           <svg
-            className="w-8 h-8 text-primary-green drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+            className="hidden lg:block w-8 h-8 text-primary-green drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"

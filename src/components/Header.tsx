@@ -63,13 +63,13 @@ const Header = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 bg-second-pink transition-all duration-700 ease-in-out ${
-          isScrolled ? "py-2" : "py-4"
+          isScrolled ? "py-2" : "py-3 md:py-4"
         }`}
       >
-        <div className="max-w-[96%] mx-auto flex items-center justify-between">
+        <div className="max-w-[96%] mx-auto flex items-center justify-end md:justify-between">
           {/* Logo wrapper (ORIGINAL POSITIONING RESTORED) */}
           <div
-            className={`flex w-57.5 md:w-75 lg:w-90 items-center translate-x-6 md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
+            className={`hidden md:flex w-57.5 md:w-75 lg:w-90 items-center md:translate-x-8 lg:translate-x-10 transition-all duration-700 ease-in-out ${
               isScrolled ? "h-18" : "h-24"
             }`}
           >
