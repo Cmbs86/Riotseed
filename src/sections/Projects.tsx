@@ -411,6 +411,7 @@ const Projects = () => {
             width: 80%;
             text-align: center;
             bottom: 1rem;
+            
           }
         }
 
@@ -467,7 +468,7 @@ const Projects = () => {
               {veegreenProject.title}
             </p>
 
-            <p className="veegreen-card-label">
+            <p className="veegreen-card-label ">
               Sustainable online shop — branding, strategy & web.
             </p>
           </div>

@@ -59,7 +59,7 @@ const Services = () => {
             <Link
               key={service.slug}
               to={`/services/${service.slug}`}
-              className={`group ${cardColors[index]} py-8 px-5 rounded-lg border-4 border-primary-black shadow-[6px_6px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-1 hover:translate-y-1 ${
+              className={`group ${cardColors[index]} border-primary-black border-t-2 border-r-4 border-b-4 border-l-4 rounded-xl  shadow-[10px_10px_0px_#000000] hover:shadow-[3px_3px_0px_#000000] hover:translate-x-1 hover:translate-y-1 cursor-pointer  ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-20"
@@ -75,7 +75,7 @@ const Services = () => {
                   {service.title}
                 </h3>
 
-                <p className="font-shantell-sans text-xs md:text-sm font-bold text-primary-black text-center leading-relaxed mt-3 flex items-start justify-center">
+                <p className="font-plus-jakarta-sans text-xs md:text-sm font-semibold text-primary-black text-center leading-relaxed mt-3 flex items-start justify-center">
                   {service.teaser}
                 </p>
 
