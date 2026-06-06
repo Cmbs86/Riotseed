@@ -41,7 +41,7 @@ const About = () => {
 
       <div className="w-full">
         <div
-          className={`flex flex-col lg:flex-row items-stretch w-full max-w-[1400px] 2xl:max-w-[2400px] mx-auto transition-all duration-1000 ${
+          className={`flex flex-col lg:flex-row items-stretch w-full max-w-[1800px] 2xl:max-w-[2400px] mx-auto transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           }`}
         >
@@ -82,37 +82,37 @@ const About = () => {
             <div className="flex flex-col gap-6 max-w-[480px] lg:max-w-[520px] 2xl:max-w-[500px] w-full">
               <div className="h-2 lg:h-4 w-full" />
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold text-primary-black leading-relaxed">
                 I’m Aude! French, Berlin-based, full of tattoos, and obsessed
                 with music since my teenage years when I first discovered punk
                 and never looked back.
               </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold text-primary-black leading-relaxed">
                 12+ years in the industry, on every side of the table:
                 independent punk labels (SideOneDummy, People Like You Records),
                 national rock radio (OÜI FM), Viacom/MTV, Vice Media, and six
                 years at Spotify managing marketing ad campaigns.
               </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold ital text-primary-black leading-relaxed">
                 But I never stopped being part of the scene. I play guitar in a
                 FLINTA punk hardcore band, go to shows constantly, and moved to
                 Berlin for the underground scene. There’s nowhere else like it.
               </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold text-primary-black leading-relaxed">
                 I built Riotseed because bands in development almost never have
                 access to professional marketing. The budgets are too small, the
                 agencies too expensive. I wanted to change that.
               </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-semibold text-primary-black leading-relaxed">
                 Female-run. No corporate bullshit. If your music is real, your
                 marketing should be too.
               </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-extrabold italic text-primary-black leading-relaxed">
+              <p className="font-plus-jakarta-sans text-base lg:text-lg font-extrabold text-primary-black leading-relaxed">
                 So, let’s plant the seed. And watch it riot!
               </p>
 

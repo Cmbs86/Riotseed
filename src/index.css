@@ -21,6 +21,17 @@
 }
 
 @theme {
+
+  
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1700px;
+
+
+
   --font-rubik-dirt: "Rubik Dirt", sans-serif;
   --font-sedgwick-ave: "Sedgwick Ave", cursive;
   --font-sedgwick-ave-display: "Sedgwick Ave Display", cursive;

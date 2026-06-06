@@ -53,13 +53,13 @@ const Services = () => {
 
       <div className="w-full h-12 md:h-16"></div>
 
-      <div className="w-full max-w-[1180px] 2xl:max-w-[1320px] px-5 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-5 lg:gap-6">
+      <div className="w-full max-w-[350px] sm:max-w-[420px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
           {services.map((service, index) => (
             <Link
               key={service.slug}
               to={`/services/${service.slug}`}
-              className={`group ${cardColors[index]} border-primary-black border-t-2 border-r-4 border-b-4 border-l-4 rounded-xl  shadow-[10px_10px_0px_#000000] hover:shadow-[3px_3px_0px_#000000] hover:translate-x-1 hover:translate-y-1 cursor-pointer  ${
+              className={`group ${cardColors[index]} border-primary-black border-t-1 border-r-4 border-b-4 border-l-4 rounded-xl  shadow-[10px_10px_0px_#000000] hover:shadow-[3px_3px_0px_#000000] hover:translate-x-1 hover:translate-y-1 cursor-pointer  ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-20"
@@ -70,14 +70,18 @@ const Services = () => {
                 transitionDelay: `${index * 150}ms, 0s, 0s, 0s`,
               }}
             >
-              <div className="grid h-full min-h-[210px] lg:min-h-[220px] grid-rows-[72px_1fr_32px] items-start">
+              <div className="grid h-full min-h-[180px] lg:min-h-[200px] xl:min-h-[210px] 2xl:min-h-[220px] grid-rows-[72px_1fr_32px] items-start">
                 <h3 className="font-permanent-marker text-base md:text-lg xl:text-xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-1 leading-none flex items-center justify-center h-full">
                   {service.title}
                 </h3>
 
-                <p className="font-plus-jakarta-sans text-xs md:text-sm font-semibold text-primary-black text-center leading-relaxed mt-3 flex items-start justify-center">
-                  {service.teaser}
-                </p>
+                <div className="w-full flex justify-center">
+                  <div className="w-[85%] md:w-[88%] lg:w-[90%]">
+                    <p className="font-plus-jakarta-sans text-xs md:text-sm font-semibold text-primary-black text-center leading-relaxed">
+                      {service.teaser}
+                    </p>
+                  </div>
+                </div>
 
                 <div className="mt-4 flex justify-center transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
                   <svg
