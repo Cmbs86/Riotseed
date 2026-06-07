@@ -209,7 +209,7 @@ const ProjectDetail = () => {
                   </h1>
 
                   {project.subtitle && (
-                    <p className="font-sedgwick-ave-display text-center sm:text-lg md:text-lg font-bold text-primary-black mb-8 md:mb-10">
+                    <p className="font-sedgwick-ave text-center sm:text-lg md:text-lg font-bold text-primary-black mb-8 md:mb-10">
                       {project.subtitle}
                     </p>
                   )}
@@ -221,7 +221,7 @@ const ProjectDetail = () => {
                     {description.map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
                       >
                         {paragraph}
                       </p>
@@ -239,7 +239,7 @@ const ProjectDetail = () => {
                     {whatWeDid.map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
                       >
                         {paragraph}
                       </p>
@@ -257,7 +257,7 @@ const ProjectDetail = () => {
                     {results.map((paragraph, index) => (
                       <p
                         key={index}
-                        className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left"
+                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
                       >
                         {paragraph}
                       </p>
@@ -272,7 +272,7 @@ const ProjectDetail = () => {
                       Client testimonial
                     </h2>
 
-                    <blockquote className="font-shantell-sans text-base md:text-lg font-bold text-primary-black leading-relaxed text-center lg:text-left">
+                    <blockquote className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left">
                       “{testimonial.quote}”
                     </blockquote>
 
@@ -290,7 +290,7 @@ const ProjectDetail = () => {
                         Info
                       </h2>
 
-                      <div className="w-full min-h-63 border-4 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
+                      <div className="w-full min-h-63 border-t-2 border-r-4 border-l-2 border-b-6 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
                         {/* CENTERED TABLE */}
                         <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
                           {project.info?.label && (
