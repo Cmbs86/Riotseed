@@ -5,14 +5,14 @@ NEXT STEPS:
 *HERO SECTION*
 Waiting for readjusted art
 
-*PROJECTS PAGE*
-Add new text field "what we done together" + testimonial
-
 **MOBILE and IPAD**
 Media queries need adjustment main page, sections: Our Services, Projects, About me.
 
 **META DATA**
 apply meta data according to clients document.
+
+**PRESS PACK DOWNLOAD BUTTON**
+need to create a presspack download button.
 
 Codebase: Adjust the inline styles to tailwind.
 

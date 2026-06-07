@@ -69,7 +69,7 @@ const ServiceDetail = () => {
               className="
                 w-full max-w-[92vw] sm:max-w-170 lg:max-w-190
                 bg-sixth-pink
-                border-4 border-primary-black
+                border-t-2 border-r-6 border-l-2 border-b-6 border-primary-black
                 rounded-lg
                 shadow-[5px_5px_0px_#000000] md:shadow-[8px_8px_0px_#000000]
                 px-5 pt-8 pb-12
@@ -89,7 +89,7 @@ const ServiceDetail = () => {
                 {service.description.map((paragraph, index) => (
                   <p
                     key={index}
-                    className="font-sedgwick-ave text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-lg md:max-w-152"
+                    className="font-plus-jakarta-sans text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-lg md:max-w-152"
                   >
                     {paragraph}
                   </p>
@@ -107,7 +107,7 @@ const ServiceDetail = () => {
                 font-permanent-marker text-xl
                 text-primary-black
                 bg-primary-green
-                border-4 border-primary-black
+                border-t-2 border-r-4 border-l-2 border-b-4 border-primary-black
                 rounded-lg
                 w-50 h-13
                 flex items-center justify-center
