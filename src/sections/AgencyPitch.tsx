@@ -56,7 +56,7 @@ const AgencyPitch = () => {
       </div>
 
       {/* BOTTOM SPACER */}
-      <div className="w-full h-16 sm:h-20 md:h-24 lg:h-32"></div>
+       <div className="w-full h-8 sm:h-10 md:h-14 lg:h-28"></div>
       <div className="w-full h-1 bg-primary-black"></div>
     </section>
   );
