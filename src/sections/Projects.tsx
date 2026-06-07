@@ -72,6 +72,7 @@ const Projects = () => {
 
         .project-card,
         .veegreen-card-new {
+        width: 100%;
           position: relative;
           border: 4px solid #000000;
           box-shadow: 8px 8px 0px #000000;
@@ -386,23 +387,45 @@ const Projects = () => {
           100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
         }
 
-        @media (min-width: 768px) {
-          .projects-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-          }
-        }
+            @media (max-width: 767px) {
+  .projects-inner {
+    padding: 5rem 1.25rem 0;
+  }
 
-        @media (max-width: 767px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 420px;
+  }
+
+  .veegreen-card-new {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+             @media (max-width: 819px) {
           .projects-inner {
             padding: 5rem 1.25rem 0;
           }
 
+          .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            justify-items: center;
+          }
+
           .project-card {
-            height: 420px;
+            width: min(100%, 360px);
+            height: 460px;
           }
 
           .veegreen-card-new {
+            width: min(100%, 360px);
             height: 220px;
           }
 
@@ -411,11 +434,60 @@ const Projects = () => {
             width: 80%;
             text-align: center;
             bottom: 1rem;
-            
           }
         }
 
-        @media (min-width: 1920px) {
+        @media (min-width: 820px) {
+          .projects-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+          }
+
+          .project-card {
+            width: auto;
+            max-width: none;
+            margin: 0;
+            height: 360px;
+          }
+
+          .projects-inner {
+            padding: 5rem 2rem 0;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .projects-grid {
+            gap: 2.75rem;
+          }
+
+          .project-card {
+            height: 400px;
+          }
+
+          .projects-inner {
+            padding: 5rem 3rem 0;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .projects-grid {
+            gap: 3rem;
+          }
+
+          .project-card {
+            height: 440px;
+          }
+
+          .projects-inner {
+            padding: 5rem 4rem 0;
+          }
+        }
+
+        @media (min-width: 1536px) {
+          .project-card {
+            height: 460px;
+          }
+
           .projects-inner {
             max-width: 1320px;
           }
