@@ -6,23 +6,28 @@ NEXT STEPS:
 apply meta data according to clients document.
 
 **PRESS PACK DOWNLOAD BUTTON**
-need to create a presspack download button.
-
-**FOOTER LOGO**
-footer needs a logo
+Need the content PDFs? or links to the page?
 
 **Hamburger menu button**
-fix that button
+fix that button - change of color maybe?
 
 **Translation**
 needs to translate to french and German
 
+***SPACING OURS SERVICES***
+fix spacing our services section - too much in mobile
 
+**FIX GET IN TOUCH MOBILE*
+fix the button shape
 
+***ABOUT TEXT IN IPAD**
+
+**GLITCH**
+Double check glitch services section
 
 Codebase: Adjust the inline styles to tailwind.
 
-Currently, two official plugins are available:
+<!-- Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
@@ -89,5 +94,4 @@ export default defineConfig([
       // other options...
     },
   },
-])
-```
+]) -->

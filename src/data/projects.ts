@@ -51,6 +51,7 @@ export const projects: Project[] = [
       label: "Independent",
       contact: "vespa.ska@gmail.com",
       download: "PRESS PACK",
+      downloadUrl: "/downloads/sick-saints-press-pack.pdf",
     },
   },
   {
@@ -107,6 +108,7 @@ export const projects: Project[] = [
       label: "Independent",
       contact: "offbeat.affair.band@gmail.com",
       download: "PRESS PACK",
+      downloadUrl: "/downloads/offbeat-affair-press-pack.pdf",
     },
   },
   {
@@ -169,6 +171,7 @@ export const projects: Project[] = [
       label: "Mighty Mike Productions",
       contact: "sicksaints.music@gmail.com",
       download: "PRESS PACK",
+      downloadUrl: "/downloads/sick-saints-press-pack.pdf",
     },
   },
   {
@@ -223,6 +226,7 @@ export const projects: Project[] = [
     info: {
       contact: "Benoît Petit",
       download: "2026 CATALOGUE",
+      downloadUrl: "/downloads/veegreen-2026-catalogue.pdf",
     },
   },
 ];

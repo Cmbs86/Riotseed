@@ -28,6 +28,7 @@ export interface ProjectInfo {
   label?: string;
   contact?: string;
   download?: string;
+  downloadUrl?: string;
   pr?: string;
 }
 

@@ -285,7 +285,7 @@ const ProjectDetail = () => {
                 {/* Info */}
                 {hasInfo && (
                   <div className="w-full flex justify-center">
-                    <div className="w-full max-w-[400px] flex flex-col items-center gap-6">
+                    <div className="w-[82%] sm:w-[85%] max-w-100 flex flex-col items-center gap-6">
                       <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                         Info
                       </h2>
@@ -293,41 +293,55 @@ const ProjectDetail = () => {
                       <div className="w-full min-h-63 border-t-2 border-r-4 border-l-2 border-b-6 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
                         {/* CENTERED TABLE */}
                         <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
-                          {project.info?.label && (
-                            <>
-                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                                Label:
-                              </span>
+                         {project.info?.label && (
+  <>
+    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+      Label:
+    </span>
 
-                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                                {project.info.label}
-                              </span>
-                            </>
-                          )}
+    <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+      {project.info.label}
+    </span>
+  </>
+)}
 
-                          {project.info?.contact && (
-                            <>
-                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                                Contact:
-                              </span>
+{project.info?.contact && (
+  <>
+    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+      Contact:
+    </span>
 
-                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                                {project.info.contact}
-                              </span>
-                            </>
-                          )}
+    <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+      {project.info.contact}
+    </span>
+  </>
+)}
 
-                          {project.info?.download && (
-                            <>
-                              <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-                                Download:
-                              </span>
+{project.info?.download && (
+  <>
+    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+      Download:
+    </span>
 
-                              <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-                                {project.info.download}
-                              </span>
-                            </>
-                          )}
+   {project.info.downloadUrl ? (
+      <a
+  href={project.info.downloadUrl}
+  download
+  className="group font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all underline decoration-transparent underline-offset-4 hover:decoration-current transition-all duration-150"
+>
+  {project.info.download}
+
+  <span className="ml-1 inline-block transition-transform duration-150 group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
+    ↘
+  </span>
+</a>
+    ) : (
+      <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+        {project.info.download}
+      </span>
+    )}
+  </>
+)}
                         </div>
                       </div>
                     </div>
