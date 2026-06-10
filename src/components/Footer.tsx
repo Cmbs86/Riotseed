@@ -3,140 +3,156 @@ import logo from "/logos/riotseed-color-long.svg";
 const Footer = () => {
   return (
     <footer className="w-full">
-      <style>{`
-        .footer-wave-section {
-          background-color: #6bf7c9;
-          line-height: 0;
-        }
+     <style>{`
+  .footer-wave-section {
+    background-color: #6bf7c9;
+    line-height: 0;
+  }
 
-        .footer-bottom {
-          background-color: #000000;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 1rem 6rem 2rem;
-        }
-
-        .footer-bottom-row {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2.5rem;
-          width: 100%;
-           max-width: 1800px;
-          margin-bottom: 8rem;
-        }
-
-        .footer-logo-link {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-decoration: none;
-        }
-
-        .footer-logo-img {
-          width: 320px;
-          height: auto;
-          display: block;
-          transition: transform 0.15s ease;
-        }
-
-        .footer-logo-link:hover .footer-logo-img {
-          transform: scale(1.03);
-        }
-
-        .footer-socials {
-          display: flex;
-          flex-direction: row;
-          gap: 2.5rem;
-          align-items: center;
-        }
-
-        .footer-social-link {
-          color: #fb387a;
-          transition: color 0.1s, transform 0.1s;
-          display: flex;
-          align-items: center;
-        }
-
-        .footer-social-link:hover {
-          color: #6bf7c9;
-          transform: translateY(-3px);
-        }
-
-       .footer-cta {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 1.25rem;
-
-  color: #fb387a;;
-  background-color: #000000;
-
-  border-top: 1px solid #fb387a;;
-  border-right: 3px solid #fb387a;;
-  border-bottom: 3px solid #fb387a;;
-  border-left: 1px solid #fb387a;;
-
-  border-radius: 0.5rem;
-
-  width: 200px;
-  height: 52px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-decoration: none;
-
-  box-shadow: 5px 5px 0px ##fb387a;;
-
-  transition: all 0.5s ease;
-}
-
-.footer-cta:hover {
-  box-shadow: 2px 2px 0px #fb387a;;
-  transform: translate(3px, 3px);
-}
-
-        .footer-copyright {
-          font-family: 'Shantell Sans', cursive;
-          font-size: 0.875rem;
-          color: #444444;
-          text-align: center;
-          padding-bottom: 2rem;
-        }
-
-       @media (min-width: 768px) {
-  .footer-bottom-row {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+  .footer-bottom {
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 1rem 6rem 2rem;
+  }
+
+  .footer-bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
     width: 100%;
     max-width: 1800px;
+    margin-bottom: 8rem;
   }
 
   .footer-logo-link {
-    justify-self: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .footer-logo-img {
+    width: 320px;
+    height: auto;
+    display: block;
+    transition: transform 0.15s ease;
+  }
+
+  .footer-logo-link:hover .footer-logo-img {
+    transform: scale(1.03);
   }
 
   .footer-socials {
-    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .footer-social-link {
+    color: #fb387a;
+    transition: color 0.1s, transform 0.1s;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-social-link:hover {
+    color: #6bf7c9;
+    transform: translateY(-3px);
   }
 
   .footer-cta {
-    justify-self: end;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.25rem;
+    color: #fb387a;
+    background-color: #000000;
+
+    border-top: 1px solid #fb387a;
+    border-right: 3px solid #fb387a;
+    border-bottom: 3px solid #fb387a;
+    border-left: 1px solid #fb387a;
+
+    border-radius: 0.5rem;
+
+    min-width: 200px;
+    height: 52px;
+    padding: 0 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: 4px 4px 0px #fb387a;
+    transition: all 0.3s ease;
   }
-}
 
-        @media (max-width: 768px) {
-          .footer-bottom {
-            padding: 1rem 2rem 2rem;
-          }
+  .footer-cta:hover {
+    color: #6bf7c9;
+    border-color: #6bf7c9;
+    box-shadow: 2px 2px 0px #6bf7c9;
+    transform: translate(3px, 3px);
+  }
 
-          .footer-logo-img {
-            width: 270px;
-          }
-        }
-      `}</style>
+  .footer-copyright {
+    font-family: 'Shantell Sans', cursive;
+    font-size: 0.875rem;
+    color: #444444;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      width: 100%;
+      max-width: 1800px;
+    }
+
+    .footer-logo-link {
+      justify-self: start;
+    }
+
+    .footer-socials {
+      justify-self: center;
+    }
+
+    .footer-cta {
+      justify-self: end;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      padding: 1rem 2rem 2rem;
+    }
+
+    .footer-bottom-row {
+      margin-bottom: 6rem;
+    }
+
+    .footer-logo-img {
+      width: 260px;
+    }
+
+    .footer-socials {
+      gap: 2rem;
+    }
+
+    .footer-cta {
+      font-size: 1.15rem;
+      min-width: 200px;
+      height: 52px;
+    }
+  }
+`}</style>
 
       {/* Wave */}
       <div className="footer-wave-section">
