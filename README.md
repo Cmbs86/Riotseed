@@ -2,17 +2,23 @@
 
 NEXT STEPS:
 
-*HERO SECTION*
-Waiting for readjusted art
-
-**MOBILE and IPAD**
-Media queries need adjustment main page, sections: Our Services, Projects, About me.
-
 **META DATA**
 apply meta data according to clients document.
 
 **PRESS PACK DOWNLOAD BUTTON**
 need to create a presspack download button.
+
+**FOOTER LOGO**
+footer needs a logo
+
+**Hamburger menu button**
+fix that button
+
+**Translation**
+needs to translate to french and German
+
+
+
 
 Codebase: Adjust the inline styles to tailwind.
 
