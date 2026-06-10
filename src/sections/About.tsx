@@ -67,7 +67,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="block lg:hidden w-full h-1 bg-primary-black my-16" />
+          {/* <div className="block lg:hidden w-full h-1 bg-primary-black my-16" /> */}
           {/* needs to be fixed on mobile somehow... */}
 
           <div className="flex flex-1 flex-col justify-start items-center text-center lg:text-left px-8 py-16 lg:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
