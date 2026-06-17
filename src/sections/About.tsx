@@ -45,10 +45,10 @@ const About = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           }`}
         >
-          <div className="flex flex-1 items-start justify-center px-8 py-16 lg:px-8 min-[1150px]:px-16 lg:pt-32 lg:pb-16 2xl:px-24 2xl:pt-40 2xl:pb-24">
+          <div className="flex flex-1 items-start justify-center  px-8 py-16 lg:px-8 min-[1150px]:px-16 lg:pt-32 lg:pb-16 2xl:px-24 2xl:pt-40 2xl:pb-24">
             <div className="lg:h-[92%]">
               <div className="lg:sticky lg:top-40">
-              <div className="w-75 h-92.5 lg:w-[260px] xl:w-[320px] lg:h-[340px] xl:h-100 overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
+                <div className="w-75 h-92.5 lg:w-65 xl:w-[320px] lg:h-85 xl:h-100 overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
                   <img
                     src={audePhoto}
                     alt="Aude"
@@ -70,57 +70,62 @@ const About = () => {
           {/* <div className="block lg:hidden w-full h-1 bg-primary-black my-16" /> */}
           {/* needs to be fixed on mobile somehow... */}
 
-          <div className="flex flex-1 flex-col justify-start items-center text-center lg:text-left px-8 py-16 lg:px-0 min-[1150px]:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
-            
-            <h2
-              className={`hidden lg:block font-permanent-marker text-5xl lg:text-7xl text-primary-black mb-12 transition-all duration-1000 ${
-                isVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 -translate-y-10"
-              }`}
-            >
-              ABOUT
-            </h2>
+          <div className="flex flex-1 flex-col justify-start items-center text-center 2xl:items-end px-8 py-16 lg:px-0 min-[1150px]:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
+            {/* ===== WRAPPER START ===== */}
+            <div className="flex flex-col items-center lg:items-center">
+              <h2
+                className={`hidden lg:block font-permanent-marker text-5xl lg:text-7xl text-primary-black mb-12 transition-all duration-1000 ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-10"
+                }`}
+              >
+                ABOUT
+              </h2>
 
-            <div className="flex flex-col gap-6 max-w-80 sm:max-w-90 md:max-w-100 lg:max-w-110 2xl:max-w-125 w-full">
-              <div className="h-2 lg:h-4 w-full" />
+              <div className="flex flex-col gap-6 max-w-80 sm:max-w-90 md:max-w-100 lg:max-w-110 2xl:max-w-125 w-full">
+                <div className="h-2 lg:h-4 w-full" />
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                I’m Aude! French, Berlin-based, full of tattoos, and obsessed
-                with music since my teenage years when I first discovered punk
-                and never looked back.
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
+                  I'm Aude! French, Berlin-based, full of tattoos, and obsessed
+                  with music since my teenage years when I first discovered punk
+                  and never looked back.
+                </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                12+ years in the industry, on every side of the table:
-                independent punk labels (SideOneDummy, People Like You Records),
-                national rock radio (OÜI FM), Viacom/MTV, Vice Media, and six
-                years at Spotify managing marketing ad campaigns.
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
+                  12+ years in the industry, on every side of the table:
+                  independent punk labels (SideOneDummy, People Like You
+                  Records), national rock radio (OÜI FM), Viacom/MTV, Vice
+                  Media, and six years at Spotify managing marketing ad
+                  campaigns.
+                </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium ital text-primary-black leading-relaxed">
-                But I never stopped being part of the scene. I play guitar in a
-                FLINTA punk hardcore band, go to shows constantly, and moved to
-                Berlin for the underground scene. There’s nowhere else like it.
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium ital text-primary-black leading-relaxed">
+                  But I never stopped being part of the scene. I play guitar in
+                  a FLINTA punk hardcore band, go to shows constantly, and moved
+                  to Berlin for the underground scene. There's nowhere else like
+                  it.
+                </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                I built Riotseed because bands in development almost never have
-                access to professional marketing. The budgets are too small, the
-                agencies too expensive. I wanted to change that.
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
+                  I built Riotseed because bands in development almost never
+                  have access to professional marketing. The budgets are too
+                  small, the agencies too expensive. I wanted to change that.
+                </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                Female-run. No corporate bullshit. If your music is real, your
-                marketing should be too.
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
+                  Female-run. No corporate bullshit. If your music is real, your
+                  marketing should be too.
+                </p>
 
-              <p className="font-plus-jakarta-sans text-base lg:text-lg font-extrabold text-primary-black leading-relaxed">
-                So, let’s plant the Seed. And watch it Riot!
-              </p>
+                <p className="font-plus-jakarta-sans text-base lg:text-lg font-extrabold text-primary-black leading-relaxed">
+                  So, let's plant the Seed. And watch it Riot!
+                </p>
 
-              <div className="h-10 lg:h-16 w-full" />
+                <div className="h-10 lg:h-16 w-full" />
+              </div>
             </div>
+            {/* ===== WRAPPER END ===== */}
           </div>
         </div>
       </div>
