@@ -85,9 +85,7 @@ const Header = () => {
                 src="/logos/riotseed-color-long.svg"
                 alt="Riot Seed"
                 className={`object-contain transition-all duration-700 ease-in-out ${
-                  isScrolled
-                    ? "w-40 md:w-55 lg:w-65"
-                    : "w-57.5 md:w-75 lg:w-90"
+                  isScrolled ? "w-40 md:w-55 lg:w-65" : "w-57.5 md:w-75 lg:w-90"
                 }`}
               />
             </Link>
@@ -168,7 +166,7 @@ const Header = () => {
           <a
             href="mailto:hello@riotseed.com"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-permanent-marker text-4xl px-8 py-3 bg-primary-green text-primary-black border-4 border-primary-black rounded-lg shadow-[4px_4px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 transition-all duration-100"
+            className="font-permanent-marker text-xl text-primary-black bg-primary-green border-t-2 border-r-4 border-l-2 border-b-4 border-primary-black rounded-lg w-50 h-13 flex items-center justify-center shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.75 hover:translate-y-0.75 transition-all duration-500"
           >
             Get in Touch
           </a>
