@@ -8,14 +8,8 @@ apply meta data according to clients document.
 **PRESS PACK DOWNLOAD BUTTON**
 Need the content PDFs? or links to the page?
 
-**Hamburger menu button**
-fix that button - change of color maybe?
-
 **Translation**
 needs to translate to french and German
-
-**FIX GET IN TOUCH MOBILE*
-fix the button shape
 
 Codebase: Adjust the inline styles to tailwind.
 
