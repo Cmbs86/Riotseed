@@ -54,50 +54,59 @@ const Services = () => {
       <div className="w-full h-12 md:h-16"></div>
 
       <div className="w-full max-w-[350px] sm:max-w-[420px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1200px] 2xl:max-w-[1400px] px-5 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 md:gap-10 items-stretch">
           {services.map((service, index) => (
-            <Link
+            <div
               key={service.slug}
-              to={`/services/${service.slug}`}
-              className={`group ${cardColors[index]} border-primary-black border-t-1 border-r-4 border-b-4 border-l-4 rounded-xl  shadow-[10px_10px_0px_#000000] hover:shadow-[3px_3px_0px_#000000] hover:translate-x-1 hover:translate-y-1 cursor-pointer  ${
+              className={`transition-all duration-1000 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-20"
               }`}
               style={{
-                transition:
-                  "opacity 1s, transform 0.45s ease-out, background-color 0.45s ease-out, box-shadow 0.3s ease-out",
-                transitionDelay: `${index * 150}ms, 0s, 0s, 0s`,
+                transitionDelay: `${index * 150}ms`,
+                willChange: "transform",
               }}
             >
-              <div className="grid h-full min-h-[180px] lg:min-h-[200px] xl:min-h-[210px] 2xl:min-h-[220px] grid-rows-[72px_1fr_32px] items-start">
-                <h3 className="font-permanent-marker text-base md:text-lg xl:text-xl text-primary-black text-center transition-transform duration-500 ease-out group-hover:-translate-y-1 leading-none flex items-center justify-center h-full">
-                  {service.title}
-                </h3>
+              <Link
+                to={`/services/${service.slug}`}
+                className={`group relative z-10 flex flex-col h-full ${cardColors[index]} border-primary-black border-t border-r-4 border-b-4 border-l-4 rounded-xl shadow-[10px_10px_0px_#000000] hover:shadow-[3px_3px_0px_#000000] hover:translate-x-[3px] hover:translate-y-[3px] cursor-pointer`}
+                style={{
+                  transition:
+                    "transform 0.45s ease-out, background-color 0.45s ease-out, box-shadow 0.3s ease-out",
+                }}
+              >
+                <div className="flex flex-col flex-1 py-6 px-4">
 
-                <div className="w-full flex justify-center">
-                  <div className="w-[85%] md:w-[88%] lg:w-[90%]">
-                    <p className="font-plus-jakarta-sans text-xs md:text-sm font-semibold text-primary-black text-center leading-relaxed">
+                  <div className="flex items-center justify-center min-h-[72px] mb-4">
+                    <h3 className="font-permanent-marker text-base md:text-lg xl:text-xl text-primary-black text-center leading-snug">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  <div className="flex-1 flex items-start justify-center">
+                    <p className="font-plus-jakarta-sans text-sm md:text-base font-semibold text-primary-black text-center leading-relaxed w-[90%]">
                       {service.teaser}
                     </p>
                   </div>
-                </div>
 
-                <div className="mt-4 flex justify-center transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
-                  <svg
-                    className="w-7 h-7 text-primary-black"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                  </svg>
+                  <div className="flex justify-center pt-6 transition-all duration-500 ease-out group-hover:translate-y-1 group-hover:scale-110">
+                    <svg
+                      className="w-7 h-7 text-primary-black"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="3"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </div>
+
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>
