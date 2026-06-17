@@ -45,10 +45,10 @@ const About = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
           }`}
         >
-          <div className="flex flex-1 items-start justify-center px-8 py-16 lg:px-16 lg:pt-32 lg:pb-16 2xl:px-24 2xl:pt-40 2xl:pb-24">
+          <div className="flex flex-1 items-start justify-center px-8 py-16 lg:px-8 min-[1150px]:px-16 lg:pt-32 lg:pb-16 2xl:px-24 2xl:pt-40 2xl:pb-24">
             <div className="lg:h-[92%]">
               <div className="lg:sticky lg:top-40">
-                <div className="w-75 h-92.5 lg:w-[320px] lg:h-100 overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
+              <div className="w-75 h-92.5 lg:w-[260px] xl:w-[320px] lg:h-[340px] xl:h-100 overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
                   <img
                     src={audePhoto}
                     alt="Aude"
@@ -56,7 +56,7 @@ const About = () => {
                   />
                 </div>
 
-                <div className="w-75 lg:w-[320px] border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3">
+                <div className="w-75 lg:w-[260px] xl:w-[320px] border-4 border-t-0 border-primary-black bg-primary-green shadow-[8px_8px_0px_#000000] px-4 py-3">
                   <p className="font-permanent-marker text-xl text-primary-black text-center">
                     Aude
                   </p>
@@ -70,7 +70,8 @@ const About = () => {
           {/* <div className="block lg:hidden w-full h-1 bg-primary-black my-16" /> */}
           {/* needs to be fixed on mobile somehow... */}
 
-          <div className="flex flex-1 flex-col justify-start items-center text-center lg:text-left px-8 py-16 lg:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
+          <div className="flex flex-1 flex-col justify-start items-center text-center lg:text-left px-8 py-16 lg:px-0 min-[1150px]:px-20 lg:pt-32 lg:pb-16 2xl:px-28 2xl:pt-40 2xl:pb-32">
+            
             <h2
               className={`hidden lg:block font-permanent-marker text-5xl lg:text-7xl text-primary-black mb-12 transition-all duration-1000 ${
                 isVisible
@@ -81,7 +82,7 @@ const About = () => {
               ABOUT
             </h2>
 
-            <div className="flex flex-col gap-6 max-w-120 lg:max-w-130 2xl:max-w-125 w-full">
+            <div className="flex flex-col gap-6 max-w-80 sm:max-w-90 md:max-w-100 lg:max-w-110 2xl:max-w-125 w-full">
               <div className="h-2 lg:h-4 w-full" />
 
               <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">

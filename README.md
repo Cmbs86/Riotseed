@@ -22,9 +22,6 @@ fix the button shape
 
 ***ABOUT TEXT IN IPAD**
 
-**GLITCH**
-Double check glitch services section
-
 Codebase: Adjust the inline styles to tailwind.
 
 <!-- Currently, two official plugins are available:
