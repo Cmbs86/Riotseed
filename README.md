@@ -14,13 +14,8 @@ fix that button - change of color maybe?
 **Translation**
 needs to translate to french and German
 
-***SPACING OURS SERVICES***
-fix spacing our services section - too much in mobile
-
 **FIX GET IN TOUCH MOBILE*
 fix the button shape
-
-***ABOUT TEXT IN IPAD**
 
 Codebase: Adjust the inline styles to tailwind.
 

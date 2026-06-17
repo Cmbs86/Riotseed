@@ -30,13 +30,13 @@ const ServiceDetail = () => {
     return (
       <section className="min-h-screen bg-second-pink flex items-center justify-center px-6">
         <div className="text-center">
-          <h1 className="font-permanent-marker text-4xl md:text-6xl text-primary-black mb-6">
+          <h1 className="font-permanent-marker text-4xl md:text-7xl text-primary-black mb-6">
             Service not found
           </h1>
 
           <Link
             to="/"
-            className="font-shantell-sans text-lg md:text-xl font-bold text-primary-black underline"
+            className="font-plus-jakarta-sans text-lg md:text-2xl font-bold text-primary-black underline"
           >
             Back to home
           </Link>
@@ -48,7 +48,7 @@ const ServiceDetail = () => {
   return (
     <section className="min-h-screen bg-second-pink">
       {/* Space for fixed header */}
-      <div className="h-40 md:h-44 lg:h-48 w-full" />
+      <div className="h-24 md:h-32 lg:h-38 w-full" />
 
       {/* Page Title */}
       <div className="w-full min-h-28 md:min-h-36 flex items-center justify-center">
