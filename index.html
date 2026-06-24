@@ -58,7 +58,7 @@
       content="https://riotseed.com/images/riotseed-banner-new-smaller.webp"
     />
 
-    <!-- Schema Markup: ProfessionalService + Founder -->
+    <!-- Schema 1: ProfessionalService + Founder -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -67,7 +67,7 @@
         "description": "Music digital marketing agency for DIY and independent bands in the punk, alternative, underground, and riot grrrl scenes",
         "url": "https://riotseed.com",
         "logo": "https://riotseed.com/logos/riot-seed-color.svg",
-      "image": "https://riotseed.com/images/riotseed-banner-new-smaller.webp",
+        "image": "https://riotseed.com/images/riotseed-banner-new-smaller.webp",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Berlin",
@@ -128,6 +128,67 @@
           "https://www.instagram.com/riotseed",
           "https://www.facebook.com/riotseed",
           "https://www.linkedin.com/company/riotseed/"
+        ]
+      }
+    </script>
+
+    <!-- Schema 2: CollectionPage — Projects portfolio -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Riotseed Projects",
+        "description": "Music marketing case studies and portfolio featuring DIY and independent bands and brands",
+        "url": "https://riotseed.com/projects",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Riotseed",
+          "url": "https://riotseed.com"
+        },
+        "mainEntity": [
+          {
+            "@type": "CreativeWork",
+            "name": "Vespa — Social Media & Paid Media Campaign",
+            "description": "Full digital presence audit and optimization for Polish ska band Vespa, including social media, SEO, paid media, and content strategy",
+            "about": {
+              "@type": "MusicGroup",
+              "name": "Vespa",
+              "genre": "Ska",
+              "location": "Szczecin, Poland"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Veegreen — SEO & Content Marketing",
+            "description": "6-month SEO strategy for French wellness brand Veegreen, resulting in +79% organic traffic and +57% Top 10 keyword rankings",
+            "about": {
+              "@type": "Organization",
+              "name": "Veegreen",
+              "url": "https://www.veegreen.fr"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Sick Saints — EU Localisation & PR",
+            "description": "DE/FR market entry strategy for Polish brutal glam band Sick Saints, including scene mapping, PR, and playlist pitching",
+            "about": {
+              "@type": "MusicGroup",
+              "name": "Sick Saints",
+              "genre": "Brutal Glam",
+              "location": "Kraków, Poland"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Offbeat Affair — EPK & Launch Strategy",
+            "description": "Complete EPK creation, social media optimization, and launch marketing for Berlin-based early reggae band Offbeat Affair",
+            "about": {
+              "@type": "MusicGroup",
+              "name": "Offbeat Affair",
+              "genre": "Early Reggae",
+              "location": "Berlin, Germany"
+            }
+          }
         ]
       }
     </script>

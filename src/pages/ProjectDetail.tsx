@@ -3,6 +3,13 @@ import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 
+const PROJECT_OG_IMAGES: Record<string, string> = {
+  "vespa": "https://riotseed.com/images/VespaBand.webp",
+  "offbeat-affair": "https://riotseed.com/images/OffbeatAffairBand.webp",
+  "sick-saints": "https://riotseed.com/images/sick-saints.webp",
+  "veegreen": "https://riotseed.com/images/Veegreen2.webp",
+};
+
 const InstagramIcon = () => (
   <svg
     aria-hidden="true"
@@ -173,14 +180,14 @@ const ProjectDetail = () => {
     return Boolean(socialLinks[socialKey]);
   });
 
-  const pageTitle = `Riotseed Projects — Music Marketing Case Studies | Riotseed`;
-  // const pageDescription = project.description?.[0]
-  //   ? project.description[0].slice(0, 140) + "..."
-  //   : `${project.title} — a Riotseed music marketing project. ${project.subtitle ?? ""}`.trim();
+  const pageTitle = `${project.title} — Music Marketing Case Studies | Riotseed`;
+  const pageDescription = "See how Riotseed has helped DIY & independent bands grow. Music marketing campaigns for Veegreen, Sick Saints, Vespa & Offbeat Affair. Real bands, real results.";
+  const ogTwitterDescription = "Real campaigns for real bands. See what we've done for Veegreen, Sick Saints, Vespa & Offbeat Affair.";
   const canonicalUrl = `https://riotseed.com/projects/${project.slug}`;
-  const pageDescription = "See how Riotseed has helped DIY &amp; independent bands grow. Music marketing campaigns for Veegreen, Sick Saints, Vespa &amp; Offbeat Affair. Real bands, real results." // gotta double check with customer
-  const ogTwitterDescription = "Real campaigns for real bands. See what we’ve done for Veegreen, SickSaints, Vespa &amp; Offbeat Affair."
-  const ogTwitterImage = `https://riotseed.com/images/${project.image}`;
+  const ogTwitterImage =
+    PROJECT_OG_IMAGES[project.slug] ??
+    "https://riotseed.com/images/riotseed-banner-new-smaller.webp";
+
   return (
     <>
       <Helmet>
