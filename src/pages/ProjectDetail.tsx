@@ -188,7 +188,7 @@ const ProjectDetail = () => {
                   {project.image ? (
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={project.imageAlt ?? project.title}
                       className="w-full h-85 sm:h-110 md:h-140 object-cover object-[center_5%]"
                     />
                   ) : (

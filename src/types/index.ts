@@ -42,6 +42,7 @@ export interface Project {
   title: string;
   slug: string;
   image?: string | null;
+  imageAlt?: string;
   category?: string;
   subtitle?: string;
   gradient?: string;
