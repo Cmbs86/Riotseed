@@ -173,12 +173,14 @@ const ProjectDetail = () => {
     return Boolean(socialLinks[socialKey]);
   });
 
-  const pageTitle = `${project.title} — Music Marketing Project | Riotseed`;
-  const pageDescription = project.description?.[0]
-    ? project.description[0].slice(0, 140) + "..."
-    : `${project.title} — a Riotseed music marketing project. ${project.subtitle ?? ""}`.trim();
+  const pageTitle = `Riotseed Projects — Music Marketing Case Studies | Riotseed`;
+  // const pageDescription = project.description?.[0]
+  //   ? project.description[0].slice(0, 140) + "..."
+  //   : `${project.title} — a Riotseed music marketing project. ${project.subtitle ?? ""}`.trim();
   const canonicalUrl = `https://riotseed.com/projects/${project.slug}`;
-
+  const pageDescription = "See how Riotseed has helped DIY &amp; independent bands grow. Music marketing campaigns for Veegreen, Sick Saints, Vespa &amp; Offbeat Affair. Real bands, real results." // gotta double check with customer
+  const ogTwitterDescription = "Real campaigns for real bands. See what we’ve done for Veegreen, SickSaints, Vespa &amp; Offbeat Affair."
+  const ogTwitterImage = `https://riotseed.com/images/${project.image}`;
   return (
     <>
       <Helmet>
@@ -189,11 +191,13 @@ const ProjectDetail = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
+        <meta property="og:description" content={ogTwitterDescription} />
+        <meta property="og:image" content={ogTwitterImage} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:description" content={ogTwitterDescription} />
+        <meta name="twitter:image" content={ogTwitterImage} />
       </Helmet>
 
       <section className="min-h-screen bg-second-pink">

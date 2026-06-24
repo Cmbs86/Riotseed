@@ -62,6 +62,7 @@ export interface Project {
 
   external?: boolean;
   link?: string;
+
 }
 
 export interface Release {
