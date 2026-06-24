@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 
 const InstagramIcon = () => (
@@ -120,9 +121,7 @@ const ProjectDetail = () => {
 
   const description = project.description ?? [];
   const whatWeDid = project.whatWeDid ?? [];
-
   const results = project.results ?? [];
-
   const testimonial = project.testimonial;
   const whatWeDidTitle = project.whatWeDidTitle ?? "What we did together";
 
@@ -149,7 +148,7 @@ const ProjectDetail = () => {
     website: <WebsiteIcon />,
   };
 
-  const socialLabels = {
+  const socialLabels: Record<string, string> = {
     instagram: "Instagram",
     tiktok: "TikTok",
     spotify: "Spotify",
@@ -174,243 +173,258 @@ const ProjectDetail = () => {
     return Boolean(socialLinks[socialKey]);
   });
 
+  const pageTitle = `${project.title} — Music Marketing Project | Riotseed`;
+  const pageDescription = project.description?.[0]
+    ? project.description[0].slice(0, 140) + "..."
+    : `${project.title} — a Riotseed music marketing project. ${project.subtitle ?? ""}`.trim();
+  const canonicalUrl = `https://riotseed.com/projects/${project.slug}`;
+
   return (
-    <section className="min-h-screen bg-second-pink">
-      <div className="h-40 md:h-44 lg:h-48 w-full" />
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+      </Helmet>
 
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="w-full flex justify-center">
-          <div className="w-full max-w-380">
-            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
-              {/* LEFT COLUMN */}
-              <div className="w-full xl:sticky xl:top-40 self-start">
-                <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.imageAlt ?? project.title}
-                      className="w-full h-85 sm:h-110 md:h-140 object-cover object-[center_5%]"
-                    />
-                  ) : (
-                    <div
-                      className="w-full h-85 sm:h-110 md:h-140"
-                      style={{ background: project.gradient ?? "#1a1a1a" }}
-                    />
-                  )}
+      <section className="min-h-screen bg-second-pink">
+        <div className="h-40 md:h-44 lg:h-48 w-full" />
+
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="w-full flex justify-center">
+            <div className="w-full max-w-380">
+              <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
+
+                {/* LEFT COLUMN */}
+                <div className="w-full xl:sticky xl:top-40 self-start">
+                  <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.imageAlt ?? project.title}
+                        className="w-full h-85 sm:h-110 md:h-140 object-cover object-[center_5%]"
+                      />
+                    ) : (
+                      <div
+                        className="w-full h-85 sm:h-110 md:h-140"
+                        style={{ background: project.gradient ?? "#1a1a1a" }}
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              {/* RIGHT COLUMN */}
-              <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-8 lg:gap-10">
-                {/* Title */}
-                <div className="text-center lg:text-left">
-                  <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-primary-black leading-none mb-6 md:mb-8">
-                    {project.title}
-                  </h1>
+                {/* RIGHT COLUMN */}
+                <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-8 lg:gap-10">
 
-                  {project.subtitle && (
-                    <p className="font-sedgwick-ave text-center sm:text-lg md:text-lg font-bold text-primary-black mb-8 md:mb-10">
-                      {project.subtitle}
-                    </p>
+                  {/* Title */}
+                  <div className="text-center lg:text-left">
+                    <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-primary-black leading-none mb-6 md:mb-8">
+                      {project.title}
+                    </h1>
+                    {project.subtitle && (
+                      <p className="font-sedgwick-ave text-center sm:text-lg md:text-lg font-bold text-primary-black mb-8 md:mb-10">
+                        {project.subtitle}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Description */}
+                  {description.length > 0 && (
+                    <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                      {description.map((paragraph, index) => (
+                        <p
+                          key={index}
+                          className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
                   )}
-                </div>
 
-                {/* Description */}
-                {description.length > 0 && (
-                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
-                    {description.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
-                      >
-                        {paragraph}
+                  {/* What We Did Together */}
+                  {whatWeDid.length > 0 && (
+                    <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                      <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                        {whatWeDidTitle}
+                      </h3>
+                      {whatWeDid.map((paragraph, index) => (
+                        <p
+                          key={index}
+                          className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Results */}
+                  {results.length > 0 && (
+                    <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                      <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                        Results
+                      </h3>
+                      {results.map((paragraph, index) => (
+                        <p
+                          key={index}
+                          className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Client Testimonial */}
+                  {testimonial && (
+                    <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
+                      <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
+                        Client testimonial
+                      </h3>
+                      <blockquote className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left">
+                        {`"`}{testimonial.quote}{`"`}
+                      </blockquote>
+                      <p className="font-sedgwick-ave text-lg md:text-xl font-bold text-primary-black text-center lg:text-left">
+                        {`— `}{testimonial.author}
                       </p>
-                    ))}
-                  </div>
-                )}
+                    </div>
+                  )}
 
-                {/* What We Did Together */}
-                {whatWeDid.length > 0 && (
-                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
-                      {whatWeDidTitle}
-                    </h2>
+                  {/* Info */}
+                  {hasInfo && (
+                    <div className="w-full flex justify-center">
+                      <div className="w-[82%] sm:w-[85%] max-w-100 flex flex-col items-center gap-6">
+                        <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
+                          Info
+                        </h3>
+                        <div className="w-full min-h-63 border-t-2 border-r-4 border-l-2 border-b-6 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
+                          <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
 
-                    {whatWeDid.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                            {project.info?.label && (
+                              <>
+                                <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                  Label:
+                                </span>
+                                <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                  {project.info.label}
+                                </span>
+                              </>
+                            )}
 
-                {/* Results */}
-                {results.length > 0 && (
-                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
-                      Results
-                    </h2>
+                            {project.info?.contact && (
+                              <>
+                                <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                  Contact:
+                                </span>
+                                <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                  {project.info.contact}
+                                </span>
+                              </>
+                            )}
 
-                    {results.map((paragraph, index) => (
-                      <p
-                        key={index}
-                        className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
-                      >
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
-                )}
+                            {project.info?.download && (
+                              <>
+                                <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
+                                  Download:
+                                </span>
+                                {project.info.downloadUrl ? (
+                                  <a
+                                    href={project.info.downloadUrl}
+                                    download={true}
+                                    className="group font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all underline decoration-transparent underline-offset-4 hover:decoration-current transition-all duration-150"
+                                  >
+                                    {project.info.download}
+                                    <span className="ml-1 inline-block transition-transform duration-150 group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
+                                      ↘
+                                    </span>
+                                  </a>
+                                ) : (
+                                  <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
+                                    {project.info.download}
+                                  </span>
+                                )}
+                              </>
+                            )}
 
-                {/* Client Testimonial */}
-                {testimonial && (
-                  <div className="max-w-lg mx-auto flex flex-col items-center lg:items-start gap-5">
-                    <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center lg:text-left">
-                      Client testimonial
-                    </h2>
-
-                    <blockquote className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left">
-                      “{testimonial.quote}”
-                    </blockquote>
-
-                    <p className="font-sedgwick-ave text-lg md:text-xl font-bold text-primary-black text-center lg:text-left">
-                      — {testimonial.author}
-                    </p>
-                  </div>
-                )}
-
-                {/* Info */}
-                {hasInfo && (
-                  <div className="w-full flex justify-center">
-                    <div className="w-[82%] sm:w-[85%] max-w-100 flex flex-col items-center gap-6">
-                      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
-                        Info
-                      </h2>
-
-                      <div className="w-full min-h-63 border-t-2 border-r-4 border-l-2 border-b-6 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
-                        {/* CENTERED TABLE */}
-                        <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
-                         {project.info?.label && (
-  <>
-    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-      Label:
-    </span>
-
-    <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-      {project.info.label}
-    </span>
-  </>
-)}
-
-{project.info?.contact && (
-  <>
-    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-      Contact:
-    </span>
-
-    <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-      {project.info.contact}
-    </span>
-  </>
-)}
-
-{project.info?.download && (
-  <>
-    <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
-      Download:
-    </span>
-
-   {project.info.downloadUrl ? (
-      <a
-  href={project.info.downloadUrl}
-  download
-  className="group font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all underline decoration-transparent underline-offset-4 hover:decoration-current transition-all duration-150"
->
-  {project.info.download}
-
-  <span className="ml-1 inline-block transition-transform duration-150 group-hover:translate-x-[2px] group-hover:translate-y-[2px]">
-    ↘
-  </span>
-</a>
-    ) : (
-      <span className="font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all">
-        {project.info.download}
-      </span>
-    )}
-  </>
-)}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
-                {/* Spotify */}
-                {project.spotifyEmbed && (
-                  <div className="w-full flex justify-center">
-                    <div className="w-full max-w-120 flex flex-col items-center gap-6">
-                      <h2 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
-                        Listen
-                      </h2>
+                  )}
 
-                      <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-black">
-                        <iframe
-                          src={project.spotifyEmbed}
-                          width="100%"
-                          height={
-                            project.spotifyEmbed?.includes("artist")
-                              ? 352
-                              : project.spotifyEmbed?.includes("album")
-                                ? 380
-                                : 152
-                          }
-                          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                          loading="lazy"
-                          className="block w-full"
-                        />
+                  {/* Spotify */}
+                  {project.spotifyEmbed && (
+                    <div className="w-full flex justify-center">
+                      <div className="w-full max-w-120 flex flex-col items-center gap-6">
+                        <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
+                          Listen
+                        </h3>
+                        <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-black">
+                          <iframe
+                            src={project.spotifyEmbed}
+                            width="100%"
+                            height={
+                              project.spotifyEmbed?.includes("artist")
+                                ? 352
+                                : project.spotifyEmbed?.includes("album")
+                                  ? 380
+                                  : 152
+                            }
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                            className="block w-full"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
-                {/* Social Icons */}
-                {hasSocials && (
-                  <div className="w-full max-w-155 mx-auto flex flex-col items-center">
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-7">
-                      {socialOrder.map((key) => {
-                        const socialKey = key as keyof typeof socialLinks;
-                        const href = socialLinks[socialKey];
-
-                        if (!href) return null;
-
-                        return (
-                          <a
-                            key={key}
-                            href={href}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={socialLabels[socialKey]}
-                            className={socialIconClass}
-                          >
-                            {socialIcons[socialKey]}
-                          </a>
-                        );
-                      })}
+                  {/* Social Icons */}
+                  {hasSocials && (
+                    <div className="w-full max-w-155 mx-auto flex flex-col items-center">
+                      <div className="flex flex-wrap justify-center gap-6 md:gap-7">
+                        {socialOrder.map((key) => {
+                          const socialKey = key as keyof typeof socialLinks;
+                          const href = socialLinks[socialKey];
+                          if (!href) return null;
+                          return (
+                            <a
+                              key={key}
+                              href={href}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={socialLabels[socialKey]}
+                              className={socialIconClass}
+                            >
+                              {socialIcons[socialKey]}
+                            </a>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
+
+                </div>
               </div>
             </div>
           </div>
+
+          <div className="h-20 md:h-24 w-full" />
         </div>
 
-        <div className="h-20 md:h-24 w-full" />
-      </div>
-
-      <div className="w-full h-1 bg-primary-black" />
-    </section>
+        <div className="w-full h-1 bg-primary-black" />
+      </section>
+    </>
   );
 };
 
