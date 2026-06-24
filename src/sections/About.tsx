@@ -51,7 +51,7 @@ const About = () => {
                 <div className="w-75 h-92.5 lg:w-65 xl:w-[320px] lg:h-85 xl:h-100 overflow-hidden border-4 border-primary-black shadow-[8px_8px_0px_#000000]">
                   <img
                     src={audePhoto}
-                    alt="Aude"
+                    alt="Aude Leteurtre, founder of Riotseed music marketing agency, Berlin"
                     className="w-full h-full object-cover object-[left_center]"
                   />
                 </div>
