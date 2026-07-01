@@ -178,7 +178,7 @@ const Footer = () => {
 
           <div className="footer-socials">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/riotseed/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"
@@ -208,7 +208,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://tiktok.com"
+              href="https://www.tiktok.com/@riotseed"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"
@@ -226,7 +226,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://spotify.com"
+              href="https://open.spotify.com/user/1120329740?si=b969c93a2875443c"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"
@@ -244,7 +244,7 @@ const Footer = () => {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/riotseed/"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-social-link"

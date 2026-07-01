@@ -40,7 +40,7 @@ export const projects: Project[] = [
     spotifyEmbed:
       "https://open.spotify.com/embed/artist/1viUiCv2UhZg1JKQRDKRxw?theme=0",
     socials: {
-      instagram: "https://instagram.com/REPLACE_VESPA",
+      instagram: "https://www.instagram.com/vespaband/",
       spotify:
         "https://open.spotify.com/artist/1viUiCv2UhZg1JKQRDKRxw?si=TBMKAp8VT1qjFh_5nf2cWw",
       facebook: "https://www.facebook.com/vespaband",
