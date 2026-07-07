@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import ServiceDetail from './pages/ServiceDetail';
 import ProjectDetail from './pages/ProjectDetail';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/services/:slug" element={<ServiceDetail />} /> 
         <Route path="/projects/:slug" element={<ProjectDetail />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
   );

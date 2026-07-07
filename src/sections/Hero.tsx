@@ -5,10 +5,10 @@ import RiotseedBanner from "../assets/images/riotseed-banner-new-smaller.webp";
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
+useEffect(() => {
+  const frame = requestAnimationFrame(() => setIsVisible(true));
+  return () => cancelAnimationFrame(frame);
+}, []);
   return (
     <section
       id="hero"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+  <url><loc>https://riotseed.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://riotseed.com/services/seo-geo</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/services/epk-website</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/services/social-media</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/services/pr-playlist-pitching</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/services/custom-packages</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/services/paid-media-ads</loc><priority>0.8</priority></url>
+  <url><loc>https://riotseed.com/projects/vespa</loc><priority>0.6</priority></url>
+  <url><loc>https://riotseed.com/projects/offbeat-affair</loc><priority>0.6</priority></url>
+  <url><loc>https://riotseed.com/projects/sick-saints</loc><priority>0.6</priority></url>
+  <url><loc>https://riotseed.com/projects/veegreen</loc><priority>0.6</priority></url>
+</urlset>
+
+
+<!--when add new projects/services, add a line here too — it's not auto-generated. -->
