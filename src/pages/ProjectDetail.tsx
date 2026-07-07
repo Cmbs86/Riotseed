@@ -4,10 +4,10 @@ import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 
 const PROJECT_OG_IMAGES: Record<string, string> = {
-  "vespa": "https://riotseed.com/images/VespaBand.webp",
+  vespa: "https://riotseed.com/images/VespaBand.webp",
   "offbeat-affair": "https://riotseed.com/images/OffbeatAffairBand.webp",
   "sick-saints": "https://riotseed.com/images/sick-saints.webp",
-  "veegreen": "https://riotseed.com/images/Veegreen2.webp",
+  veegreen: "https://riotseed.com/images/Veegreen2.webp",
 };
 
 const InstagramIcon = () => (
@@ -181,8 +181,10 @@ const ProjectDetail = () => {
   });
 
   const pageTitle = `${project.title} — Music Marketing Case Studies | Riotseed`;
-  const pageDescription = "See how Riotseed has helped DIY & independent bands grow. Music marketing campaigns for Veegreen, Sick Saints, Vespa & Offbeat Affair. Real bands, real results.";
-  const ogTwitterDescription = "Real campaigns for real bands. See what we've done for Veegreen, Sick Saints, Vespa & Offbeat Affair.";
+  const pageDescription =
+    "See how Riotseed has helped DIY & independent bands grow. Music marketing campaigns for Veegreen, Sick Saints, Vespa & Offbeat Affair. Real bands, real results.";
+  const ogTwitterDescription =
+    "Real campaigns for real bands. See what we've done for Veegreen, Sick Saints, Vespa & Offbeat Affair.";
   const canonicalUrl = `https://riotseed.com/projects/${project.slug}`;
   const ogTwitterImage =
     PROJECT_OG_IMAGES[project.slug] ??
@@ -214,7 +216,6 @@ const ProjectDetail = () => {
           <div className="w-full flex justify-center">
             <div className="w-full max-w-380">
               <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
-
                 {/* LEFT COLUMN */}
                 <div className="w-full xl:sticky xl:top-40 self-start">
                   <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
@@ -235,7 +236,6 @@ const ProjectDetail = () => {
 
                 {/* RIGHT COLUMN */}
                 <div className="w-full h-full flex flex-col justify-start items-center lg:items-center gap-8 lg:gap-10">
-
                   {/* Title */}
                   <div className="text-center lg:text-left">
                     <h1 className="font-permanent-marker text-4xl sm:text-5xl md:text-5xl lg:text-6xl text-primary-black leading-none mb-6 md:mb-8">
@@ -303,10 +303,13 @@ const ProjectDetail = () => {
                         Client testimonial
                       </h3>
                       <blockquote className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left">
-                        {`"`}{testimonial.quote}{`"`}
+                        {`"`}
+                        {testimonial.quote}
+                        {`"`}
                       </blockquote>
                       <p className="font-sedgwick-ave text-lg md:text-xl font-bold text-primary-black text-center lg:text-left">
-                        {`— `}{testimonial.author}
+                        {`— `}
+                        {testimonial.author}
                       </p>
                     </div>
                   )}
@@ -320,7 +323,6 @@ const ProjectDetail = () => {
                         </h3>
                         <div className="w-full min-h-63 border-t-2 border-r-4 border-l-2 border-b-6 bg-second-green border-primary-black shadow-[8px_8px_0px_#000000] px-6 md:px-8 py-6 md:py-8 flex items-center justify-center">
                           <div className="inline-grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 items-center">
-
                             {project.info?.label && (
                               <>
                                 <span className="font-permanent-marker text-left text-base md:text-xl text-third-black">
@@ -351,7 +353,8 @@ const ProjectDetail = () => {
                                 {project.info.downloadUrl ? (
                                   <a
                                     href={project.info.downloadUrl}
-                                    download={true}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="group font-sedgwick-ave font-bold text-base md:text-xl text-third-black break-all underline decoration-transparent underline-offset-4 hover:decoration-current transition-all duration-150"
                                   >
                                     {project.info.download}
@@ -366,7 +369,6 @@ const ProjectDetail = () => {
                                 )}
                               </>
                             )}
-
                           </div>
                         </div>
                       </div>
@@ -424,7 +426,6 @@ const ProjectDetail = () => {
                       </div>
                     </div>
                   )}
-
                 </div>
               </div>
             </div>
