@@ -21,10 +21,10 @@ const Hero = () => {
           srcSet={`${RiotSeedBannerMobile} 900w, ${RiotseedBanner} 1920w`}
           sizes="(max-width: 768px) 100vw, 1920px"
           alt="Riotseed banner"
+          fetchPriority="high"
           width={1920}
           height={1153}
           className="w-full h-auto block"
-          fetchpriority="high"
         />
       </div>
 
