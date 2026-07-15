@@ -4,7 +4,7 @@ A brutalist-styled marketing site for **Riotseed**, a Berlin-based digital marke
 
 Built as a freelance client project for founder **Aude Leteurtre**.
 
-**Live site:** [riotseed.com](https://riotseed.com) *(pending launch)*
+**Live site:** [riotseed.com](https://riotseed.com)
 
 ---
 
