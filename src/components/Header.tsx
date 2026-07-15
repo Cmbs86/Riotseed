@@ -84,6 +84,8 @@ const Header = () => {
               <img
                 src="/logos/riotseed-color-long.svg"
                 alt="Riot Seed"
+                width={360}
+                height={94}
                 className={`object-contain transition-all duration-700 ease-in-out ${
                   isScrolled ? "w-40 md:w-55 lg:w-65" : "w-57.5 md:w-75 lg:w-90"
                 }`}

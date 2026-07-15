@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import RiotseedBanner from "../assets/images/riotseed-banner-new-smaller.webp";
+import RiotSeedBannerMobile from "../assets/images/riotseed-banner-mobile.webp";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,8 +18,9 @@ const Hero = () => {
       <div className="translate-y-4 md:translate-y-6 ">
         <img
           src={RiotseedBanner}
+          srcSet={`${RiotSeedBannerMobile} 900w, ${RiotseedBanner} 1920w`}
+          sizes="(max-width: 768px) 100vw, 1920px"
           alt="Riotseed banner"
-          fetchPriority="high"
           width={1920}
           height={1153}
           className="w-full h-auto block"
