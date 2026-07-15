@@ -5,24 +5,25 @@ import RiotseedBanner from "../assets/images/riotseed-banner-new-smaller.webp";
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-useEffect(() => {
-  const frame = requestAnimationFrame(() => setIsVisible(true));
-  return () => cancelAnimationFrame(frame);
-}, []);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
   return (
     <section
       id="hero"
       className="relative w-full overflow-hidden bg-primary-black"
     >
-     <div className="translate-y-4 md:translate-y-6 ">
-  <img
-    src={RiotseedBanner}
-    alt="Riotseed banner"
-    className="w-full h-auto block"
-  />
-</div>
+      <div className="translate-y-4 md:translate-y-6 ">
+        <img
+          src={RiotseedBanner}
+          alt="Riotseed banner"
+          width={1920}
+          height={1153}
+          className="w-full h-auto block"
+        />
+      </div>
 
-    
       {/* Scroll indicator */}
       <div
         className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-1000 ${

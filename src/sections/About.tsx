@@ -52,6 +52,8 @@ const About = () => {
                   <img
                     src={audePhoto}
                     alt="Aude Leteurtre, founder of Riotseed music marketing agency, Berlin"
+                    width={512}
+                    height={664}
                     className="w-full h-full object-cover object-[left_center]"
                   />
                 </div>
