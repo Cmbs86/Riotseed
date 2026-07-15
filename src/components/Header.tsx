@@ -164,7 +164,7 @@ const Header = () => {
 
           {/* CTA */}
           <a
-            href="mailto:hello@riotseed.com"
+            href="mailto:aude@riotseed.com"
             onClick={() => setIsMobileMenuOpen(false)}
             className="font-permanent-marker text-xl text-primary-black bg-primary-green border-t-2 border-r-4 border-l-2 border-b-4 border-primary-black rounded-lg w-38 h-13 flex items-center justify-center shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.75 hover:translate-y-0.75 transition-all duration-500"
           >
