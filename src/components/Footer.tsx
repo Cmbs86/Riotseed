@@ -262,7 +262,7 @@ const Footer = () => {
             </a>
           </div>
 
-          <a href="mailto:hello@riotseed.com" className="footer-cta">
+          <a href="mailto:aude@riotseed.com" className="footer-cta">
             Get in Touch
           </a>
         </div>
