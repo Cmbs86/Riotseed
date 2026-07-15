@@ -173,7 +173,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-row">
           <a href="/" className="footer-logo-link" aria-label="Riotseed home">
-            <img src={logo} alt="Riotseed logo" className="footer-logo-img" />
+            <img src={logo} alt="Riotseed logo" width={320} height={84} className="footer-logo-img" />
           </a>
 
           <div className="footer-socials">

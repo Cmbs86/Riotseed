@@ -18,6 +18,7 @@ const Hero = () => {
         <img
           src={RiotseedBanner}
           alt="Riotseed banner"
+          fetchPriority="high"
           width={1920}
           height={1153}
           className="w-full h-auto block"
