@@ -47,7 +47,7 @@ const Navigation = ({ isScrolled }: NavigationProps) => {
         About
       </button>
 
-      <a href="mailto:hello@riotseed.com" className={navLinkClass}>
+      <a href="mailto:aude@riotseed.com" className={navLinkClass}>
         Get in Touch
       </a>
     </nav>
