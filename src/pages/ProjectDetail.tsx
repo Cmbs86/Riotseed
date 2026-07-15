@@ -210,7 +210,7 @@ const ProjectDetail = () => {
       </Helmet>
 
       <section className="min-h-screen bg-second-pink">
-        <div className="h-40 md:h-44 lg:h-48 w-full" />
+        <div className="h-24 md:h-32 lg:h-38 w-full" />
 
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="w-full flex justify-center">
