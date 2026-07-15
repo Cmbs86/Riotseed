@@ -24,6 +24,7 @@ const Hero = () => {
           width={1920}
           height={1153}
           className="w-full h-auto block"
+          fetchpriority="high"
         />
       </div>
 
