@@ -1,6 +1,7 @@
 import { useMemo, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { services } from "../data/services";
+import { renderTitle } from "../utils/renderTitle";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -78,7 +79,7 @@ const ServiceDetail = () => {
               "
             >
               <h2 className="font-permanent-marker  text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
-                {service.title}
+                {renderTitle(service.title)}
               </h2>
 
               <div className="w-full h-1.5 md:h-2 bg-primary-black mb-8 md:mb-12" />

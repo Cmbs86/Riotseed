@@ -202,7 +202,9 @@ export const projects: Project[] = [
 
       "39,100 impressions on Google Search in December.",
 
-      "The site now ranks as a natural reference for searches around Palo Santo, white sage, and organic maté in France — with solid foundations to expand into the German market next.",
+      "Faster load times and a cleaner, fully mobile-responsive site, thanks to the technical work behind the scenes.",
+
+      "The site now ranks as a natural reference for searches around Palo Santo, white sage, and organic maté in France, with solid foundations to expand into the German market next.",
     ],
 
     testimonial: {

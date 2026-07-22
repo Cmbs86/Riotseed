@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { services } from "../data/services";
+import { renderTitle } from "../utils/renderTitle";
 
 const cardColors = [
   "bg-primary-pink hover:bg-second-pink",
@@ -80,7 +81,7 @@ const Services = () => {
 
                   <div className="flex items-center justify-center min-h-[72px] mb-4">
                     <h3 className="font-permanent-marker text-base md:text-lg xl:text-xl text-primary-black text-center leading-snug">
-                      {service.title}
+                      {renderTitle(service.title)}
                     </h3>
                   </div>
 

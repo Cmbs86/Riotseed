@@ -3,7 +3,7 @@ import logo from "/logos/riotseed-color-long.svg";
 const Footer = () => {
   return (
     <footer className="w-full">
-     <style>{`
+      <style>{`
   .footer-wave-section {
     background-color: #6bf7c9;
     line-height: 0;
@@ -173,7 +173,13 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="footer-bottom-row">
           <a href="/" className="footer-logo-link" aria-label="Riotseed home">
-            <img src={logo} alt="Riotseed logo" width={320} height={84} className="footer-logo-img" />
+            <img
+              src={logo}
+              alt="Riotseed logo"
+              width={320}
+              height={84}
+              className="footer-logo-img"
+            />
           </a>
 
           <div className="footer-socials">
@@ -204,6 +210,24 @@ const Footer = () => {
                   fill="currentColor"
                   stroke="none"
                 />
+              </svg>
+            </a>
+
+            <a
+              href="https://www.facebook.com/riotseed"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-link"
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="32"
+                height="32"
+              >
+                <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H16.7V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.2v3H10V22h3.5Z" />
               </svg>
             </a>
 
