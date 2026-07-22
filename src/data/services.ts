@@ -3,7 +3,7 @@ import type { Service } from "../types";
 export const services: Service[] = [
   {
     slug: "seo-geo",
-    title: "SEO & GEO",
+    title: "SEO: Show up First",
     teaser:
       "Get found where it matters — Google, YouTube, and AI search tools like ChatGPT. We make sure people discover your band before they even know they’re looking for you.",
     description: [

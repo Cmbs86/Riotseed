@@ -87,34 +87,36 @@ const About = () => {
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
                   I'm Aude! French, Berlin-based, full of tattoos, and obsessed
-                  with music since my teenage years when I first discovered punk
-                  and never looked back.
+                  with punk since I discovered Rancid as a teenager.
                 </p>
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                  12+ years in the industry, on every side of the table:
-                  independent punk labels (SideOneDummy, People Like You
-                  Records), national rock radio (OÜI FM), Viacom/MTV, Vice
+                  I play guitar too, though I'll be honest: I never had what it
+                  takes to live off it. What I did have was an obsession with
+                  everything backstage: the music business, the media,
+                  everything that goes into breaking an artist. That obsession
+                  took me through independent punk labels (SideOneDummy, People
+                  Like You Records), national rock radio (OÜI FM), MTV, Vice
                   Media, and six years at Spotify managing marketing ad
                   campaigns.
                 </p>
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium ital text-primary-black leading-relaxed">
-                  But I never stopped being part of the scene. I play guitar in
-                  a FLINTA punk hardcore band, go to shows constantly, and moved
-                  to Berlin for the underground scene. There's nowhere else like
-                  it.
+                  I never left the scene though. I still play in a FLINTA punk
+                  hardcore band, still at shows and clubs constantly, moved to
+                  Berlin for the underground and never found anywhere like it.
                 </p>
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                  I built Riotseed because bands in development almost never
-                  have access to professional marketing. The budgets are too
-                  small, the agencies too expensive. I wanted to change that.
+                  I built Riotseed because I kept seeing the same thing:
+                  marketing agencies charging prices only major-label bands can
+                  afford, running campaigns for artists whose world they don't
+                  even understand. Underground musicians deserve better than
+                  that.
                 </p>
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-medium text-primary-black leading-relaxed">
-                  Female-run. No corporate bullshit. If your music is real, your
-                  marketing should be too.
+                  Female-run. No corporate bullshit.
                 </p>
 
                 <p className="font-plus-jakarta-sans text-base lg:text-lg font-extrabold text-primary-black leading-relaxed">
