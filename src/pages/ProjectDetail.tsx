@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
+import { renderLinkedText } from "../utils/renderLinkedText";
 
 const PROJECT_OG_IMAGES: Record<string, string> = {
   vespa: "https://riotseed.com/images/VespaBand.webp",
@@ -273,7 +274,7 @@ const ProjectDetail = () => {
                           key={index}
                           className="font-plus-jakarta-sans text-base md:text-lg font-medium text-primary-black leading-relaxed text-center lg:text-left"
                         >
-                          {paragraph}
+                           {renderLinkedText(paragraph)}
                         </p>
                       ))}
                     </div>

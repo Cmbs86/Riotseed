@@ -3,7 +3,7 @@ import type { Service } from "../types";
 export const services: Service[] = [
   {
     slug: "seo-geo",
-    title: "SEO: Show up First",
+    title: "SEO & GEO: Show up First",
     teaser:
       "When fans search your band, your scene, or ask AI for recommendations, you show up first. I optimize for Google, YouTube, and tools like ChatGPT, so they find you, not a band that sounds like you.",
     description: [
@@ -17,7 +17,7 @@ export const services: Service[] = [
   },
   {
     slug: "epk-website",
-    title: "EPK & Website",
+    title: "EPK + Website",
     teaser:
       "Your EPK is your business card for the industry. Your website is your digital venue. I build both, so you look as professional as you sound.",
     description: [
@@ -48,10 +48,10 @@ export const services: Service[] = [
     description: [
       "Getting press coverage and landing on the right playlists can change everything for a band.",
       "But the PR world is full of empty promises and fake playlist numbers.",
-      "We do real outreach to journalists, bloggers, and curators who actually care about your scene.",
-      "Press releases, interviews, blog features, editorial submissions — no shortcuts, no scams.",
-      "Not every pitch lands, but every pitch is real.",
-      "Your music deserves real ears, not inflated numbers.",
+      "I know how real outreach works: pitching journalists, bloggers, and curators who actually care about your scene, not blasting a list.",
+      "Press releases, interviews, blog features, editorial submissions. No shortcuts, no scams.",
+      "I also make sure your Spotify and streaming profiles are solid before I pitch anywhere: bio, Canvas, pitch notes, all the basics agencies skip. That foundation comes from six years of real DSP ad and marketing experience, not guesswork.",
+      "Not every pitch lands, but every pitch is real. Your music deserves real ears, not inflated numbers.",
     ],
   },
   {
@@ -60,12 +60,10 @@ export const services: Service[] = [
     teaser:
       "You pick from the menu, I build the plan around your goal. Whether it's a single, a tour, or a full rebrand, I scope it to your budget.",
     description: [
-      "Every band is different. Different goals, budgets, timelines, and scenes.",
-      "We don't believe in one-size-fits-all packages.",
-      "We build custom campaigns combining the services you actually need.",
-      "Releasing an album? Touring? Just starting out? We adapt to your situation.",
-      "You pick the direction. We build the strategy.",
-      "Your campaign. Your budget. Your call.",
+      "You pick from the menu, I build the plan around your goal.",
+      "Releasing an album? Touring? Just starting out? I adapt to your situation, combining the services you actually need instead of selling you a fixed tier. Maybe that's just an EPK. Maybe it's social media, PR, and paid ads running together for a release. I build what gets you there, nothing more, nothing less.",
+      "Whether it's a single, a tour, or a full rebrand, I scope it to your budget.",
+     
     ],
   },
   {
@@ -75,10 +73,10 @@ export const services: Service[] = [
       "Targeted ads that put your music in front of the right ears. Small budget? Good. We make every euro count.",
     description: [
       "You don't need a label's budget to run ads that work. A well-targeted campaign can put your music in front of the right people.",
-      "We build campaigns across Instagram, Facebook, Spotify, and YouTube based on your goals — releases, tours, or merch.",
-      "No boosted posts and crossed fingers. We handle strategy, targeting, creatives, and reporting.",
-      "No fake streams, no bot traffic — only real listeners that actually convert into fans.",
-      "Smart budget. Real reach. No smoke and mirrors.",
+      "I build campaigns across Instagram, Facebook, Spotify, and YouTube based on your goals: releases, tours, or merch.",
+      "No boosted posts and crossed fingers. I handle strategy, targeting, creatives, and reporting, backed by six years running ad campaigns at Spotify.",
+      "Ads get a bad rep in DIY scenes, and honestly, a lot of them deserve it. But done right (right audience, right visual, right budget) they don't compromise your identity. They just make sure the people who'd actually love your music get the chance to hear it.",
+      "No fake streams, no bot traffic. Just real listeners who actually convert into fans, smart budget, real reach.",
     ],
   },
 ];

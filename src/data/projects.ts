@@ -11,25 +11,22 @@ export const projects: Project[] = [
     title: "Vespa",
     slug: "vespa",
     image: vespaPhoto,
-    imageAlt: "Vespa ska band from Szczecin Poland — Riotseed music marketing project, social media optimization and paid media campaign",
+    imageAlt:
+      "Vespa ska band from Szczecin Poland — Riotseed music marketing project, social media optimization and paid media campaign",
     bgPosition: "center left",
     category: "music",
     subtitle: "Ska / Swing / Reggae — Szczecin, Poland",
     description: [
-      "Vespa: Pioneers of Ska Music in Poland",
-      "There is no doubt that Vespa is is one of the pioneers of Ska music in Poland. Known for their unique blend of Jamaican rhythms and a mix of soul, swing, and rock'n'roll, Vespa has solidified their place as one of the top ska bands in Poland since 1995. With six critically acclaimed LPs, the band continues to captivate audiences both old and new.",
-      "Their energetic live shows are a trademark of their career. Vespa's retro style, a dynamic four-piece brass section, and the distinctive presence of their female vocalist have made them a favorite across Europe. With a love for vintage fashion, sharp suits, and brass-heavy grooves, they became a staple in Poland's alternative music scene, bridging the gap between traditional ska and a modern, danceable sound.",
-      "Whether in Poland, Germany, the UK, or Russia, the performances of the band from Szczecin are known for their lively, unpredictable interludes and unforgettable stage presence.",
-      "Don't miss your chance to see them live on tour!",
+      "Vespa has been one of Poland's pioneering ska bands since 1995, blending Jamaican rhythms with soul, swing, and rock'n'roll across six studio albums. Their four-piece brass section and sharp vintage style have made them a fixture of the European ska scene. Catch them live in Poland, Germany, or beyond.",
     ],
     whatWeDidTitle: "What we did together",
     whatWeDid: [
-      "Ahead of their 6th album release and European tour, the goal was to sharpen Vespa’s entire digital presence and make sure their online visibility matched their live reputation. We ran a full audit and optimization across all platforms — Instagram, Facebook, YouTube, Spotify, Bandcamp, Apple Music, and Deezer.",
+      "Ahead of their sixth album release and European tour, the goal was to sharpen Vespa's entire digital presence and make sure their online visibility matched their live reputation. We ran a full audit and optimization across all platforms: Instagram, Facebook, YouTube, Spotify, Bandcamp, Apple Music, and Deezer.",
 
       "We rewrote their bios for SEO, harmonized their branding across every channel, set up Google Analytics and Search Console, claimed their Google Knowledge Panel, and built a content strategy tailored to each platform. On top of that, we ran a paid media campaign to promote their upcoming tour dates.",
     ],
     results: [
-      "A fully optimized, consistent, and professional digital presence across all platforms — ready to support an album launch and European tour.",
+      "A fully optimized, consistent, and professional digital presence across all platforms, ready to support an album launch and European tour.",
     ],
     testimonial: {
       quote:
@@ -52,7 +49,7 @@ export const projects: Project[] = [
       label: "Independent",
       contact: "vespa.ska@gmail.com",
       download: "PRESS PACK",
-      downloadUrl: "https://vespaband.pl/en/",
+      downloadUrl: "https://vespaband.pl/download/vespa_press_pack_en.zip",
     },
   },
   {
@@ -60,29 +57,23 @@ export const projects: Project[] = [
     title: "Offbeat Affair",
     slug: "offbeat-affair",
     image: offbeatPhoto,
-    imageAlt: "Offbeat Affair early reggae and rocksteady band Berlin — Riotseed EPK creation and music marketing project",
+    imageAlt:
+      "Offbeat Affair early reggae and rocksteady band Berlin — Riotseed EPK creation and music marketing project",
     bgPosition: "center center",
     category: "music",
     subtitle: "Early Reggae / Rocksteady / Soul — Berlin, Germany",
     description: [
-      "Offbeat Affair is a Berlin five-piece blending early reggae, rocksteady, ska, and soul into something that sounds like Kingston circa 1967 filtered through Berlin’s underground.",
-      "Five musicians from wildly different worlds — punk, Oi!, goth, Brazilian music — united by a shared love for Jamaican offbeat rhythms.",
-      "Their debut EP “Don’t Need Love” was recorded fully analog on a 16-track tape machine, mixed to mono, no computers.",
-      "They sold out their very first show before ever setting foot on stage.",
+      "Offbeat Affair is a Berlin five-piece blending early reggae, ska, and soul into a sound rooted in Kingston circa 1967. Five musicians from Poland, Brazil, Greece, and Australia recorded their debut EP, Don't Need Love, fully analogue on a 16-track tape machine. They sold out their first show before ever setting foot on a Berlin stage.",
     ],
     whatWeDidTitle: "What we're doing together",
     whatWeDid: [
-      "Offbeat Affair is a brand new band — everything needed to be built from scratch. We created their complete EPK to pitch venues, festivals, and media.",
-
-      "We ran a full social media optimization and built a content strategy to generate awareness and reach new audiences ahead of their first live dates. Playlist pitching and paid media campaigns are currently in progress to drive streams and grow their listener base across Germany and beyond.",
+      "Offbeat Affair is a brand new band. I built their complete EPK from scratch to pitch venues, festivals, and media, ran a full social media optimization, and built a content strategy to generate awareness and reach new audiences ahead of their first live dates. Playlist pitching and paid media campaigns are currently in progress to grow their listener base across Germany and beyond.",
     ],
 
     results: [
-      "First show sold out.",
+      "First show sold out. Playlist adds up 188.9%, Instagram up 14%, Spotify monthly listeners up 8.1%.",
 
-      "Spotify followers up 19.3%, playlist adds up 188.9%.",
-
-      "Shows booked at Berlin’s Wild At Heart, Supamolly, Schokoladen, and SO36 alongside The Hotknives and The Butlers.",
+      "Shows booked at Berlin's Wild At Heart, Supamolly, Schokoladen, and SO36 alongside The Hotknives and The Butlers.",
 
       "Festival slots secured at Gdańsk Ska Jamboree and Offbeat Attack.",
 
@@ -110,7 +101,8 @@ export const projects: Project[] = [
       label: "Independent",
       contact: "offbeat.affair.band@gmail.com",
       download: "PRESS PACK",
-    downloadUrl: "https://drive.google.com/file/d/1SrqSDZuPp0Tj_JkI6BR58A-cza_DPsDy/view?usp=drive_link",
+      downloadUrl:
+        "https://drive.google.com/drive/folders/1I9u--FBCsIgkfkUH1PignQfxssNemdfs?usp=sharing",
     },
   },
   {
@@ -118,37 +110,36 @@ export const projects: Project[] = [
     title: "Sick Saints",
     slug: "sick-saints",
     image: sicksaintsPhoto,
-    imageAlt: "Sick Saints brutal glam band from Kraków Poland — Riotseed music marketing campaign, European tour promotion",
+    imageAlt:
+      "Sick Saints brutal glam band from Kraków Poland — Riotseed music marketing campaign, European tour promotion",
     gradient: "linear-gradient(135deg, #2a1a1a 0%, #5c3a3a 50%, #1a0a0a 100%)",
     bgPosition: "center center",
     category: "music",
     subtitle: "Brutal Glam / Heavy Rock — Kraków, Poland",
     description: [
-      "Sick Saints play Brutal Glam: a high-energy collision of 70s glam, 80s metal, and larger-than-life stage presence.",
-
-      "Founded by guitarist Mighty Mike in 2020, the Kraków-based band has quickly become one of the most exciting acts on the Polish rock scene, with two national tours supporting Nocny Kochanek and a debut album 'Out of the Night' released in 2025.",
-
-      "In 2026, they launched their first European tour.",
+      "Sick Saints play Brutal Glam: a high-energy collision of 70s glam, 80s metal, and larger-than-life stage presence. Founded by guitarist Mighty Mike in 2020, the Kraków-based band has quickly become one of the most exciting acts on the Polish rock scene, with two national tours supporting Nocny Kochanek and a debut album Out of the Night released in 2025. In 2026, they launched their first European tour.",
     ],
     whatWeDidTitle: "What we're doing together",
     whatWeDid: [
       "The goal: start building real, repeatable fanbases in Germany and France — not just views, but actual fans showing up to shows.",
 
-      "We created localized bios and press materials in German and French, then built a comprehensive mapping of the European scene — over 1,000 contacts including relevant blogs, radio shows, playlist curators, venues, festivals, and potential collaboration partners across both territories, with clear prioritization for outreach.",
+      "I created localized bios and press materials in German and French, then built a comprehensive mapping of the European scene: over 600 contacts including relevant blogs, radio shows, playlist curators, venues, festivals, and potential collaboration partners across both territories, with clear prioritization for outreach.",
 
-      "We’re currently running targeted PR and playlist pitching to key contacts in DE/FR, and adapting their social media content for local audiences — all coordinated with the band’s existing PR and paid ads teams.",
+      "I’m currently running targeted playlist pitching to key contacts in DE/FR, and adapting their social media content for local audiences, all coordinated with the band's existing PR and paid ads teams.",
     ],
 
     results: [
-      "Project in progress.",
+      "Scene mapping delivered with 600+ curated contacts across Germany and France.",
 
-      "Scene mapping delivered with 1,000+ curated contacts across Germany and France.",
+      "4 playlists secured, 14,600+ combined reach.",
 
-      "PR and playlist pitching campaign currently active ahead of European tour dates.",
+      "Festival entry pathway mapped toward Wacken and Hellfest.",
+
+      "Playlist pitching campaigns currently active ahead of European tour dates.",
     ],
 
     testimonial: {
-      quote: "Client testimonial coming soon.",
+      quote: "It was a pleasure to work with you, thanks for everything you've done. We have playlist results so it's very good for us!",
       author: "Sick Saints",
     },
     spotifyEmbed:
@@ -182,14 +173,13 @@ export const projects: Project[] = [
     title: "Veegreen",
     slug: "veegreen",
     image: veePhoto,
-    imageAlt: "Veegreen sustainable wellness brand — Riotseed SEO and content marketing project, Palo Santo and white sage",
+    imageAlt:
+      "Veegreen sustainable wellness brand — Riotseed SEO and content marketing project, Palo Santo and white sage",
     bgPosition: "center top",
     category: "brand",
     subtitle: "Sustainable Wellness brand — France",
     description: [
-      "Veegreen is a French e-commerce brand rooted in well-being, purification rituals, and ethically sourced products — from Palo Santo and white sage to organic maté.",
-
-      "A brand built on authenticity, sustainability, and connection to nature.",
+      "Veegreen is a French e-commerce brand rooted in well-being, purification rituals, and ethically sourced products, from Palo Santo and white sage to organic maté. A brand built on authenticity, sustainability, and connection to nature.",
     ],
     whatWeDidTitle: "What we did together",
     whatWeDid: [
@@ -197,7 +187,8 @@ export const projects: Project[] = [
 
       "Over six months, we ran a full SEO strategy: complete technical audit, on-page optimization of all product descriptions and collections, keyword research, blog content creation and rewrite, internal linking architecture, metadata overhaul, and performance optimization.",
 
-      "We also built a social media audit with a ready-to-deploy content strategy.",
+      "I also built a social media audit with a ready-to-deploy content strategy.",
+      "Alongside this, my developer [Carlos Sousa](https://www.linkedin.com/in/carlos-brito-de-sousa) worked on the Shopify site itself: improving page load speed, simplifying the user journey, and making sure the technical SEO fundamentals were properly in place and mobile responsive.",
     ],
 
     results: [
@@ -230,7 +221,7 @@ export const projects: Project[] = [
     info: {
       contact: "Benoît Petit",
       download: "2026 CATALOGUE",
-   downloadUrl: "https://heyzine.com/flip-book/de3d2ff9a8.html",
+      downloadUrl: "https://heyzine.com/flip-book/de3d2ff9a8.html",
     },
   },
 ];

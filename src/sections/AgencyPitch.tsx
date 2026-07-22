@@ -30,9 +30,9 @@ const AgencyPitch = () => {
 
               <p className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg lg:text-2xl font-normal text-primary-black leading-relaxed">
                 Riotseed is a female-run, Berlin-based music marketing agency
-                for punk, underground, Techno & Riot grrl artists across Germany
-                and France: social media, ads, PR, playlists, SEO, websites,
-                EPKs.
+                for punk, alternative, underground, Techno, and Riot grrl bands
+                across Germany and France: social media, ads, PR, playlists,
+                SEO, websites, EPKs.
               </p>
 
               <p className="font-plus-jakarta-sans text-sm sm:text-base md:text-lg lg:text-2xl font-extrabold text-primary-black leading-relaxed">
