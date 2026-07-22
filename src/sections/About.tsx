@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import audePhoto from "../assets/images/aude-leteurtre.webp";
+import audePhoto from "../assets/images/AudeTeufelsberg.webp";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
