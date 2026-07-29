@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <NotFoundMessage
       title="Page not found"
-      message="This page doesn't exist — let's get you back on track."
+      message="“Wrong stage? Let's get you back on track.”"
       backTo="/"
       backLabel="Back to home"
     />

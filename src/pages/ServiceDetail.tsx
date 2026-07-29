@@ -2,6 +2,7 @@ import { useMemo, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { services } from "../data/services";
 import { renderTitle } from "../utils/renderTitle";
+import NotFoundMessage from "../components/NotFoundMessage";
 
 const ServiceDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -29,22 +30,15 @@ const ServiceDetail = () => {
 
   if (!service) {
     return (
-      <section className="min-h-screen bg-second-pink flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="font-permanent-marker text-4xl md:text-7xl text-primary-black mb-6">
-            Service not found
-          </h1>
-
-          <Link
-            to="/"
-            className="font-plus-jakarta-sans text-lg md:text-2xl font-bold text-primary-black underline"
-          >
-            Back to home
-          </Link>
-        </div>
-      </section>
+      <NotFoundMessage
+        title="Service not found"
+        message="“Wrong stage? Let's get you back on track.”"
+        onBackClick={handleBackToServices}
+        backLabel="Back to services"
+      />
     );
   }
+
 
   return (
     <section className="min-h-screen bg-second-pink">
