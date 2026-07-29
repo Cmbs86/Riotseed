@@ -130,7 +130,7 @@ const ProjectDetail = () => {
     return (
       <NotFoundMessage
         title="Project not found"
-        message="“Wrong stage? Let's get you back on track.”"
+        message="“Wrong lineup? Let's get you back on track.”"
         onBackClick={handleBackToProjects}
         backLabel="Back to projects"
       />

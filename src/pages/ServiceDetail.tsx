@@ -32,7 +32,7 @@ const ServiceDetail = () => {
     return (
       <NotFoundMessage
         title="Service not found"
-        message="“Wrong stage? Let's get you back on track.”"
+        message="“Wrong setlist? Let's get you back on track.”"
         onBackClick={handleBackToServices}
         backLabel="Back to services"
       />
