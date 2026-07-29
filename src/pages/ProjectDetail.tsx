@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import { renderLinkedText } from "../utils/renderLinkedText";
 
+
 const PROJECT_OG_IMAGES: Record<string, string> = {
   vespa: "https://riotseed.com/images/VespaBand.webp",
   "offbeat-affair": "https://riotseed.com/images/OffbeatAffairBand.webp",
