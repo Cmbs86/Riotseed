@@ -4,16 +4,20 @@ import mascotImage from "../assets/images/riotseed-logo-hand.webp";
 type NotFoundMessageProps = {
   title: string;
   message: string;
-  backTo: string;
   backLabel: string;
+  backTo?: string;
+  onBackClick?: () => void;
 };
 
 const NotFoundMessage = ({
   title,
   message,
-  backTo,
   backLabel,
+  backTo,
+  onBackClick,
 }: NotFoundMessageProps) => {
+  const buttonClassName =
+    "font-permanent-marker text-lg sm:text-xl text-primary-black bg-primary-green border-t-2 border-r-4 border-l-2 border-b-4 border-primary-black rounded-lg w-48 h-13 inline-flex items-center justify-center shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.75 hover:translate-y-0.75 transition-all duration-500";
   return (
     <section className="min-h-screen bg-second-pink">
       {/* Space for fixed header */}
@@ -38,12 +42,15 @@ const NotFoundMessage = ({
           {message}
         </p>
        <div className="w-full h-6 md:h-10" />
-        <Link
-          to={backTo}
-          className="font-permanent-marker text-lg sm:text-xl text-primary-black bg-primary-green border-t-2 border-r-4 border-l-2 border-b-4 border-primary-black rounded-lg w-48 h-13 inline-flex items-center justify-center shadow-[5px_5px_0px_#000000] hover:shadow-[2px_2px_0px_#000000] hover:translate-x-0.75 hover:translate-y-0.75 transition-all duration-500"
-        >
-          {backLabel}
-        </Link>
+        {onBackClick ? (
+          <button onClick={onBackClick} className={buttonClassName}>
+            {backLabel}
+          </button>
+        ) : (
+          <Link to={backTo ?? "/"} className={buttonClassName}>
+            {backLabel}
+          </Link>
+        )}
       </div>
     </section>
   );

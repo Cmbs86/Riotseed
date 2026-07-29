@@ -1,8 +1,9 @@
 import { useMemo } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import { renderLinkedText } from "../utils/renderLinkedText";
+import NotFoundMessage from "../components/NotFoundMessage";
 
 
 const PROJECT_OG_IMAGES: Record<string, string> = {
@@ -107,24 +108,32 @@ const socialIconClass =
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
 
   const project = useMemo(
     () => projects.find((item) => item.slug === slug),
     [slug],
   );
 
+  const handleBackToProjects = () => {
+    navigate("/");
+
+    setTimeout(() => {
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  };
+
   if (!project) {
     return (
-      <section className="min-h-screen bg-second-pink flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="font-permanent-marker text-4xl md:text-6xl text-primary-black mb-6">
-            Project not found
-          </h1>
-          <p className="font-shantell-sans text-lg md:text-xl text-primary-black">
-            This project page does not exist yet.
-          </p>
-        </div>
-      </section>
+      <NotFoundMessage
+        title="Project not found"
+        message="This project page does not exist yet."
+        onBackClick={handleBackToProjects}
+        backLabel="Back to projects"
+      />
     );
   }
 
