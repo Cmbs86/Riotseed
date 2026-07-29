@@ -1,5 +1,5 @@
 import { useMemo, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { services } from "../data/services";
 import { renderTitle } from "../utils/renderTitle";
 import NotFoundMessage from "../components/NotFoundMessage";
