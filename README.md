@@ -18,7 +18,7 @@ Built as a freelance client project for founder **Aude Leteurtre**.
 | **Routing** | React Router v7 |
 | **SEO** | `react-helmet-async` + JSON-LD structured data |
 | **Linting** | ESLint 9 (flat config) + `typescript-eslint` |
-| **Deployment** | Cloudflare Pages |
+| **Deployment** | Cloudflare Workers |
 
 No backend, no database, no CMS — content lives in typed data files (`src/data/`) and is edited directly in code. This is an intentional choice: the site is small, content changes are infrequent, and the client supplies copy directly to the developer rather than self-managing content.
 
@@ -30,7 +30,7 @@ No backend, no database, no CMS — content lives in typed data files (`src/data
 - **Brutalist design system**: hard shadows, thick borders, bold color blocks, custom display fonts
 - **Dynamic per-page SEO**: unique `<title>`, meta description, and Open Graph/Twitter card data for every route via `react-helmet-async`
 - **Structured data (JSON-LD)**: `ProfessionalService` schema with founder bio, and `CollectionPage` schema for the projects listing — helps search engines and AI answer engines understand the business
-- **Client-side routing** with scroll-restoration on navigation, and a dedicated 404 page for unmatched routes or invalid project/service slugs
+- **Client-side routing** with scroll-restoration on navigation, and a shared `NotFoundMessage` component powering both the wildcard 404 page and inline "not found" states on invalid project/service slugs
 - **`sitemap.xml`** and **`robots.txt`** for search engine indexing
 - **Custom entrance animations** (fade/slide-in on mount, staggered reveals) built with Tailwind transitions and a small amount of targeted inline styles where Tailwind's utility classes weren't sufficient (see [A note on inline styles](#a-note-on-inline-styles))
 
@@ -41,12 +41,13 @@ No backend, no database, no CMS — content lives in typed data files (`src/data
 ```
 src/
 ├── assets/images/     # Source images (imported directly into components)
-├── components/        # Shared UI: Header, Footer, Navigation, ScrollToTop
+├── components/        # Shared UI: Header, Footer, Navigation, ScrollToTop, NotFoundMessage
 ├── data/               # Typed content: projects.ts, services.ts
 ├── layouts/            # MainLayout (Header + Footer wrapper)
 ├── pages/              # Route-level pages: Home, ServiceDetail, ProjectDetail, NotFound
 ├── sections/           # Homepage sections: Hero, About, Services, Projects, AgencyPitch
 ├── types/              # Shared TypeScript interfaces
+├── utils/              # renderLinkedText.tsx (markdown-style link parsing), renderTitle.tsx (custom font handling for "&")
 ├── App.tsx             # Route definitions
 ├── main.tsx            # App entry point (providers: HelmetProvider, BrowserRouter)
 └── index.css           # Tailwind import + design tokens (@theme)
@@ -134,7 +135,7 @@ A handful of components (`Footer.tsx`, `Services.tsx`, `ProjectDetail.tsx`) use 
 
 ## Deployment
 
-Deployed via **Cloudflare Pages**, connected to this repository for automatic build-and-deploy on push to `main`. Domain registered and managed through **Cloudflare Registrar**.
+Deployed via **Cloudflare Workers**, connected to this repository for automatic build-and-deploy on push to `main`. Domain registered and managed through **Cloudflare Registrar**.
 
 ---
 
@@ -146,4 +147,4 @@ Client: Aude Leteurtre, Riotseed (Berlin)
 
 ## License
 
-MIT — see [LICENSE](./LICENSE)
+This code is shared publicly for portfolio purposes only. All rights reserved — see [LICENSE](./LICENSE). Reuse, copying, or redistribution of the code, design, or content is not permitted without written permission.
