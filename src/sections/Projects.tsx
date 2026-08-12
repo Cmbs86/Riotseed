@@ -1,11 +1,10 @@
 import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { projects } from "../data/projects";
 
 const LEAVE_ANIMATION_MS = 650;
 
 const Projects = () => {
-  const navigate = useNavigate();
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [leavingCard, setLeavingCard] = useState<string | null>(null);
   const leaveTimeoutRef = useRef<number | null>(null);
@@ -32,10 +31,6 @@ const Projects = () => {
       setLeavingCard((current) => (current === id ? null : current));
       leaveTimeoutRef.current = null;
     }, LEAVE_ANIMATION_MS);
-  };
-
-  const handleCardClick = (slug: string) => {
-    navigate(`/projects/${slug}`);
   };
 
   const getCardClassName = (id: string, isWide = false) => {
@@ -73,6 +68,7 @@ const Projects = () => {
         .project-card,
         .veegreen-card-new {
         width: 100%;
+          display: block;
           position: relative;
           border: 4px solid #000000;
           box-shadow: 8px 8px 0px #000000;
@@ -503,12 +499,12 @@ const Projects = () => {
 
         <div className="projects-grid">
           {mainProjects.map((project) => (
-            <div
+            <Link
               key={project.id}
+              to={`/projects/${project.slug}`}
               className={getCardClassName(project.id)}
               onMouseEnter={() => handleMouseEnter(project.id)}
               onMouseLeave={() => handleMouseLeave(project.id)}
-              onClick={() => handleCardClick(project.slug)}
             >
               <div className="project-bg-base" style={getBackgroundStyle(project)} />
               <div className="project-bg-glitch-cyan" style={getBackgroundStyle(project)} />
@@ -517,7 +513,7 @@ const Projects = () => {
               <p className="project-name" data-text={project.title}>
                 {project.title}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -526,11 +522,11 @@ const Projects = () => {
         <p className="projects-sub-label text-center">Beyond the Music</p>
 
         {veegreenProject && (
-          <div
+          <Link
+            to={`/projects/${veegreenProject.slug}`}
             className={getCardClassName(veegreenProject.id, true)}
             onMouseEnter={() => handleMouseEnter(veegreenProject.id)}
             onMouseLeave={() => handleMouseLeave(veegreenProject.id)}
-            onClick={() => handleCardClick(veegreenProject.slug)}
           >
             <div className="project-bg-base" style={getBackgroundStyle(veegreenProject)} />
             <div className="project-bg-glitch-cyan" style={getBackgroundStyle(veegreenProject)} />
@@ -543,7 +539,7 @@ const Projects = () => {
             <p className="veegreen-card-label ">
               Sustainable online shop — branding, strategy & web.
             </p>
-          </div>
+          </Link>
         )}
       </div>
 

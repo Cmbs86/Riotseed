@@ -1,5 +1,6 @@
 import { useMemo, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { services } from "../data/services";
 import { renderTitle } from "../utils/renderTitle";
 import NotFoundMessage from "../components/NotFoundMessage";
@@ -40,8 +41,30 @@ const ServiceDetail = () => {
   }
 
 
+  const pageTitle = `${service.title} — Music Marketing Services | Riotseed`;
+  const pageDescription = service.teaser;
+  const canonicalUrl = `https://riotseed.com/services/${service.slug}`;
+  const ogImage = "https://riotseed.com/images/riotseed-banner-new-smaller.webp";
+
   return (
     <section className="min-h-screen bg-second-pink">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
+
       {/* Space for fixed header */}
       <div className="h-24 md:h-32 lg:h-38 w-full" />
 

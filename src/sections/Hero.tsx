@@ -15,12 +15,16 @@ const Hero = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-primary-black"
     >
+      <h1 className="sr-only">
+        Riotseed, music marketing agency for punk, diy and underground bands in Berlin and elsewhere
+      </h1>
+
       <div className="translate-y-4 md:translate-y-6 ">
         <img
           src={RiotseedBanner}
           srcSet={`${RiotSeedBannerMobile} 900w, ${RiotseedBanner} 1920w`}
           sizes="(max-width: 768px) 100vw, 1920px"
-          alt="Riotseed banner"
+          alt="Riotseed, music marketing agency for punk, diy and underground bands in Berlin and elsewhere"
           fetchPriority="high"
           width={1920}
           height={1153}
