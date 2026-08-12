@@ -17,46 +17,22 @@
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags (homepage defaults — overridden by Helmet on dynamic pages) -->
-    <title>Music Marketing for DIY &amp; Independent Bands | Riotseed</title>
-    <meta
-      name="description"
-      content="Berlin-based music marketing agency for punk, alternative &amp; underground bands. Social media, PR, playlists, ads, SEO, websites &amp; EPKs. Germany &amp; France."
-    />
-    <link rel="canonical" href="https://riotseed.com" />
-    <meta name="robots" content="index, follow" />
+<!-- Fallback title shown only before React/Helmet hydrates -->
+    <title>Riotseed</title>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://riotseed.com" />
-    <meta
-      property="og:title"
-      content="Riotseed — Music Marketing for DIY &amp; Independent Bands"
-    />
-    <meta
-      property="og:description"
-      content="Berlin-based music marketing for punk, alternative &amp; underground bands. Real impact. No bullshit."
-    />
-    <meta
-      property="og:image"
-      content="https://riotseed.com/images/riotseed-banner-new-smaller.webp"
-    />
-    <meta property="og:locale" content="en_US" />
-
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Riotseed — Music Marketing for DIY &amp; Independent Bands"
-    />
-    <meta
-      name="twitter:description"
-      content="Berlin-based music marketing for punk, alternative &amp; underground bands. Real impact. No bullshit."
-    />
-    <meta
-      name="twitter:image"
-      content="https://riotseed.com/images/riotseed-banner-new-smaller.webp"
-    />
+    <!--
+      NOTE: title, meta description, canonical, robots, and OG/Twitter tags are
+      intentionally NOT hardcoded here anymore. react-helmet-async only manages
+      tags that it itself renders — it has no way to see or remove tags that are
+      already sitting in this static index.html, so having them here as well as
+      in each page's <Helmet> caused every route to ship TWO <title> tags and TWO
+      canonical tags at once (one static, pointing to the homepage; one correct,
+      from Helmet). Google flagged this as "Alternative page with proper canonical
+      tag" since it couldn't tell which canonical to trust.
+      Every route (including the homepage, via Home.tsx) now sets its own
+      complete set of these tags through <Helmet>, so there is exactly one of
+      each on every page.
+    -->
 
     <!-- Schema 1: ProfessionalService + Founder -->
     <script type="application/ld+json">
