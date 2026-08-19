@@ -51,11 +51,11 @@ const Datenschutz = () => {
 
                 prose-a:text-primary-black prose-a:underline prose-a:decoration-transparent
                 prose-a:underline-offset-4 hover:prose-a:decoration-current
-                prose-a:break-words
+                prose-a:wrap-break-word
 
                 [&_ul.index]:list-none [&_ul.index]:p-6 [&_ul.index]:my-6
                 [&_ul.index]:bg-primary-green [&_ul.index]:border-2 [&_ul.index]:border-primary-black
-                [&_ul.index]:rounded-lg
+                [&_ul.index]:rounded-none
                 [&_ul.index_li]:mb-2
                 [&_ul.index_a.index-link]:no-underline [&_ul.index_a.index-link]:font-bold
                 hover:[&_ul.index_a.index-link]:underline

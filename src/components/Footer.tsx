@@ -1,11 +1,25 @@
+import { Link } from "react-router-dom";
 import logo from "/logos/riotseed-color-long.svg";
 
+declare global {
+  interface Window {
+    Kookiok?: {
+      showBanner: () => void;
+      [key: string]: unknown;
+    };
+  }
+}
+
 const Footer = () => {
+  const handleCookieSettings = () => {
+    window.Kookiok?.showBanner();
+  };
+
   return (
     <footer className="w-full">
       <style>{`
   .footer-wave-section {
-    background-color: #6bf7c9;
+    background-color: #000000;
     line-height: 0;
   }
 
@@ -24,7 +38,7 @@ const Footer = () => {
     gap: 2.5rem;
     width: 100%;
     max-width: 1800px;
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
   }
 
   .footer-logo-link {
@@ -66,18 +80,18 @@ const Footer = () => {
 
   .footer-cta {
     font-family: 'Permanent Marker', cursive;
-    font-size: 1.25rem;
+    font-size: 1.10rem;
     color: #fb387a;
     background-color: #000000;
 
     border-top: 1px solid #fb387a;
-    border-right: 3px solid #fb387a;
-    border-bottom: 3px solid #fb387a;
+    border-right: 1px solid #fb387a;
+    border-bottom: 1px solid #fb387a;
     border-left: 1px solid #fb387a;
 
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
 
-    min-width: 200px;
+    min-width: 100px;
     height: 52px;
     padding: 0 1.5rem;
 
@@ -88,7 +102,7 @@ const Footer = () => {
     text-decoration: none;
     white-space: nowrap;
 
-    box-shadow: 4px 4px 0px #fb387a;
+    box-shadow: 3px 3px 0px #fb387a;
     transition: all 0.3s ease;
   }
 
@@ -97,6 +111,38 @@ const Footer = () => {
     border-color: #6bf7c9;
     box-shadow: 2px 2px 0px #6bf7c9;
     transform: translate(3px, 3px);
+  }
+
+  .footer-legal-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-legal-link {
+    font-family: 'Shantell Sans', cursive;
+    font-size: 0.875rem;
+    color: #888888;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-legal-link:hover {
+    color: #6bf7c9;
+  }
+
+  .footer-legal-divider {
+    color: #444444;
+    font-size: 0.875rem;
+    user-select: none;
   }
 
   .footer-copyright {
@@ -135,7 +181,7 @@ const Footer = () => {
     }
 
     .footer-bottom-row {
-      margin-bottom: 6rem;
+      margin-bottom: 2.5rem;
     }
 
     .footer-logo-img {
@@ -151,10 +197,14 @@ const Footer = () => {
       min-width: 200px;
       height: 52px;
     }
+
+    .footer-legal-row {
+      gap: 1rem;
+    }
   }
 `}</style>
 
-      {/* Wave */}
+      {/* Wave — green lives inside the SVG now so there's no seam with the black section below */}
       <div className="footer-wave-section">
         <svg
           viewBox="0 0 1440 280"
@@ -162,6 +212,7 @@ const Footer = () => {
           preserveAspectRatio="none"
           style={{ display: "block", width: "100%", height: "280px" }}
         >
+          <rect x="0" y="0" width="1440" height="280" fill="#6bf7c9" />
           <path
             d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
             fill="#000000"
@@ -289,6 +340,24 @@ const Footer = () => {
           <a href="mailto:aude@riotseed.com" className="footer-cta">
             Get in Touch
           </a>
+        </div>
+
+        <div className="footer-legal-row">
+          <Link to="/impressum" className="footer-legal-link">
+            Impressum
+          </Link>
+          <span className="footer-legal-divider">·</span>
+          <Link to="/datenschutz" className="footer-legal-link">
+            Datenschutz
+          </Link>
+          <span className="footer-legal-divider">·</span>
+          <button
+            type="button"
+            onClick={handleCookieSettings}
+            className="footer-legal-link"
+          >
+            Cookie-Einstellungen
+          </button>
         </div>
 
         <p className="footer-copyright">
