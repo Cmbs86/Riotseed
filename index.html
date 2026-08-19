@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
 
+    <!--
+      KookiOk consent script — MUST be the first script/resource-loading tag
+      in <head>, before the favicon, fonts, JSON-LD, and anything else.
+      No async/defer: KookiOk's own installation check looks for this loaded
+      first and synchronously, and auto-blocking of trackers (once GA4/Meta
+      Pixel exist) relies on this running before anything else can.
+    -->
+    <script src="https://cdn.kookiok.com/consent.js?id=01a0193b-2d42-735e-b897-e9ba761e3ca1"></script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/logos/riot-seed-color.svg" />
 
