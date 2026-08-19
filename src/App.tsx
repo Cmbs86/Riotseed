@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ServiceDetail from './pages/ServiceDetail';
 import ProjectDetail from './pages/ProjectDetail';
 import Impressum from './pages/Impressum';
+import Datenschutz from './pages/Datenschutz';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/services/:slug" element={<ServiceDetail />} /> 
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/impressum" element={<Impressum />} />
+        <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
