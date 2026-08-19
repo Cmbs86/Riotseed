@@ -124,9 +124,9 @@ const Footer = () => {
   }
 
   .footer-legal-link {
-    font-family: 'Shantell Sans', cursive;
+    font-family: 'Permanent Marker', cursive;
     font-size: 0.875rem;
-    color: #888888;
+    color: #fb387a;
     background: none;
     border: none;
     padding: 0;
