@@ -79,8 +79,8 @@ const ServiceDetail = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-16">
         <div className="w-full flex justify-center">
           {/* FLEX COLUMN WRAPPER */}
-          <div className="w-full max-w-230 min-h-[60vh] flex flex-col items-center">
-            <div className="h-6 md:h-10 lg:h-12 w-full" />
+          <div className="w-full max-w-230 min-h-[75vh] md:min-h-[69vh] flex flex-col items-center">
+            <div className="h-6 md:h-10 lg:h-5 w-full" />
 
             {/* CARD */}
             <article
