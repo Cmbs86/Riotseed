@@ -79,39 +79,60 @@ const Footer = () => {
   }
 
   .footer-cta {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 1.10rem;
-    color: #fb387a;
-    background-color: #000000;
+  position: relative;
+  isolation: isolate;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.10rem;
+  color: #fb387a;
+  background-color: #000000;
+  border: 2px solid #000000;
 
-    border-top: 1px solid #fb387a;
-    border-right: 1px solid #fb387a;
-    border-bottom: 1px solid #fb387a;
-    border-left: 1px solid #fb387a;
+  min-width: 100px;
+  height: 52px;
+  padding: 0 1.5rem;
 
-    border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    min-width: 100px;
-    height: 52px;
-    padding: 0 1.5rem;
+  text-decoration: none;
+  white-space: nowrap;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  transition: color 0.2s ease;
+}
 
-    text-decoration: none;
-    white-space: nowrap;
+.footer-cta::before,
+.footer-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid;
+  z-index: -1;
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
 
-    box-shadow: 3px 3px 0px #fb387a;
-    transition: all 0.3s ease;
-  }
+.footer-cta::before {
+  border-color: #fb387a;
+  transform: translate(3px, -3px) rotate(-1deg);
+}
 
-  .footer-cta:hover {
-    color: #6bf7c9;
-    border-color: #6bf7c9;
-    box-shadow: 2px 2px 0px #6bf7c9;
-    transform: translate(3px, 3px);
-  }
+.footer-cta::after {
+  border-color: #6bf7c9;
+  transform: translate(-3px, 3px) rotate(1deg);
+}
+
+.footer-cta:hover {
+  color: #6bf7c9;
+}
+
+.footer-cta:hover::before {
+  transform: translate(5px, -5px) rotate(-3deg);
+}
+
+.footer-cta:hover::after {
+  transform: translate(-5px, 5px) rotate(3deg);
+}
 
   .footer-legal-row {
     display: flex;
@@ -156,7 +177,7 @@ const Footer = () => {
   @media (min-width: 768px) {
     .footer-bottom-row {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
       align-items: center;
       width: 100%;
       max-width: 1800px;
@@ -192,33 +213,68 @@ const Footer = () => {
       gap: 2rem;
     }
 
-    .footer-cta {
-      font-size: 1.15rem;
-      min-width: 200px;
-      height: 52px;
-    }
+   .footer-cta {
+  font-size: 0.95rem;
+  min-width: 140px;
+  height: 44px;
+  padding: 0 1.25rem;
+}
 
     .footer-legal-row {
       gap: 1rem;
     }
   }
+
+  @media (min-width: 768px) and (max-width: 900px) {
+  .footer-bottom {
+    padding: 1rem 3rem 2rem;
+  }
+
+  .footer-bottom-row {
+    column-gap: 1rem;
+  }
+
+    .footer-logo-img {
+    width: 200px;
+  }
+
+  .footer-socials {
+    gap: 1.5rem;
+  }
+
+  .footer-cta {
+    min-width: 90px;
+    padding: 0 1rem;
+    font-size: 1rem;
+     margin-right: 1.5rem;
+  }
+}
 `}</style>
 
-      {/* Wave — green lives inside the SVG now so there's no seam with the black section below */}
-      <div className="footer-wave-section">
-        <svg
-          viewBox="0 0 1440 280"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          style={{ display: "block", width: "100%", height: "280px" }}
-        >
-          <rect x="0" y="0" width="1440" height="280" fill="#6bf7c9" />
-          <path
-            d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
-            fill="#000000"
-          />
-        </svg>
-      </div>
+  <div className="footer-wave-section" style={{ position: "relative" }}>
+  <svg
+    viewBox="0 0 1440 280"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    style={{ display: "block", width: "100%", height: "280px" }}
+  >
+    <rect x="0" y="0" width="1440" height="280" fill="#6bf7c9" />
+    <path
+      d="M0,80 C200,200 400,20 600,120 C800,220 1000,40 1200,140 C1320,200 1380,160 1440,140 L1440,280 L0,280 Z"
+      fill="#000000"
+    />
+  </svg>
+  <div
+    style={{
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: "100%",
+      height: "4px",
+      backgroundColor: "#000000",
+    }}
+  />
+</div>
 
       {/* Bottom — Black */}
       <div className="footer-bottom">
