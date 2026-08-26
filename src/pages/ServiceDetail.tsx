@@ -47,7 +47,7 @@ const ServiceDetail = () => {
   const ogImage = "https://riotseed.com/images/riotseed-banner-new-smaller.webp";
 
   return (
-    <section className="min-h-screen bg-second-pink">
+    <section className="min-h-screen bg-second-pink flex flex-col">
       <Helmet>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
@@ -66,7 +66,7 @@ const ServiceDetail = () => {
       </Helmet>
 
       {/* Space for fixed header */}
-      <div className="h-24 md:h-32 lg:h-38 w-full" />
+      <div className="h-16 md:h-32 lg:h-38 w-full" />
 
       {/* Page Title */}
       <div className="w-full min-h-28 md:min-h-36 flex items-center justify-center">
@@ -75,11 +75,14 @@ const ServiceDetail = () => {
         </h1>
       </div>
 
-      {/* CONTENT WRAPPER */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 pt-16">
+      {/* CONTENT WRAPPER — flex-1 so it (and the spacer inside it) can grow
+          to fill remaining space; keeps the bottom divider pinned to the
+          fold on short pages without relying on guessed vh values, which
+          swing wildly across real device aspect ratios. */}
+      <div className="w-full px-4 sm:px-6 lg:px-8 pt-16 flex-1 flex flex-col">
         <div className="w-full flex justify-center">
           {/* FLEX COLUMN WRAPPER */}
-          <div className="w-full max-w-230 min-h-[75vh] md:min-h-[69vh] flex flex-col items-center">
+          <div className="w-full max-w-230 flex flex-col items-center">
             <div className="h-6 md:h-10 lg:h-5 w-full" />
 
             {/* CARD */}
@@ -140,6 +143,11 @@ const ServiceDetail = () => {
             </button>
           </div>
         </div>
+
+        {/* Grows to fill leftover vertical space, pinning the divider
+            below to a consistent distance from real content — not tied
+            to viewport height. */}
+        <div className="flex-1" />
 
         <div className="h-24 md:h-32 w-full" />
       </div>
