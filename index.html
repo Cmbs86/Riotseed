@@ -61,18 +61,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--
-      NOTE: title, meta description, canonical, robots, and OG/Twitter tags are
-      intentionally NOT hardcoded here anymore. react-helmet-async only manages
-      tags that it itself renders — it has no way to see or remove tags that are
-      already sitting in this static index.html, so having them here as well as
-      in each page's <Helmet> caused every route to ship TWO <title> tags and TWO
-      canonical tags at once (one static, pointing to the homepage; one correct,
-      from Helmet). Google flagged this as "Alternative page with proper canonical
-      tag" since it couldn't tell which canonical to trust.
-      Every route (including the homepage, via Home.tsx) now sets its own
-      complete set of these tags through <Helmet>, so there is exactly one of
-      each on every page.
-    -->
+  Static Open Graph / Twitter Card fallback — required because WhatsApp,
+  Facebook, Slack, iMessage etc. crawl raw HTML and do NOT execute JS, so
+  they never see the per-route tags react-helmet-async injects client-side.
+  This is a single sitewide fallback (homepage banner/copy) since a CSR SPA
+  has no way to serve a different static preview per route without SSR/edge
+  prerendering. Googlebot DOES run JS and will still pick up Helmet's
+  per-route og/twitter tags correctly — these static ones are invisible to
+  it in terms of ranking/canonical signals, so this does not reintroduce
+  the earlier duplicate-title/canonical indexing issue.
+-->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://riotseed.com" />
+<meta property="og:title" content="Riotseed — Music Marketing for DIY & Independent Bands" />
+<meta property="og:description" content="Berlin-based music marketing for punk, alternative & underground bands. Real impact. No bullshit." />
+<meta property="og:image" content="https://riotseed.com/images/riotseed-banner-new-smaller.webp" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1153" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Riotseed — Music Marketing for DIY & Independent Bands" />
+<meta name="twitter:description" content="Berlin-based music marketing for punk, alternative & underground bands. Real impact. No bullshit." />
+<meta name="twitter:image" content="https://riotseed.com/images/riotseed-banner-new-smaller.webp" />
+
+   <!--
+  NOTE: title, meta description, canonical, and robots tags are intentionally
+  NOT hardcoded here — react-helmet-async owns those per-route, and having them
+  in both places caused duplicate <title>/<link rel="canonical"> tags that
+  confused Google's indexing (see OG/Twitter comment above for why THOSE tags
+  don't have the same problem). Every route sets its own title/description/
+  canonical/robots via <Helmet>, so there is exactly one of each on every page.
+-->
 
     <!-- Schema 1: ProfessionalService + Founder -->
     <script type="application/ld+json">
