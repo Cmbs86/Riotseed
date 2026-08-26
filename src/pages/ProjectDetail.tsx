@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { projects } from "../data/projects";
 import { renderLinkedText } from "../utils/renderLinkedText";
 import NotFoundMessage from "../components/NotFoundMessage";
+import SpotifyEmbed from "../components/SpotifyEmbed";
 
 
 const PROJECT_OG_IMAGES: Record<string, string> = {
@@ -223,7 +224,7 @@ const ProjectDetail = () => {
       <section className="min-h-screen bg-second-pink">
         <div className="h-24 md:h-32 lg:h-38 w-full" />
 
-        <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-6 sm:px-6 lg:px-8">
           <div className="w-full flex justify-center">
             <div className="w-full max-w-380">
               <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
@@ -386,29 +387,16 @@ const ProjectDetail = () => {
                     </div>
                   )}
 
-                  {/* Spotify */}
+                  {/* Spotify — click-to-load, see components/SpotifyEmbed.tsx
+                      for why (third-party cookie blocking causes a
+                      permanently blank iframe for a lot of visitors) */}
                   {project.spotifyEmbed && (
                     <div className="w-full flex justify-center">
                       <div className="w-full max-w-120 flex flex-col items-center gap-6">
                         <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                           Listen
                         </h3>
-                        <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-black">
-                          <iframe
-                            src={project.spotifyEmbed}
-                            width="100%"
-                            height={
-                              project.spotifyEmbed?.includes("artist")
-                                ? 352
-                                : project.spotifyEmbed?.includes("album")
-                                  ? 380
-                                  : 152
-                            }
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"
-                            className="block w-full"
-                          />
-                        </div>
+                        <SpotifyEmbed embedUrl={project.spotifyEmbed} />
                       </div>
                     </div>
                   )}
