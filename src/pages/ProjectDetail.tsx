@@ -224,10 +224,9 @@ const ProjectDetail = () => {
       <section className="min-h-screen bg-second-pink">
         <div className="h-24 md:h-32 lg:h-38 w-full" />
 
-        <div className="w-full px-6 sm:px-6 lg:px-8">
-          <div className="w-full flex justify-center">
-            <div className="w-full max-w-380">
-              <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
+        <div className="w-full flex justify-center">
+          <div className="w-[88%] sm:w-[90%] lg:w-[92%] max-w-380">
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,500px)_minmax(0,500px)] gap-8 xl:gap-32 2xl:gap-48 project-detail-grid justify-center items-start">
                 {/* LEFT COLUMN */}
                 <div className="w-full xl:sticky xl:top-40 self-start">
                   <div className="w-full border-4 border-primary-black shadow-[8px_8px_0px_#000000] overflow-hidden bg-third-black">
@@ -329,7 +328,7 @@ const ProjectDetail = () => {
                   {/* Info */}
                   {hasInfo && (
                     <div className="w-full flex justify-center">
-                      <div className="w-[82%] sm:w-[85%] max-w-100 flex flex-col items-center gap-6">
+                      <div className="w-[82%] sm:w-[85%] max-w-100 min-w-[320px] flex flex-col items-center gap-6">
                         <h3 className="font-permanent-marker text-3xl md:text-4xl text-primary-black text-center">
                           Info
                         </h3>
@@ -431,7 +430,6 @@ const ProjectDetail = () => {
           </div>
 
           <div className="h-20 md:h-24 w-full" />
-        </div>
 
         <div className="w-full h-1 bg-primary-black" />
       </section>
