@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import RiotseedBanner from "../assets/images/riotseed-banner-new-smaller.webp";
 import RiotSeedBannerMobile from "../assets/images/riotseed-banner-mobile.webp";
+import RiotseedBanner2x from "../assets/images/riotseed-banner-2x.webp";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,7 +23,7 @@ const Hero = () => {
       <div className="translate-y-4 md:translate-y-6 ">
         <img
           src={RiotseedBanner}
-          srcSet={`${RiotSeedBannerMobile} 900w, ${RiotseedBanner} 1920w`}
+          srcSet={`${RiotSeedBannerMobile} 900w, ${RiotseedBanner} 1920w, ${RiotseedBanner2x} 3840w`}
           sizes="(max-width: 768px) 100vw, 1920px"
           alt="Riotseed, music marketing agency for punk, diy and underground bands in Berlin and elsewhere"
           fetchPriority="high"
