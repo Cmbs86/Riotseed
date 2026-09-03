@@ -40,11 +40,11 @@ const ServiceDetail = () => {
     );
   }
 
-
   const pageTitle = `${service.title} — Music Marketing Services | Riotseed`;
   const pageDescription = service.teaser;
   const canonicalUrl = `https://riotseed.com/services/${service.slug}`;
-  const ogImage = "https://riotseed.com/images/riotseed-banner-new-smaller.webp";
+  const ogImage =
+    "https://riotseed.com/images/riotseed-banner-new-smaller.webp";
 
   return (
     <section className="min-h-screen bg-second-pink flex flex-col">
@@ -88,38 +88,40 @@ const ServiceDetail = () => {
             {/* CARD */}
             <article
               className="
-                w-full max-w-[92vw] sm:max-w-170 lg:max-w-190
-                bg-sixth-pink
-                border-t-2 border-r-6 border-l-2 border-b-6 border-primary-black
-                rounded-lg
-                shadow-[5px_5px_0px_#000000] md:shadow-[8px_8px_0px_#000000]
-                px-5 pt-8 pb-12
-                sm:px-8 sm:pt-10 sm:pb-14
-                md:px-14 md:pt-16 md:pb-20
-              "
+    w-full max-w-[92vw] sm:max-w-170 lg:max-w-190
+    bg-sixth-pink
+    border-t-2 border-r-6 border-l-2 border-b-6 border-primary-black
+    rounded-lg
+    shadow-[5px_5px_0px_#000000] md:shadow-[8px_8px_0px_#000000]
+    pt-8 pb-12
+    sm:pt-10 sm:pb-14
+    md:pt-16 md:pb-20
+    flex flex-col items-center
+  "
             >
-              <h2 className="font-permanent-marker  text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
-                {renderTitle(service.title)}
-              </h2>
+              <div className="w-[88%] sm:w-[90%] md:w-[92%] flex flex-col items-center">
+                <h2 className="font-permanent-marker text-2xl sm:text-3xl md:text-4xl text-primary-black text-center leading-tight mb-8 md:mb-10">
+                  {renderTitle(service.title)}
+                </h2>
 
-              <div className="w-full h-1.5 md:h-2 bg-primary-black mb-8 md:mb-12" />
+                <div className="w-full h-0.5  md:h-1 bg-primary-black mb-8 md:mb-12" />
 
-              <div className="h-3 md:h-6 w-full" />
+                <div className="h-3 md:h-6 w-full" />
 
-              <div className="flex flex-col items-center gap-6 md:gap-8">
-                {service.description.map((paragraph, index) => (
-                  <p
-                    key={index}
-                    className="font-plus-jakarta-sans text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-lg md:max-w-152"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                <div className="flex flex-col items-center gap-6 md:gap-8">
+                  {service.description.map((paragraph, index) => (
+                    <p
+                      key={index}
+                      className="font-plus-jakarta-sans text-base sm:text-lg md:text-xl font-bold text-primary-black leading-relaxed text-center max-w-lg md:max-w-152"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                <div className="h-6 md:h-8 w-full" />
               </div>
-
-              <div className="h-6 md:h-8 w-full" />
             </article>
-
             <div className="h-14 md:h-20 w-full" />
 
             <button
