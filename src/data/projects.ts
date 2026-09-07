@@ -83,7 +83,8 @@ export const projects: Project[] = [
     ],
 
     testimonial: {
-      quote: "Client testimonial coming soon.",
+      quote:
+        "For a new band, having someone like Riotseed behind you is a huge advantage - it really gives you a kick-start: being known before you've even played a single show, already having plenty of listeners on streaming platforms, and so much more. It allows us to focus entirely on writing music and playing gigs while she makes sure people know who we are",
       author: "Offbeat Affair",
     },
     spotifyEmbed:
@@ -139,7 +140,8 @@ export const projects: Project[] = [
     ],
 
     testimonial: {
-      quote: "It was a pleasure to work with you, thanks for everything you've done. We have playlist results so it's very good for us!",
+      quote:
+        "It was a pleasure to work with you, thanks for everything you've done. We have playlist results so it's very good for us!",
       author: "Sick Saints",
     },
     spotifyEmbed:
