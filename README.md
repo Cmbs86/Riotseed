@@ -28,6 +28,7 @@ No backend, no database, no CMS — content lives in typed data files (`src/data
 
 - **Fully responsive**, tested down to mobile and up to large desktop monitors (custom breakpoints, see [Design System](#design-system))
 - **Brutalist design system**: hard shadows, thick borders, bold color blocks, custom display fonts
+- **High-DPI responsive images**: the hero banner ships three pixel-density variants (mobile, 1x desktop, 2x/retina) via `srcSet`, so it renders sharp on high-density displays (MacBook Retina, most modern phones) without over-serving a 4K asset to standard screens
 - **Dynamic per-page SEO**: unique `<title>`, meta description, and Open Graph/Twitter card data for every route via `react-helmet-async`
 - **Structured data (JSON-LD)**: `ProfessionalService` schema with founder bio, and `CollectionPage` schema for the projects listing — helps search engines and AI answer engines understand the business
 - **Client-side routing** with scroll-restoration on navigation, and a shared `NotFoundMessage` component powering both the wildcard 404 page and inline "not found" states on invalid project/service slugs
@@ -111,6 +112,10 @@ Design tokens are defined in `src/index.css` under Tailwind's `@theme` directive
 
 Tested primarily on a 13" laptop screen and a 27" external monitor.
 
+### A note on horizontal spacing
+
+Horizontal insets (card/section padding) are implemented with flexbox alignment and explicit width instead of Tailwind's `px-`/`mx-` utilities: a `flex flex-col items-center` parent wraps an inner child sized to a percentage width (e.g. `w-[88%]`), which centers and insets its contents without relying on padding. This mirrors the project's existing spacer-div convention for vertical spacing (explicit `w-full h-[n]` divs rather than `py-`/`mb-`/`mt-` utilities) — geometry is controlled structurally (width, flex alignment) rather than through spacing utilities, which proved more predictable across this project's custom breakpoint set. Where a container also needs a size floor on very narrow viewports (e.g. the project detail Info card), an explicit `min-w-[…]` is layered on top of the percentage width.
+
 ### A note on inline styles
 
 A handful of components (`Footer.tsx`, `Services.tsx`, `ProjectDetail.tsx`) use inline `style={{ ... }}` alongside Tailwind classes. This is intentional, not leftover — in each case the value is computed at runtime (e.g. a staggered animation delay based on an item's index in a list) and can't be expressed as a static Tailwind utility class. Everything that *can* be a Tailwind class, is one.
@@ -129,8 +134,7 @@ A handful of components (`Footer.tsx`, `Services.tsx`, `ProjectDetail.tsx`) use 
 ## Known Limitations / Roadmap
 
 - **German and French translations** are planned but not yet implemented. The site launches English-only, with translations to follow once the client's copy is delivered. No i18n scaffolding exists yet — this will be scoped once the copy arrives.
-- Two case studies (Offbeat Affair, Sick Saints) are ongoing client engagements; their results/testimonial content will be updated as the work progresses.
-
+  
 ---
 
 ## Deployment
